@@ -1,0 +1,1 @@
+Provide information here about the region collection: content-field types, field types that automatically populate, etc.
