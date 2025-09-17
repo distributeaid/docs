@@ -1,1 +1,1 @@
-contrib docs go here
+This folder will contain docs about how we do things at DA (like how we use GitHub, for instance).
