@@ -13,4 +13,4 @@ The current needs assessment information utilized for this documentation was obt
 
 ## Troubleshooting
 
-Some points to note if experiencing issues when getting the repo setup in a local dev environment or possible GitHub codespace requirements.
+Some points to note if experiencing issues when getting the repo running in a local dev environment or possible GitHub codespace requirements.
