@@ -1,26 +1,25 @@
-# CONTRIBUTING
-**
-**[TODO: rename this file to `README.md`; i.e. remove the template reference]**
+# README
 
-This is a template document for UC projects can use to help build the documentation in your project repos. It requires editing before it is ready to use, and you can find guides for using these templates on [our website](https://ucospo.net/oss-resources/#template-guides). Please feel free to [reach out to our Laura](mailto:lalangdon@ucdavis.edu), our Community Manager, if you have any questions!
+Welcome! We're glad you want to contribute to our work at DistributeAid! 💖 We’re not currently set up for async-only contributions so if you’re interested in joining, we encourage you to get in touch with our tech team lead at <tech@distributeaid.org> to get properly onboarded.
 
-Search for the word `TODO` in this template to identify parts that require customization; e.g. line 3 above lets you know you should rename this file.. When you finish editing the template, remove the `TODO` bits.
+## Expectations
 
-**[TODO: delete the lines between line 1 and the "Welcome" heading]**
+Most of our contributors put in an average of 5h a week. Volunteer participation fluctuates as people’s lives do, so we ask contributors to communicate proactively.
 
-## Welcome!
+A lot of our team communication happens in virtual meetings: 1 sprint meeting/month and 2 tech hangs/week where we hang out and collaborate. We’ve seen that people who show up to these consistently are having a better experience, make more progress, growing in skills, personal abilities, and confidence!
 
-**[TODO: edit welcome text below]**
+Tech hangs: every Wednesday and Thursday from 6 to 8 pm CET/CEST
+Sprint meetings: first hour of the tech hang on the first Wednesday of the month
 
-Welcome! We're glad you want to contribute to our project! 💖
+Any other collaboration usually happens via Slack.
 
-As you get started, you're in the best position to give us feedback on areas of our project that we need help with including:
+**Join our contributor team if:**
 
-- Problems found during setting up a new developer environment
-- Gaps in our Quickstart Guide or documentation
-- Bugs in our automation scripts
-
-If anything doesn't make sense, or doesn't work when you run it, please open a bug report and let us know!
+- You’re able and willing to communicate clearly
+- You’re reliable, organised and focused
+- You have some availability overlapping with Central European Time
+- You can make it to at least 1 tech hang per month
+- You can come to at least 1 sprint meeting per quarter
 
 ## Table of Contents
 
@@ -29,8 +28,8 @@ If anything doesn't make sense, or doesn't work when you run it, please open a b
 - [Ways to Contribute](#ways-to-contribute)
 - [Come to Community Calls](#come-to-community-calls)
 - [Finding an Issue](#finding-an-issue)
+- [Creating Issues](#creating-issues)
 - [Setting Up a Dev Environment](#setting-up-a-dev-environment)
-- [Running Tests](#running-tests)
 - [Asking for Help](#asking-for-help)
 - [Norms for Commits](#norms-for-commits)
 - [Pull Request Lifecycle](#pull-request-lifecycle)
@@ -40,27 +39,32 @@ If anything doesn't make sense, or doesn't work when you run it, please open a b
 
 **[TODO: edit this to reflect the kinds of contributions you'd like to receive for your project]**
 
-We welcome many different types of contributions, including:
+We’re looking for experienced engineers and designers, but you don’t need to already know our full stack as long as you know how to onboard yourself and ask for help if needed. Some experience with contributing to OSS is helpful. We welcome many different types of contributions, including:
 
-- New features
-- Builds, CI/CD
-- Bug fixes
-- Documentation
-- Issue Triage
-- Answering questions on Slack/Mailing List
-- Web design
-- Communications/Social Media/Blog Posts
-- Release management
+- [Frontend]( https://github.com/distributeaid/next-website-v2)
+  - As a Frontend Developer at Distribute Aid, you’ll create new pages for, update, and maintain the Distribute Aid website, often working closely with our designers or other devs
+  - Stack: NextJS, TypeScript, Strapi, Radix UI
+- [Backend](https://github.com/distributeaid/aggregated-public-information)
+  - As a Backend Developer at Distribute Aid, you’ll develop and maintain our backend for our website, work with APIs to share and structure collected needs data for our needs assessment as well as data visualisations to show our work. You’ll most likely collaborate with other Backend devs.
+  - Stack: Strapi (our website’s backend), TypeScript, APIs
+- Design
+  - As a designer at Distribute Aid, you’ll create designs for our website and any app we’re working on to make the lives of aid workers easier and more effective. You’ll collaborate with frontend developers and are expected to learn to create issues on GitHub.
+  - Stack: Figma, Canva, GitHub issues
+- Data
+  - Part data engineer, part data analyst, you’ll work with historical data from our Needs Assessment as well as future incoming Needs Assessment data. One of your main responsibilities will be to structure and present the data, creating visualisations that we can use on the website or show to partners to emphasise our impact.
+  - Stack: Strapi, APIs, Salesforce
+- [Documentation](https://github.com/distributeaid/docs)
+- Communications/Social Media/Blog Posts **[TODO: This wasn't on the original list, but should it be added?]
 
-Not everything happens through a GitHub pull request. Please come to [our meetings](**TODO: link to your meetings**) or [contact us](**TODO: link to your preferred method of contact**) and let's discuss how we can work together.
+## What we offer
 
-## Come to Community Calls
+Having a team structure in place allows us to foster both collaboration and individual growth. We emphasise doing peer reviews and encourage contributors who are willing to take on more responsibility to step up and get on track to become maintainers.
 
-**[TODO: Maybe your project doesn't have [community calls](https://opensource.com/open-organization/16/1/community-calls-will-increase-participation-your-open-organization), in which case you can omit this section. But you might consider trying them out!]**
+Regular contributors get access to periodic 1on1s with our tech lead to check in and enable personal development and growth at Distribute Aid. We’re also happy to write references for regular contributors as needed.
 
-Anyone interested in our project is welcome to come to any of [our community calls](**TODO: add a link to your community calls**)! You never need an invite to join us. In fact, we want you to join us, even if you don’t have anything you feel like you want to contribute. Just being there is enough!
+If this sounds interesting to you, [get in touch](mailto:tech@distributeaid.org) and tell us a bit about yourself.
 
-You don’t have to turn on your video. The first time you come, just introducing yourself is perfectly fine. Over time, we hope that you feel comfortable voicing your opinions, giving feedback on others’ ideas, and even sharing your own ideas, and experiences.
+If anything doesn't make sense, or doesn't work when you run it, please open a bug report and let us know!
 
 ## Finding an Issue
 
@@ -72,28 +76,30 @@ Sometimes there won’t be any issues with these labels. That’s ok! There is l
 
 Once you see an issue that you'd like to work on, please post a comment saying that you want to work on it. Something like "I want to work on this" is fine.
 
+## Creating Issues
+
+## Creating Issues
+
+On the [Issues page on Github](https://github.com/distributeaid/next-website-v2/issues), click the green `New Issue` button or this [New Issue Link](https://github.com/distributeaid/next-website-v2/issues/new).
+
+- Add a descriptive title with an optional `[type tag]` such as [component] or [page]. In the description body summarize the issue.
+- Add external links, such as to figma designs or external documentation, if applicable. If a figma design exists, be sure to add screenshots. Visual explanations go a long way towards making things super clear.
+- Add parts of the codebase where changes would be made.
+- Assign the issue to yourself or someone else, or leave for another person to pick it up.
+- Add appropriate labels and types.
+- Add the issue to the project **DA Tech**.
+
+If the issue needs some precursor set up before someone can work on the issue (particularly for parents of sub issues) such as library installations and page or folder creations, then you must first set the issue as `Triage` until those appropriate changes are made and reviewed in a pull request. Otherwise, set the issue as `Ready for Work`.
+
+### Sub Issues
+
+For larger issues that can be split up into separate independent parts. For example a new parent page with multiple children components. You can create a parent issue, with multiple child issues. [See these slides](https://docs.google.com/presentation/d/1ToMum70-qDlaCv6m7X3HfGr3XjaX-UjyA36K4IElO5Y/edit?slide=id.g2dd259a195e_0_9#slide=id.g2dd259a195e_0_9) on how to create sub issues.
+
 ## Setting up a Dev Environment
 
 **[TODO: edit the steps provided for what's needed for your project]**
 
-Clone the project:
-
-```bash
-git clone yourprojecturl
-```
-
-Install dependencies:
-
-```bash
-install command
-```
-
-## Running Tests
-
-**[TODO: Describe the process you use to test code in your project]**
-
-1. Step one
-2. Step two
+Dev environment setup across our repos, so please refer to the README for any repo you'd like to contribute to!
 
 ## Asking for Help
 
@@ -109,7 +115,12 @@ The best way to reach us with a question when contributing is to ask on:
 
 **[TODO: edit this section to reflect what's needed for your project]**
 
-Our project uses [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/), and we require [commit signing](https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits). Please let us know if you need help with these!
+Most of our repos (except docs) use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/). When crafting commit messages, group commits that are related to a particular topic. For example, if you're making commits related to the styling, only include files that are related to styling. This makes it easier to read through the commits and see the exact files that made changes to the styles. Proper commits make debugging easier in cases where we need to go through our git logs.
+
+A good commit message will ideally have the following attributes:
+
+- Subject => A summary of what you did in the commit.
+- Body => A detailed explanation of the commit.
 
 ## Pull Request Lifecycle
 
@@ -143,9 +154,16 @@ Submit your pull request when you have a working implementation that addresses t
 
 **[TODO: edit this section to reflect what's needed for your project]**
 
-Create a feature branch from the latest `main` branch. Use descriptive branch names like `feature/add-user-authentication` or `fix/memory-leak-in-parser`.
+We have a long-running branch (**saga**) and create short-lived branches to develop parts of the website. Our branch naming convention is `type/issue#/condensed-issue-name`. An example of a short-lived branch would be `feat/365/about-us`. Connect words using a "-" as branch names cannot include empty spaces. Always ensure you're working on a separate branch to avoid merge conflicts.
 
 ### Submission Process
+
+- Include the purpose of the Pull Request and link the issue related to the PR (with the `#` sign)
+- Consider providing an overview of why the work is taking place (with any relevant links). Don't assume familiarity with the history
+- Be explicit about what feedback you want, if any: a quick pair of 👀 on the code, discussion on the technical approach, critique on design, a review copy
+- Be explicit about when you want feedback, if the Pull Request is a work in progress, say so. Prefix the title of your PR with [WIP]
+- @mention individuals that you specifically want to involve in the discussion and explain the help or input you need from them.
+- Assign the issue author as a reviewer **[TODO: I think we found that contributors can't assign reviewers themselves?]**
 
 #### PR Scope
 
@@ -244,105 +262,3 @@ _Questions about the PR process? Feel free to ask in the issue comments, discuss
 ## Code of Conduct
 
 Please read our [Code of Conduct](**TODO: link to your project's CoC**)
-
-**[TODO: merge content below with content above]**
-
-# How to get started contributing to Distribute Aid
-
-We’re not currently set up for async-only contributions so if you’re interested in joining, we encourage you to get in touch with our tech team lead at <tech@distributeaid.org> to get properly onboarded.
-
-## Expectations
-
-Most of our contributors put in an average of 5h a week. Volunteer participation fluctuates as people’s lives do, so we ask contributors to communicate proactively.
-
-A lot of our team communication happens in virtual meetings: 1 sprint meeting/month and 2 tech hangs/week where we hang out and collaborate. We’ve seen that people who show up to these consistently are having a better experience, make more progress, growing in skills, personal abilities, and confidence!
-
-Tech hangs: every Wednesday and Thursday from 6 to 8 pm CET/CEST
-Sprint meetings: first hour of the tech hang on the first Wednesday of the month
-
-Any other collaboration usually happens via Slack.
-
-**Join our contributor team if:**
-
-- you’re able and willing to communicate clearly
-- you’re reliable, organised and focused
-- you have some availability overlapping with Central European Time
-- you can make it to at least 1 tech hang per month
-- you can come to at least 1 sprint meeting per quarter
-
-## What we’re looking for
-
-We’re looking for experienced engineers and designers, but you don’t need to already know our full stack as long as you know how to onboard yourself and ask for help if needed. Some experience with contributing to OSS is helpful.
-
-### Frontend
-
-As a Frontend Developer at Distribute Aid, you’ll create new pages for, update, and maintain the Distribute Aid website, often working closely with our designers or other devs.
-
-Stack: NextJS, TypeScript, Strapi, Radix UI
-
-### Backend
-
-As a Backend Developers at Distribute Aid, you’ll develop and maintain our backend for our website, work with APIs to share and structure collected needs data for our needs assessment as well as data visualisations to show our work. You’ll most likely collaborate with other Backend devs.
-
-Stack: Strapi (our website’s backend), TypeScript, APIs
-
-### Design
-
-As a designer at Distribute Aid, you’ll create designs for our website and any app we’re working on to make the lives of aid workers easier and more effective. You’ll collaborate with frontend developers and are expected to learn to create issues on GitHub.
-
-Stack: Figma, Canva, GitHub issues
-
-### Data
-
-Part data engineer, part data analyst, you’ll work with historical data from our Needs Assessment as well as future incoming Needs Assessment data. One of your main responsibilities will be to structure and present the data, creating visualisations that we can use on the website or show to partners to emphasise our impact.
-
-Stack: Strapi, APIs, Salesforce
-
-### Other areas
-
-Got any other skills you think could help us? Project management, writing, documentation, video, etc. Get in touch and let us know!
-
-# What we offer
-
-Having a team structure in place allows us to foster both collaboration and individual growth. We emphasise doing peer reviews and encourage contributors who are willing to take on more responsibility to step up and get on track to become maintainers.
-
-Regular contributors get access to periodic 1on1s with our tech lead to check in and enable personal development and growth at Distribute Aid. We’re also happy to write references for regular contributors as needed.
-
-If this sounds interesting to you, [get in touch](mailto:tech@distributeaid.org) and tell us a bit about yourself.
-
-## Relevant repos
-
-### Frontend: Next website v2
-
-Repo link: https://github.com/distributeaid/next-website-v2
-
-This is the website redesign that we’re currently working on. Once the redesign goes live the repo will be renamed to distributeaid.org.
-
-Our [“old” website repo](https://github.com/distributeaid/distributeaid.org), which contains the version of our site that's currently live, will be retired and archived once the next-website has been launched.
-Technologies used
-
-- [Next.js](https://nextjs.org/docs) - Frontend framework
-- [Typescript](https://www.typescriptlang.org/) - scripting language
-- [Tailwind.css](https://tailwindcss.com/) CSS framework
-- [npm](https://docs.npmjs.com/getting-started) - package manager
-- [Prettier](https://prettier.io/) - code formatter (via the pretty-quick node module)
-- [ESLint](https://eslint.org/) - Linting
-- [Vercel](https://vercel.com/home) - Production and deployment
-
-### Backend: Strapi
-
-[Backend repo](https://github.com/distributeaid/aggregated-public-information)
-
-<!-- TODO: More information incl stack needs to be added -->
-
-### Needs Assessment
-
-[Needs Assessment repo](https://github.com/distributeaid/needs-assessment-v2)
-
-<!-- TODO: More information incl stack needs to be added -->
-
-### Documentation
-
-[Docs repo](https://github.com/distributeaid/docs)
-
-This is where most of our documentation is housed.
