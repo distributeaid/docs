@@ -2,5 +2,13 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended"
-  ]
+  ],
+  "constraints": {
+  "packageManager": "yarn@4.9.4"
+  },
+  "npm": {
+    "enabled": true,
+    "postUpdateOptions": ["yarnDedupeHighest"]
+  },
+  "ignorePaths": ["**/package-lock.json"]
 }
