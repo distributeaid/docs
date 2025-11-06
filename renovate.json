@@ -10,5 +10,6 @@
     "enabled": true,
     "postUpdateOptions": ["yarnDedupeHighest"]
   },
-  "ignorePaths": ["**/package-lock.json"]
+  "ignorePaths": ["**/package-lock.json"],
+  "packageRules": []
 }
