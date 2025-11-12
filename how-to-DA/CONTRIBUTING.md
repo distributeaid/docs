@@ -54,7 +54,6 @@ We’re looking for experienced engineers and designers, but you don’t need to
   - Part data engineer, part data analyst, you’ll work with historical data from our Needs Assessment as well as future incoming Needs Assessment data. One of your main responsibilities will be to structure and present the data, creating visualisations that we can use on the website or show to partners to emphasise our impact.
   - Stack: Strapi, APIs, Salesforce
 - [Documentation](https://github.com/distributeaid/docs)
-- Communications/Social Media/Blog Posts **[TODO: This wasn't on the original list, but should it be added?]
 
 ## What we offer
 
@@ -78,8 +77,6 @@ Once you see an issue that you'd like to work on, please post a comment saying t
 
 ## Creating Issues
 
-## Creating Issues
-
 On the [Issues page on Github](https://github.com/distributeaid/next-website-v2/issues), click the green `New Issue` button or this [New Issue Link](https://github.com/distributeaid/next-website-v2/issues/new).
 
 - Add a descriptive title with an optional `[type tag]` such as [component] or [page]. In the description body summarize the issue.
@@ -97,23 +94,16 @@ For larger issues that can be split up into separate independent parts. For exam
 
 ## Setting up a Dev Environment
 
-**[TODO: edit the steps provided for what's needed for your project]**
-
 Dev environment setup across our repos, so please refer to the README for any repo you'd like to contribute to!
 
 ## Asking for Help
 
 The best way to reach us with a question when contributing is to ask on:
 
-**[TODO: Pick the way(s) that you prefer people ask for help]**
-
 - The original Github issue
-- The developer mailing list
 - Our Slack channel
 
 ## Norms for Commits
-
-**[TODO: edit this section to reflect what's needed for your project]**
 
 Most of our repos (except docs) use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/). When crafting commit messages, group commits that are related to a particular topic. For example, if you're making commits related to the styling, only include files that are related to styling. This makes it easier to read through the commits and see the exact files that made changes to the styles. Proper commits make debugging easier in cases where we need to go through our git logs.
 
