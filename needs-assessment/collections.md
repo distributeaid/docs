@@ -15,32 +15,37 @@ These collections provide a structured data source that supports efficient query
 - Naming Conventions for the Strapi Collections
 - How to create a Collection
 - How to rename a Collection
-- List of Strapi Collections relating to the Needs Assessment
+- List of Strapi Collections Related to the Needs Assessment
 
 ## What's in a collection
 
-A collection is one of three Strapi content-types, formally known as a collection-type, and contains various fields for the data used to populate that collection. These felds can be added during the creation of a collection or afterward during edits/updates to the collection.
+A **collection** is one of Strapi's three content-types (formally called a _collection-type_). It contains fields that define the data structure for that collection. Fields can be added when creating the collection or later during edits and updates.
 
-To view a collection:
-1. The Strapi Admin panel must be running in your browser.
+### Viewing a Collection
+To view a collection in Strapi:
+1. Ensure the **Strapi Admin Panel** is running in your browser.
 
-2. Select the Content Manager icon from the navigation menu in the Strapi Admin panel (see Figure 1). A list of collections to choose from should now appear in a column beside the navigation menu.
+2. Select the **Content Manager** icon from the navigation menu (see Figure 1). A list of available collections will appear.
 
-3. Select the collection type you wish to view by clicking on the name of the collection (for example, Product.Category)
+3. Click the name of the collection you want to view (for example, `Product.Category`)
 
-4. In the browser, you should now see the title of the collection at the top and a table that displays some of the fields for that collection. If the collection has been populated, a list of options available for that collection will also appear in the table.
+4. The main panel should now display the collection title and a table showing several of its fields. If entries exist, they'll appear as rows in the table.
 
-5. To view all of the fields in that collection, click the view settings toggle that displays over the top right corner of the table (see Figure 2). The fields that are currently displayed in the table will be checked as Displayed Fields. Here, you can choose which fields to view, reset the fields for viewing, or configure the view of fields for display.
+5. To view or customize the displayed fields, select the **View settings** toggle above the top-right corner of the table (see Figure 2). In this panel, you can:
+    * Choose which fields to display
+    * Reset the default view
+    * Configure the display order of fields
 
-Strapi automatically generates and populates the following fields in a collection:
+### Automatically Generated Fields
+Strapi automatically creates and populates the following fields in every collection:
 
-* id
-* createdAt
-* createdBy
-* documentId
-* updatedAt
-* updatedBy
+* `id`
+* `createdAt`
+* `createdBy`
+* `documentId`
+* `updatedAt`
+* `updatedBy`
 
-Other fields (like name) are determined by the data requirements established for each collection.
+Other fields (such as `name`) are determined by the data requirements specific to each collection and are added manually during collection creation or during updates.
 
-Some fields in specific collections are automatically populated as a result of the setup implemented during creation. For more details on these specific fields in our Strapi collections, follow the [field-types](./field-types.md) link.
+Some collections also contain auto-populated fields configured during setup. For details about these specific fields, see [field-types](./field-types.md).
