@@ -10,8 +10,8 @@ These collections provide a structured data source that supports efficient query
 
 ## Table of Contents
 
-- Overview of Needs Assessment Collections
-- What's in a Collection
+- [Overview of Needs Assessment Collections](#overview-of-needs-assessment-collections)
+- [What's in a Collection](#whats-in-a-collection)
 - Naming Conventions for the Strapi Collections
 - How to create a Collection
 - How to rename a Collection
@@ -19,7 +19,7 @@ These collections provide a structured data source that supports efficient query
 
 ## What's in a collection
 
-A **collection** is one of Strapi's three content-types (formally called a _collection-type_). It contains fields that define the data structure for that collection. Fields can be added when creating the collection or later during edits and updates.
+A **collection** is one of Strapi's three content-types (formally called a _collection type_). It contains fields that define the data structure for that collection. Fields can be added when creating the collection or later during edits and updates.
 
 ### Viewing a Collection
 To view a collection in Strapi:
@@ -46,6 +46,10 @@ Strapi automatically creates and populates the following fields in every collect
 * `updatedAt`
 * `updatedBy`
 
-Other fields (such as `name`) are determined by the data requirements specific to each collection and are added manually during collection creation or during updates.
+Other fields (such as `name`) are determined by the data requirements specific to each collection and are added manually during collection creation or during updates. 
 
-Some collections also contain auto-populated fields configured during setup. For details about these specific fields, see [field-types](./field-types.md).
+Some collections also contain auto-populated fields configured during setup. For details about these specific fields, see [our field types documentation](./field-types.md).
+
+For more information on Strapi content-types, including the collection type, and creating content-types manually, see these [Strapi docs](https://docs.strapi.io/cms/features/content-type-builder).
+
+>**NOTE**: All current Strapi collections related to Needs Assessment have been created manually. They were not generated using Strapi's AI features.
