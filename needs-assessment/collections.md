@@ -27,14 +27,26 @@ To view a collection in Strapi:
 
 2. Select the **Content Manager** icon from the navigation menu (see Figure 1). A list of available collections will appear.
 
+<figure>
+  <img src="../images/content-manager.png" alt="Strapi Content Manager icon in the navigation menu" style="max-width: 80%; height: auto;">
+  <figcaption><strong>Figure 1.</strong> Strapi Content Manager icon in the navigation menu.</figcaption>
+</figure>
+
 3. Click the name of the collection you want to view (for example, `Product.Category`)
 
 4. The main panel should now display the collection title and a table showing several of its fields. If entries exist, they'll appear as rows in the table.
 
-5. To view or customize the displayed fields, select the **View settings** toggle above the top-right corner of the table (see Figure 2). In this panel, you can:
-    * Choose which fields to display
-    * Reset the default view
-    * Configure the display order of fields
+5. To view or customize the displayed fields, select the **View settings** toggle above the top-right corner of the table (see Figure 2). 
+
+<figure>
+  <img src="../images/view-settings.png" alt="View settings toggle" style="max-width: 80%; height: auto;">
+  <figcaption><strong>Figure 2.</strong> View settings toggle.</figcaption>
+</figure>
+
+        In this panel, you can:
+            - Choose which fields to display
+            - Reset the default view
+            - Configure the display order of fields
 
 ### Automatically Generated Fields
 Strapi automatically creates and populates the following fields in every collection:
