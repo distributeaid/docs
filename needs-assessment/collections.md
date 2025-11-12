@@ -17,7 +17,7 @@ These collections provide a structured data source that supports efficient query
 - How to rename a Collection
 - List of Strapi Collections Related to the Needs Assessment
 
-## What's in a collection
+## What's in a Collection
 
 A **collection** is one of Strapi's three content-types (formally called a _collection type_). It contains fields that define the data structure for that collection. Fields can be added when creating the collection or later during edits and updates.
 
