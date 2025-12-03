@@ -43,10 +43,10 @@ To view a collection in Strapi:
   <figcaption><strong>Figure 2.</strong> View settings toggle.</figcaption>
 </figure>
 
-        In this panel, you can:
-            - Choose which fields to display
-            - Reset the default view
-            - Configure the display order of fields
+- In this panel, you can:
+    * Choose which fields to display
+    * Reset the default view
+    * Configure the display order of fields
 
 ### Automatically Generated Fields
 Strapi automatically creates and populates the following fields in every collection:
