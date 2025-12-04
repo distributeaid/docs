@@ -28,7 +28,7 @@ To view a collection in Strapi:
 2. Select the **Content Manager** icon from the navigation menu (see Figure 1). A list of available collections will appear.
 
 <figure>
-  <img src="../images/content-manager.png" alt="Strapi Content Manager icon in the navigation menu" style="max-width: 80%; height: auto;">
+  <img src="../images/content-manager.png" alt="Content Manager icon in the Strapi navigation menu that opens Collection Types column" style="max-width: 80%; height: auto;">
   <figcaption><strong>Figure 1.</strong> Strapi Content Manager icon in the navigation menu.</figcaption>
 </figure>
 
