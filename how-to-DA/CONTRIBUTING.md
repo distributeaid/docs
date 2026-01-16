@@ -117,28 +117,39 @@ A good commit message will ideally have the following attributes:
 > [!TIP]
 > TODO: Edit the text below to describe your pull request process. You don't need to adopt every aspect! Pick and choose what makes sense for *your* project]
 
+### While You're Working
+
+- when starting to work, merge main into your branch so that you're not behind and avoid merge conflicts later on
+- when you're done for the day, commit and push your changes, even if it's not done or breaks, but if someone else needs to take over, then no work is lost and maintainers can get an idea of the progress of an issue
+
+- coding principles: before a PR, check if you have classes, files, etc. that do more that they should, dependencies that are unnecessary, etc. (keyword SOLID and KISS)
+- run tests before creating a PR
+- naming conventions e.g website specific: using reusable file names that make sense in more than one context. e.g. ~homepageData.ts~ testimonials.ts
+- more naming conventions, when to use camelCase, PascalCase,etc. for things. there are common conventions, best practices, etc. that help keep it clean. This is probably repo specific. eg. for the website
+
+| Category | Example name | File name | Why |
+|-----------|---------------|-----------|------|
+| **React component** | `Testimonials` | `Testimonials.tsx` | Capitalized because JSX tags must start with an uppercase letter to be treated as components. |
+| **Data / config / constants / plain TS modules** | `partnerTestimonials` | `partnerTestimonials.ts` | Lowercase (camelCase or sometimes snake_case) because they’re **values**, not types or components. |
+| **Type or interface** | `ImpactItem` | (`.ts`/`.tsx`) | PascalCase to clearly mark a type-level construct rather than a runtime value. |
+| **Constant / enum-like value** | `API_URL` | `constants.ts` | UPPER_SNAKE_CASE for immutable, global configuration values. |
+| **Utility / helper function** | `formatNumber` | `formatNumber.ts` | camelCase because it’s a regular JavaScript function or exported helper. |
+
+
 ### Before You Submit
 
 **[TODO: edit this section to reflect what's needed for your project]**
 
 When you submit your pull request, or you push new commits to it, our automated systems will run some checks on your new code. We require that your pull request passes these checks, but we also have more criteria than just that before we can accept and merge it. We recommend that you check the following things locally before you submit your code:
 
-- First thing to check
-- Another thing to check
-
-#### When to Submit
-
-**[TODO: edit this section to reflect what's needed for your project]**
-
-Submit your pull request when you have a working implementation that addresses the issue or feature request. Your code should be tested and ready for review, even if you're open to suggestions for improvements.
+- Your branch is up to date with `saga` and any merge conflicts have been resolved
+- Run the applicable formatting checks as specified in the repo's README.md
 
 #### Draft vs. Ready PRs
 
-**[TODO: edit this section to reflect what's needed for your project]**
-
-- Use **Draft PRs** when your work is incomplete or you want early feedback on your approach
-- Convert to **Ready for Review** when your implementation is complete and tested
-- Mark as ready even if you expect minor changes during review
+- Use **Draft PRs** when your work is incomplete
+- Convert to **Ready for Review** when your implementation is complete and tested (mark as ready even if you expect minor changes during review)
+- In either case, if you'd like feedback or a review please post in the #tech-github-chat on Slack
 
 #### Branch Strategy
 
