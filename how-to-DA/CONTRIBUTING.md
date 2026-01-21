@@ -37,8 +37,6 @@ Any other collaboration usually happens via Slack.
 
 ## Ways to Contribute
 
-**[TODO: edit this to reflect the kinds of contributions you'd like to receive for your project]**
-
 We’re looking for experienced engineers and designers, but you don’t need to already know our full stack as long as you know how to onboard yourself and ask for help if needed. Some experience with contributing to OSS is helpful. We welcome many different types of contributions, including:
 
 - [Frontend]( https://github.com/distributeaid/next-website-v2)
@@ -67,11 +65,9 @@ If anything doesn't make sense, or doesn't work when you run it, please open a b
 
 ## Finding an Issue
 
-**[TODO: edit this section as needed]**
+We have good first issues for new contributors and help wanted issues suitable for any contributor. `good first issue` has extra information to help you make your first contribution. `help wanted`are issues suitable for someone who isn't a core maintainer and is good to move onto after your first pull request.
 
-We have good first issues for new contributors and help wanted issues suitable for any contributor. [`good first issue`](**TODO: link your project's `good first issue` label**) has extra information to help you make your first contribution. [`help wanted`](**TODO: link to your project's `help wanted` label**) are issues suitable for someone who isn't a core maintainer and is good to move onto after your first pull request.
-
-Sometimes there won’t be any issues with these labels. That’s ok! There is likely still something for you to work on. If you want to contribute but you don’t know where to start or can't find a suitable issue, you can **[TODO: explain how people can ask for an issue to work on]**.
+Sometimes there won’t be any issues with these labels. That’s ok! There is likely still something for you to work on. If you want to contribute but you don’t know where to start or can't find a suitable issue, you can ask in Slack.
 
 Once you see an issue that you'd like to work on, please post a comment saying that you want to work on it. Something like "I want to work on this" is fine.
 
@@ -79,18 +75,19 @@ Once you see an issue that you'd like to work on, please post a comment saying t
 
 On the [Issues page on Github](https://github.com/distributeaid/next-website-v2/issues), click the green `New Issue` button or this [New Issue Link](https://github.com/distributeaid/next-website-v2/issues/new).
 
-- Add a descriptive title with an optional `[type tag]` such as [component] or [page]. In the description body summarize the issue.
-- Add external links, such as to figma designs or external documentation, if applicable. If a figma design exists, be sure to add screenshots. Visual explanations go a long way towards making things super clear.
-- Add parts of the codebase where changes would be made.
-- Assign the issue to yourself or someone else, or leave for another person to pick it up.
-- Add appropriate labels and types.
-- Add the issue to the project **DA Tech**.
+- Add a descriptive title with an optional `[type tag]` such as [component] or [page]. In the description body summarize the issue
+- Add external links, such as to figma designs or external documentation, if applicable
+  - If a figma design exists, be sure to add screenshots. Visual explanations go a long way towards making things super clear!
+- Add parts of the codebase where changes would be made
+- Assign the issue to yourself or someone else, or leave for another person to pick it up
+- Add appropriate labels and types
+- Add the issue to the project **DA Tech**
 
 If the issue needs some precursor set up before someone can work on the issue (particularly for parents of sub issues) such as library installations and page or folder creations, then you must first set the issue as `Triage` until those appropriate changes are made and reviewed in a pull request. Otherwise, set the issue as `Ready for Work`.
 
 ### Sub Issues
 
-For larger issues that can be split up into separate independent parts. For example a new parent page with multiple children components. You can create a parent issue, with multiple child issues. [See these slides](https://docs.google.com/presentation/d/1ToMum70-qDlaCv6m7X3HfGr3XjaX-UjyA36K4IElO5Y/edit?slide=id.g2dd259a195e_0_9#slide=id.g2dd259a195e_0_9) on how to create sub issues.
+For larger issues that can be split up into separate independent parts—like a new parent page with multiple children components, for example—you can create a parent issue, with multiple child issues. [See these slides](https://docs.google.com/presentation/d/1ToMum70-qDlaCv6m7X3HfGr3XjaX-UjyA36K4IElO5Y/edit?slide=id.g2dd259a195e_0_9#slide=id.g2dd259a195e_0_9) on how to create sub issues.
 
 ## Setting up a Dev Environment
 
@@ -112,50 +109,23 @@ A good commit message will ideally have the following attributes:
 - Subject => A summary of what you did in the commit.
 - Body => A detailed explanation of the commit.
 
-## Pull Request Lifecycle
+## Dev Process
 
-> [!TIP]
-> TODO: Edit the text below to describe your pull request process. You don't need to adopt every aspect! Pick and choose what makes sense for *your* project]
+### Branch Strategy
+
+We have a long-running branch `main` and create short-lived branches to develop parts of the website. Our branch naming convention is `type/issue#/condensed-issue-name`. An example of a short-lived branch would be `feat/365/about-us`. Connect words using a "-" as branch names cannot include empty spaces. Always ensure you're working on a separate branch to avoid merge conflicts.
 
 ### While You're Working
 
-- when starting to work, merge main into your branch so that you're not behind and avoid merge conflicts later on
-- when you're done for the day, commit and push your changes, even if it's not done or breaks, but if someone else needs to take over, then no work is lost and maintainers can get an idea of the progress of an issue
+The usual best practices apply:
 
-- coding principles: before a PR, check if you have classes, files, etc. that do more that they should, dependencies that are unnecessary, etc. (keyword SOLID and KISS)
-- run tests before creating a PR
-- naming conventions e.g website specific: using reusable file names that make sense in more than one context. e.g. ~homepageData.ts~ testimonials.ts
-- more naming conventions, when to use camelCase, PascalCase,etc. for things. there are common conventions, best practices, etc. that help keep it clean. This is probably repo specific. eg. for the website
-
-| Category | Example name | File name | Why |
-|-----------|---------------|-----------|------|
-| **React component** | `Testimonials` | `Testimonials.tsx` | Capitalized because JSX tags must start with an uppercase letter to be treated as components. |
-| **Data / config / constants / plain TS modules** | `partnerTestimonials` | `partnerTestimonials.ts` | Lowercase (camelCase or sometimes snake_case) because they’re **values**, not types or components. |
-| **Type or interface** | `ImpactItem` | (`.ts`/`.tsx`) | PascalCase to clearly mark a type-level construct rather than a runtime value. |
-| **Constant / enum-like value** | `API_URL` | `constants.ts` | UPPER_SNAKE_CASE for immutable, global configuration values. |
-| **Utility / helper function** | `formatNumber` | `formatNumber.ts` | camelCase because it’s a regular JavaScript function or exported helper. |
-
-
-### Before You Submit
-
-**[TODO: edit this section to reflect what's needed for your project]**
-
-When you submit your pull request, or you push new commits to it, our automated systems will run some checks on your new code. We require that your pull request passes these checks, but we also have more criteria than just that before we can accept and merge it. We recommend that you check the following things locally before you submit your code:
-
-- Your branch is up to date with `saga` and any merge conflicts have been resolved
-- Run the applicable formatting checks as specified in the repo's README.md
-
-#### Draft vs. Ready PRs
-
-- Use **Draft PRs** when your work is incomplete
-- Convert to **Ready for Review** when your implementation is complete and tested (mark as ready even if you expect minor changes during review)
-- In either case, if you'd like feedback or a review please post in the #tech-github-chat on Slack
-
-#### Branch Strategy
-
-**[TODO: edit this section to reflect what's needed for your project]**
-
-We have a long-running branch (**saga**) and create short-lived branches to develop parts of the website. Our branch naming convention is `type/issue#/condensed-issue-name`. An example of a short-lived branch would be `feat/365/about-us`. Connect words using a "-" as branch names cannot include empty spaces. Always ensure you're working on a separate branch to avoid merge conflicts.
+- We prefer **small, focused pull requests** that address a single issue or implement one feature. Large PRs are harder to review and more likely to conflict with other changes. If your feature is large, consider breaking it into multiple PRs.
+- Each time you start to work, merge `main` into your branch so that you're not behind and avoid merge conflicts later on
+- When you're done for the day, commit and push your changes, even if it's not done or breaks, but so that maintainers can get an idea of the progress of an issue
+- Make sure your [code is modular](https://dev.to/prxtikk/how-to-write-clean-and-modular-code-1d87) and free of unnecessary dependencies (see also the [SOLID design principles](https://www.digitalocean.com/community/conceptual-articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design) and  [KISS principle](https://www.freecodecamp.org/news/keep-it-simple-stupid-how-to-use-the-kiss-principle-in-design/))
+- Make sure your code passes the applicable tests (see the README for the repo you're working in)
+- Use reusable file names that make sense in more than one context. e.g. ~homepageData.ts~ testimonials.ts
+- Follow the best practices for naming variables, case choice (like PascalCase, camelCase, or snake_case), etc. for each language you're writing in
 
 ### Submission Process
 
@@ -164,13 +134,6 @@ We have a long-running branch (**saga**) and create short-lived branches to deve
 - Be explicit about what feedback you want, if any: a quick pair of 👀 on the code, discussion on the technical approach, critique on design, a review copy
 - Be explicit about when you want feedback, if the Pull Request is a work in progress, say so. Prefix the title of your PR with [WIP]
 - @mention individuals that you specifically want to involve in the discussion and explain the help or input you need from them.
-- Assign the issue author as a reviewer **[TODO: I think we found that contributors can't assign reviewers themselves?]**
-
-#### PR Scope
-
-**[TODO: edit this section to reflect what's needed for your project]**
-
-We prefer **small, focused pull requests** that address a single issue or implement one feature. Large PRs are harder to review and more likely to conflict with other changes. If your feature is large, consider breaking it into multiple PRs.
 
 #### Signaling Readiness
 
