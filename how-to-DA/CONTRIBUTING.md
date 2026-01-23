@@ -1,6 +1,6 @@
-# README
+# Contributing to Distribute Aid
 
-Welcome! We're glad you want to contribute to our work at DistributeAid! 💖 We’re not currently set up for async-only contributions so if you’re interested in joining, we encourage you to get in touch with our tech team lead at <tech@distributeaid.org> to get properly onboarded.
+Welcome! We're glad you want to contribute to our work at Distribute Aid! 💖 We’re not currently set up for async-only contributions so if you’re interested in joining, we encourage you to get in touch with our tech team lead at <tech@distributeaid.org> to get properly onboarded.
 
 ## Expectations
 
@@ -23,16 +23,24 @@ Any other collaboration usually happens via Slack.
 
 ## Table of Contents
 
-**[TODO: edit the Table of Contents]**
-
 - [Ways to Contribute](#ways-to-contribute)
-- [Come to Community Calls](#come-to-community-calls)
+- [What We Offer](#what-we-offer)
 - [Finding an Issue](#finding-an-issue)
 - [Creating Issues](#creating-issues)
+  - [Sub Issues](#sub-issues)
 - [Setting Up a Dev Environment](#setting-up-a-dev-environment)
 - [Asking for Help](#asking-for-help)
-- [Norms for Commits](#norms-for-commits)
 - [Dev Process](#dev-process)
+  - [Branch Strategy](#branch-strategy)
+  - [Norms for Commits](#norms-for-commits)
+  - [While You're Working](#while-youre-working)
+  - [Making a Pull Request](#making-a-pull-request)
+  - [Signaling Readiness](#signaling-readiness)
+  - [Review Process](#review-process)
+  - [Handling Common Situations](#handling-common-situations)
+    - [Abandoned Pull Requests](#abandoned-pull-requests)
+    - [Follow-Up Work](#follow-up-work)
+  - [After Your PR is Approved](#after-your-pr-is-approved)
 - [Code of Conduct](#code-of-conduct)
 
 ## Ways to Contribute
@@ -100,7 +108,13 @@ The best way to reach us with a question when contributing is to ask on:
 - The original Github issue
 - Our Slack channel
 
-## Norms for Commits
+## Dev Process
+
+### Branch Strategy
+
+We have a long-running branch `main` and create short-lived branches to develop parts of the website. Our branch naming convention is `type/issue#/condensed-issue-name`. An example of a short-lived branch would be `feat/365/about-us`. Connect words using a "-" as branch names cannot include empty spaces. Always ensure you're working on a separate branch to avoid merge conflicts.
+
+### Norms for Commits
 
 Most of our repos (except docs) use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/). When crafting commit messages, group commits that are related to a particular topic. For example, if you're making commits related to the styling, only include files that are related to styling. This makes it easier to read through the commits and see the exact files that made changes to the styles. Proper commits make debugging easier in cases where we need to go through our git logs.
 
@@ -108,12 +122,6 @@ A good commit message will ideally have the following attributes:
 
 - Subject => A summary of what you did in the commit.
 - Body => A detailed explanation of the commit.
-
-## Dev Process
-
-### Branch Strategy
-
-We have a long-running branch `main` and create short-lived branches to develop parts of the website. Our branch naming convention is `type/issue#/condensed-issue-name`. An example of a short-lived branch would be `feat/365/about-us`. Connect words using a "-" as branch names cannot include empty spaces. Always ensure you're working on a separate branch to avoid merge conflicts.
 
 ### While You're Working
 
@@ -135,7 +143,7 @@ The usual best practices apply:
 - Be explicit about when you want feedback, if the Pull Request is a work in progress, say so. Prefix the title of your PR with [WIP]
 - @mention individuals that you specifically want to involve in the discussion and explain the help or input you need from them.
 
-#### Signaling Readiness
+### Signaling Readiness
 
 - Ensure all CI checks are passing
 - Make sure your branch is up to date with `main`
