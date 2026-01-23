@@ -32,14 +32,14 @@ Any other collaboration usually happens via Slack.
 - [Setting Up a Dev Environment](#setting-up-a-dev-environment)
 - [Asking for Help](#asking-for-help)
 - [Norms for Commits](#norms-for-commits)
-- [Pull Request Lifecycle](#pull-request-lifecycle)
+- [Dev Process](#dev-process)
 - [Code of Conduct](#code-of-conduct)
 
 ## Ways to Contribute
 
 We’re looking for experienced engineers and designers, but you don’t need to already know our full stack as long as you know how to onboard yourself and ask for help if needed. Some experience with contributing to OSS is helpful. We welcome many different types of contributions, including:
 
-- [Frontend]( https://github.com/distributeaid/next-website-v2)
+- [Frontend](https://github.com/distributeaid/next-website-v2)
   - As a Frontend Developer at Distribute Aid, you’ll create new pages for, update, and maintain the Distribute Aid website, often working closely with our designers or other devs
   - Stack: NextJS, TypeScript, Strapi, Radix UI
 - [Backend](https://github.com/distributeaid/aggregated-public-information)
@@ -76,8 +76,8 @@ Once you see an issue that you'd like to work on, please post a comment saying t
 On the [Issues page on Github](https://github.com/distributeaid/next-website-v2/issues), click the green `New Issue` button or this [New Issue Link](https://github.com/distributeaid/next-website-v2/issues/new).
 
 - Add a descriptive title with an optional `[type tag]` such as [component] or [page]. In the description body summarize the issue
-- Add external links, such as to figma designs or external documentation, if applicable
-  - If a figma design exists, be sure to add screenshots. Visual explanations go a long way towards making things super clear!
+- Add external links, such as to Figma designs or external documentation, if applicable
+  - If a Figma design exists, be sure to add screenshots. Visual explanations go a long way towards making things super clear!
 - Add parts of the codebase where changes would be made
 - Assign the issue to yourself or someone else, or leave for another person to pick it up
 - Add appropriate labels and types
@@ -122,12 +122,12 @@ The usual best practices apply:
 - We prefer **small, focused pull requests** that address a single issue or implement one feature. Large PRs are harder to review and more likely to conflict with other changes. If your feature is large, consider breaking it into multiple PRs.
 - Each time you start to work, merge `main` into your branch so that you're not behind and avoid merge conflicts later on
 - When you're done for the day, commit and push your changes, even if it's not done or breaks, but so that maintainers can get an idea of the progress of an issue
-- Make sure your [code is modular](https://dev.to/prxtikk/how-to-write-clean-and-modular-code-1d87) and free of unnecessary dependencies (see also the [SOLID design principles](https://www.digitalocean.com/community/conceptual-articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design) and  [KISS principle](https://www.freecodecamp.org/news/keep-it-simple-stupid-how-to-use-the-kiss-principle-in-design/))
+- Make sure your [code is modular](https://dev.to/prxtikk/how-to-write-clean-and-modular-code-1d87) and free of unnecessary dependencies (see also the [SOLID design principles](https://www.digitalocean.com/community/conceptual-articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design) and [KISS principle](https://www.freecodecamp.org/news/keep-it-simple-stupid-how-to-use-the-kiss-principle-in-design/))
 - Make sure your code passes the applicable tests (see the README for the repo you're working in)
-- Use reusable file names that make sense in more than one context. e.g. ~homepageData.ts~ testimonials.ts
+- Use reusable file names that make sense in more than one context. e.g. ~~`homepageData.ts`~~ `testimonials.ts`
 - Follow the best practices for naming variables, case choice (like PascalCase, camelCase, or snake_case), etc. for each language you're writing in
 
-### Submission Process
+### Making a Pull Request
 
 - Include the purpose of the Pull Request and link the issue related to the PR (with the `#` sign)
 - Consider providing an overview of why the work is taking place (with any relevant links). Don't assume familiarity with the history
@@ -137,48 +137,27 @@ The usual best practices apply:
 
 #### Signaling Readiness
 
-**[TODO: edit this section to reflect what's needed for your project]**
-
-- Remove "Draft" status when ready for review
 - Ensure all CI checks are passing
+- Make sure your branch is up to date with `main`
 - Include a clear description of what the PR does and why
 - Link to relevant issues using "Fixes #123" or "Addresses #456"
+- If your PR is currently in "Draft" status, click "Mark ready for review"
+- Tag the appropriate review team
+- Post a link to your PR in Slack and say it's ready for review
 
 ### Review Process
 
-**[TODO: edit this section to reflect what's needed for your project]**
+**Initial Review Timeline**: Expect an initial review within **3-5 business days**. Complex PRs may take longer. If you haven't heard anything from the team (a verbal response or an emoji reaction in Slack) within a week, please post again
 
-**Initial Review Timeline**: Expect an initial review within **3-5 business days**. Complex PRs may take longer.
-
-**Follow-up Reviews**: After addressing feedback, expect follow-up reviews within **2-3 business days**.
-
-#### Requesting Reviews
-
-**[TODO: edit this section to reflect what's needed for your project]**
-
-- After pushing changes, add a comment like "Ready for re-review" or "@mention" specific reviewers
-- If your PR hasn't been reviewed after the expected timeline, feel free to politely bump with a comment
-- For urgent fixes, mention the urgency in your comment
+**Follow-up Reviews**: After addressing feedback, please click "Re-request review" and post in Slack again
 
 ### Handling Common Situations
 
-#### Stalled Pull Requests
-
-**[TODO: edit this section to reflect what's needed for your project]**
-
-If your PR appears stalled:
-
-1. First, check if all feedback has been addressed
-2. After 1 week of no activity, add a polite comment requesting status
-3. If still no response after another week, reach out via [preferred communication channel]
-
 #### Abandoned Pull Requests
-
-**[TODO: edit this section to reflect what's needed for your project]**
 
 If you can no longer continue work on your PR:
 
-- Comment on the PR explaining the situation
+- Comment on the PR and post in Slack explaining the situation
 - Maintainers may either:
   - Take over the PR and push additional commits to complete it
   - Close the PR and create a new issue for others to pick up
@@ -186,38 +165,13 @@ If you can no longer continue work on your PR:
 
 #### Follow-up Work
 
-**[TODO: edit this section to reflect what's needed for your project]**
-
 - Small follow-up changes should be addressed in the same PR when possible
 - Larger follow-ups or new issues discovered during review should be handled in separate issues/PRs
 - Use "TODO" comments sparingly and create follow-up issues for any deferred work
 
-### After Your PR is Merged
+### After Your PR is Approved
 
-**[TODO: edit this section to reflect what's needed for your project]**
-
-**Release Timeline**: Merged pull requests are included in the next release, which typically happens:
-
-- **Patch releases**: Every 2-4 weeks for bug fixes
-- **Minor releases**: Every 1-3 months for new features
-- **Major releases**: As needed for breaking changes
-
-#### Release Process
-
-**[TODO: edit this section to reflect what's needed for your project]**
-
-After merge, your changes will:
-
-1. Be available immediately in the `main` branch
-2. Go through additional testing in our staging environment
-3. Be included in the next scheduled release
-4. Be documented in the changelog with attribution
-
-#### Staying Updated
-
-**[TODO: edit this section to reflect what's needed for your project]**
-
-Watch the repository to be notified when your contributions are released. We'll also tag you in release notes when your PR introduces significant changes.
+Once you've received an approval from a maintainer you can merge your PR. If your branch has become out of sync with `main`, GitHub will show an "Update branch" button on your PR. If you run into merge conflicts you're not sure how to handle or if you have any other questions, please post in Slack!
 
 ---
 
@@ -225,4 +179,4 @@ _Questions about the PR process? Feel free to ask in the issue comments, discuss
 
 ## Code of Conduct
 
-Please read our [Code of Conduct](**TODO: link to your project's CoC**)
+Please read our [Code of Conduct](https://distributeaid.org/code-of-conduct/)
