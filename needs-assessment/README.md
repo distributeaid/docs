@@ -15,86 +15,147 @@ The current needs assessment information utilized for this documentation was obt
 
 If you experience errors while setting up your local environment or running Strapi, start here for solutions to common issues.
 
-Before you start, ensure you have the suggested packages and dependencies (version specific) from the repository readme installed (Node.js, Node version Manager, Yarn).
+Before you start, ensure you have the required packages and dependencies installed (Node.js, Node version Manager, Yarn) in the versions specified in the repository README.
 
 ### Common Issues
-1. Strapi Admin build fails because environment keys are missing
+1. Strapi admin build fails because environment keys are missing
 2. Local environment setup (Windows OS)
 
-#### Strapi: Admin build fails because environment keys are missing
+---
 
-Error Message: 
+### Strapi: Admin build fails because environment keys are missing
+
+#### Error Message 
     
 `Missing admin.auth.secret configuration. The SessionManager requires a JWT secret`
 
-Applies To:
+#### Applies To
 
- - Windows OS
+ - Any OS
 
- - PowerShell, Command Prompt
+ - Especially when using Windows PowerShell or Command Prompt, where `./setup.bash` may not run correctly
 
-Cause: 
+#### Cause 
     
-The command `./setup.bash` to auto-generate keys fails.
+Strapi requires several environment keys (for example `APP_KEYS`, `ADMIN_JWT_SECRET`, and others) to be defined in a `.env` file. The helper script `./setup.bash`, which auto‑generates these keys, may fail to run depending on your shell or OS. When the keys are not properly set, Strapi cannot start the admin panel and reports a missing JWT secret.
 
-Solution:
+#### Solution
 
-1. In the code editor, open a new Git Bash terminal. *See Figure 1.*
+1. Open a Git Bash terminal in your code editor.
 
-<figure>
-  <img src="../images/gitbash-terminal-selection.png" alt="Git Bash selected as the new terminal to open" style="max-width: 80%; height: auto;">
-  <figcaption><strong>Figure 1.</strong> Git Bash selected as the new terminal to open.</figcaption>
-</figure>
+   Use Git Bash rather than Powershell or Command Prompt so that `./setup.bash` can run correctly.
+    ```
+    # In VS Code: Terminal -> New Terminal -> select "Git Bash"
+    ```
 
-2. Enter `./setup.bash` to auto-generate the keys. If successful, skip to step 6, otherwise proceed to step 3.
-3. Create a `.env` file in the root directory.
-4. Copy the contents from the `.env.example` file and paste them into the new `.env` file.
-5. Enter `openssl rand -base64` to generate each key. Copy and paste each key into a placeholder spot. Repeat until all **8** keys have replaced the placeholders.
-6. Enter `yarn develop` in either the Powershell or Git Bash terminal to start the server. 
+2. Try running the setup script.
+    ```
+    `./setup.bash`
+    ```
+    - If this completes successfully, it should create/populate a `.env` file.
+    - If it fails, continue with the manual steps below.
 
-Verification:
+3. Create a `.env` file in the project root.
 
-The Strapi admin panel loads in a browser without key-related errors; logs show the server is running successfully.
+4. Open `.env.example`, copy all contents, and paste them into the new `.env` file.
 
-#### Local environment setup (Windows OS)
+5. Generate and insert the required keys.
+    ```
+    openssl rand -base64 16
+    ```
+     - Run this command to generate each of the keys. (There are currently 8 keys required).
+      - For each placeholder in `.env` (for example `"key1==="`), replace it with one of the generated values.
+      - Keep the same structure (quotes, commas) as shown in `.env.example`.
+6. Start the Strapi server
 
-Error Message:
+    From either a Powershell or Git Bash terminal, run:
+    ```
+    yarn develop
+    ``` 
+
+#### Verification
+
+- The Strapi server starts without "missing ... secret" or other key-related errors.
+- The admin panel loads in a browser and you can log in successfully. 
+- Server logs show the application is running successfully.
+
+---
+
+### Local environment setup (Windows OS)
+
+#### Error Message
 
 `@swc/core "Failed to load native binding"`
 
-Applies To:
+#### Applies To
 
 - Windows OS
+- Local development using Yarn and Strapi
 
-Cause: 
+#### Cause
 
-Solution:
+`@swc/core` uses native binaries that must match your OS and CPU architecture. On Windows, this error often occurs when:
+- Yarn is not configured to use classic `node_modules`,
+- Platform/architecture are not locked, or
+- The correct Windows SWC binary is not installed.
 
-1. Force classic node_modules and platform lock in **.yarnrc.yml**:
-```
-nodeLinker: node-modules
-yarnPath: .yarn/releases/yarn-4.12.0.cjs
-enableScripts: true
-supportedArchitectures:
-  os:
-    - current
-  cpu:
-    - current
-  libc:
-    - current
-```
+#### Solution
 
-2. In a new terminal/powershell window, install yarn:
-```
-corepack enable
-yarn set version 4.12.0
-```
+1. Configure Yarn to use classic `node_modules` and lock to the current platform.
 
-3. Check the yarn version installed is correct:
-```
-yarn -v
-```
+    In the project root, edit **.yarnrc.yml** and ensure it contains:
+    ```
+    nodeLinker: node-modules
+    yarnPath: .yarn/releases/yarn-4.12.0.cjs
+    enableScripts: true
+    supportedArchitectures:
+      os:
+        - current
+      cpu:
+        - current
+      libc:
+        - current
+    ```
+
+2. Enable Corepack and pin the Yarn version.
+
+   Open a new terminal (Powershell or Git Bash) in the project root and run:
+   ```
+   corepack enable
+   yarn set version 4.12.0
+   ```
+
+3. Confirm the Yarn version is correct:
+   ```
+   yarn -v
+   ```
 
 4. Clean and reinstall core dependencies:
+   ```
+   yarn dlx rimraf node_modules .yarn/cache .pnp.cjs .pnp.loader.mjs
+   yarn cache clean
 
+   # core deps (if not already present in package.json)
+   yarn add @strapi/strapi@^5 better-sqlite3 react@18 react-dom@18
+   ```
+
+5. Install the correct Windows SWC binary
+
+   Determine your CPU architecture in Powershell:
+   ```
+   echo $env:PROCESSOR_ARCHITECTURE             
+   // will be either AMD64 or ARM
+   ```
+   Then install the matching SWC packages:
+   ```
+   # for AMD64
+   yarn add -D @swc/core@^1.7.26 @swc/core-win32-x64-msvc@^1.7.26
+
+   # for ARM (if applicable)
+   yarn add -D @swc/core-win32-arm64-msvc
+   ```
+   Finally, reinstall dependencies:
+   ```
+   yarn install
+   ```
 
