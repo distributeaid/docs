@@ -15,15 +15,15 @@ The current needs assessment information utilized for this documentation was obt
 
 If you experience errors while setting up your local environment or running Strapi, start here for solutions to common issues.
 
-Before you start, ensure you have the required packages and dependencies installed (Node.js, Node version Manager, Yarn) in the versions specified in the repository README.
+Before you start, ensure you have the required packages and dependencies installed (Node.js, Node Version Manager, Yarn) in the versions specified in the repository README.
 
 ### Common Issues
-1. Strapi admin build fails because environment keys are missing
-2. Local environment setup (Windows OS)
+1. [Strapi admin build fails because environment keys are missing](#strapi-admin-build-fails-because-environment-keys-are-missing)
+2. [Local environment setup (Windows OS)](#local-environment-setup-windows-os)
 
 ---
 
-### Strapi: Admin build fails because environment keys are missing
+### Strapi admin build fails because environment keys are missing
 
 #### Error Message 
     
@@ -44,13 +44,17 @@ Strapi requires several environment keys (for example `APP_KEYS`, `ADMIN_JWT_SEC
 1. Open a Git Bash terminal in your code editor.
 
    Use Git Bash rather than Powershell or Command Prompt so that `./setup.bash` can run correctly.
-    ```
-    # In VS Code: Terminal -> New Terminal -> select "Git Bash"
-    ```
+  
+   **In VS Code:** Terminal -> New Terminal -> select "Git Bash"
+    
+    <figure>
+    <img src="../images/gitbash-terminal-selection.png" alt="Git Bash selected in the terminal options" style="max-width: 80%; height: auto;">
+    <figcaption><strong>Figure 1.</strong> Git Bash selected as the new terminal.</figcaption>
+    </figure>
 
 2. Try running the setup script.
     ```
-    `./setup.bash`
+    ./setup.bash
     ```
     - If this completes successfully, it should create/populate a `.env` file.
     - If it fails, continue with the manual steps below.
@@ -63,8 +67,8 @@ Strapi requires several environment keys (for example `APP_KEYS`, `ADMIN_JWT_SEC
     ```
     openssl rand -base64 16
     ```
-     - Run this command to generate each of the keys. (There are currently 8 keys required).
-      - For each placeholder in `.env` (for example `"key1==="`), replace it with one of the generated values.
+     - Run this command, repeatedly, until you have generated each of the required keys. (There are currently 8 keys required).
+      - For each placeholder in `.env` (for example `"key1=="`), replace it with one of the generated values.
       - Keep the same structure (quotes, commas) as shown in `.env.example`.
 6. Start the Strapi server
 
@@ -76,7 +80,7 @@ Strapi requires several environment keys (for example `APP_KEYS`, `ADMIN_JWT_SEC
 #### Verification
 
 - The Strapi server starts without "missing ... secret" or other key-related errors.
-- The admin panel loads in a browser and you can log in successfully. 
+- The admin panel loads in a browser and you can log in or register a new admin user. 
 - Server logs show the application is running successfully.
 
 ---
@@ -117,17 +121,21 @@ Strapi requires several environment keys (for example `APP_KEYS`, `ADMIN_JWT_SEC
         - current
     ```
 
-2. Enable Corepack and pin the Yarn version.
+2. Enable Corepack and set the Yarn version.
 
    Open a new terminal (Powershell or Git Bash) in the project root and run:
    ```
    corepack enable
-   yarn set version 4.12.0
+   yarn set version 4.12.0 
+   
+   // Note: This version may update with the project
    ```
 
 3. Confirm the Yarn version is correct:
    ```
    yarn -v
+
+   // should show 4.12.0 (or the updated version used in the project)
    ```
 
 4. Clean and reinstall core dependencies:
@@ -143,7 +151,8 @@ Strapi requires several environment keys (for example `APP_KEYS`, `ADMIN_JWT_SEC
 
    Determine your CPU architecture in Powershell:
    ```
-   echo $env:PROCESSOR_ARCHITECTURE             
+   echo $env:PROCESSOR_ARCHITECTURE 
+               
    // will be either AMD64 or ARM
    ```
    Then install the matching SWC packages:
@@ -159,3 +168,7 @@ Strapi requires several environment keys (for example `APP_KEYS`, `ADMIN_JWT_SEC
    yarn install
    ```
 
+#### Verification
+
+- Running the dev server no longer shows the `@swc/core "Failed to load native binding"` error.
+- Strapi starts successfully and your local environment behaves as expected.
