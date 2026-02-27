@@ -17,6 +17,8 @@ If you experience errors while setting up your local environment or running Stra
 
 Before you start, ensure you have the required packages and dependencies installed (Node.js, Node Version Manager, Yarn) in the versions specified in the repository README.
 
+If you require further assistance, reach out to the team on the `#tech` channel on Slack. 
+
 ### Common Issues
 1. [Strapi admin build fails because environment keys are missing](#strapi-admin-build-fails-because-environment-keys-are-missing)
 2. [Local environment setup (Windows OS)](#local-environment-setup-windows-os)
@@ -152,7 +154,7 @@ Strapi requires several environment keys (for example `APP_KEYS`, `ADMIN_JWT_SEC
    Determine your CPU architecture in Powershell:
    ```
    echo $env:PROCESSOR_ARCHITECTURE 
-               
+
    // will be either AMD64 or ARM
    ```
    Then install the matching SWC packages:
