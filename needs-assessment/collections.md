@@ -12,7 +12,7 @@ These collections provide a structured data source that supports efficient query
 
 - [Overview of Needs Assessment Collections](#overview-of-needs-assessment-collections)
 - [What's in a Collection](#whats-in-a-collection)
-- Naming Conventions for the Strapi Collections
+- [Naming Conventions for the Strapi Collections](#naming-conventions-for-the-strapi-collections)
 - How to create a Collection
 - How to rename a Collection
 - List of Strapi Collections Related to the Needs Assessment
@@ -65,3 +65,29 @@ Some collections also contain auto-populated fields configured during setup. For
 For more information on Strapi content-types, including the collection type, and creating content-types manually, see these [Strapi docs](https://docs.strapi.io/cms/features/content-type-builder).
 
 >**NOTE**: All current Strapi collections related to Needs Assessment have been created manually. They were not generated using Strapi's AI features.
+
+## Naming Conventions for the Strapi Collections
+
+Most Strapi collection names follow a **two-level naming structure** that reflects both the core concept (parent/umbrella category) and a specific aspect within that category (subcomponent).
+
+### Structure
+
+`<CoreConcept>.<SpecificAspect>`
+* **CoreConcept** - Represents the parent or umbrella category (e.g. `Product`, `Geo`, `NeedsAssessment`).
+
+* **SpecificAspect** - Distinct subcomponent within that category.
+
+#### Examples
+
+| Collection Name   | Core Concept   | Specific Aspect   | Description   |
+|--------------------|-----------------|---------------|----------------------------|
+|`Product.Category`|Product|Category| List of product categories.|
+|`Product.Item`|Product|Item| List of product items.|
+|`NeedsAssessment.Survey`|NeedsAssessment|Survey|Surveys for the needs assessment.|
+|`NeedsAssessment.Need`|NeedsAssessment|Need|Collected needs from previous assessments.|
+
+
+### Purpose
+This convention ensures clear organization, consistent naming, and easier navigation of collections across the Strapi admin and codebase. It supports scalability as new aspects are added under existing core parent categories.
+
+ 
