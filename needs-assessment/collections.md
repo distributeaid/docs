@@ -13,7 +13,7 @@ These collections provide a structured data source that supports efficient query
 - [Overview of Needs Assessment Collections](#overview-of-needs-assessment-collections)
 - [What's in a Collection](#whats-in-a-collection)
 - [Naming Conventions for the Strapi Collections](#naming-conventions-for-the-strapi-collections)
-- How to create a Collection
+- How to Create a Collection
 - How to rename a Collection
 - List of Strapi Collections Related to the Needs Assessment
 
@@ -90,7 +90,7 @@ Most Strapi collection names follow a **two-level naming structure** that reflec
 ### Purpose
 This convention ensures clear organization, consistent naming, and easier navigation of collections across the Strapi admin and codebase. It supports scalability as new aspects are added under existing core parent categories.
 
-## How to create a Collection
+## How to Create a Collection
 
 Use this process when you need a new collection that follows the `<CoreConcept>.<SpecificAspect>` naming conventions. 
 
@@ -105,7 +105,7 @@ Use this process when you need a new collection that follows the `<CoreConcept>.
 ### Part 1 - Create the Collection in the Strapi Admin
 1. Open the Strapi admin panel and go to **Content-Type Builder**.
 2. Select the icon to **Create new collection type**.
-3. In **Display name**, enter the **SpecificAspect** (for example, `Survey`).
+3. In **Display name**, enter the **SpecificAspect** (for example, `Category`).
 4. In **Advanced Settings**, enable **Draft and Publish**.
 5. Click [TODO - ensure the correct label is here] Continue.
 6. Add the required fields for the collection and configure their settings.
@@ -114,60 +114,85 @@ Use this process when you need a new collection that follows the `<CoreConcept>.
 
 ### Part 2 - Rename the Collection to Use `<CoreConcept>.<SpecificAspect>` (CLI)
 
-#### Example: Aligning the API with our naming conventions 
+Use this procedure when the collection must follow the two-level naming structure and the API ID needs to be aligned.
 
-_Scenario_
+### Example Scenario 
+You want a collection named `Product.Category`. 
+Strapi will initially name the API ID `api::category.category` but you want the API ID `api::product.category`.
 
-Create a collection type that is called **CoreConcept.Example**. Strapi will want to name the endpoint `core-concept-example` but we want the API endpoint to exist as `example`, so we need to modify the collection via the command line after initial creation.
+A real instance from the repo: 
 
-_Working Instance from the Repo_ 
+- Strapi initially created `api::survey.survey`. 
+- The API ID was adjusted to `api::assessment.survey`. 
+- After further refinement, the collection was renamed to _NeedsAssessment.Survey_, and the API ID became `api::needs-assessment.survey`.
 
-Strapi created `api::survey.survey` and we modified that endpoint to be `api::assessment.survey`. After further discussion, we eventually renamed the collection to NeedsAssessment.Survey, which is what you see in Strapi admin panel, and updated the endpoint to be `api::needs-assessment.survey`.
+Steps
+1. Open a terminal at the project root.
+2. Run the Strapi generator.
 
-_Step-By-Step Process_
+   ```
+   yarn strapi generate
+   ```
 
-Step 1: Create the Collection Type
+3. When prompted, choose **content-type**:
 
-- In the Strapi admin panel, create a collection using the **SpecificAspect** as the _Display name_ in Basic Settings. 
-- Ensure that _Draft and Publish_ is enabled by checking the box for that feature in Advanced Settings.
-- Save the new collection type.
-- Add fields for the collection.
-- Save the changes.
+   ```
+   ? Strapi Generators (Use arrow keys)
+       api - Generate a basic API 
+       controller - Generate a controller for an API 
+     ❯ content-type - Generate a content type for an API 
+       policy - Generate a policy for an API 
+       middleware - Generate a middleware for an API 
+       migration - Generate a migration 
+       service - Generate a service for an API
+   ```
 
-Step 2: Modify the Collection Name
+4. Answer the prompts:
 
-Strapi has named the API endpoint as `example.example` and we want to name it `core-concept.example`. We use the command line to achieve this modification.
+   ```
+   ? Content type display name Product.Category  # two-level structure
+   ? Content type singular name category   # SpecificAspect
+   ? Content type plural name categories
+   ? Please choose the model type  Collection Type 
+   ? Do you want to add attributes? No
+   ? Where do you want to add this model? Add model to new API 
+   ? Name of the new API? product  # CoreConcept
+   ? Bootstrap API related files? Yes
+   ```
 
-  Step 1: Generate a new content-type (`example`) & api (`core-concept`) in the terminal
+5. Copy over the attributes in the schema.json file from the original **SpecificAspect**-only API folder (`src/api/categpry/content-types/category`) into the new content-type schema.json file for the **CoreConcept.SpecificAspect** API folder (`src/api/product/content-types/category`).
 
-  ```
-  yarn strapi generate
-  ```
+6. Remove the old collection type to avoid types errors:
+   ```
+   rm -rf src/api/category
+   ```
 
-  Step 2: Answer the following prompts accordingly
-  ```
-  ? Strapi Generators (Use arrow keys)
-      api - Generate a basic API 
-      controller - Generate a controller for an API 
-    ❯ content-type - Generate a content type for an API 
-      policy - Generate a policy for an API 
-      middleware - Generate a middleware for an API 
-      migration - Generate a migration 
-      service - Generate a service for an API
-  ? Content type display name CoreConcept.Example  // ensure this has the two-level structure
-  ? Content type singular name example  // ensure the singular name is the targeted specific aspect
-  ? Content type plural name examples
-  ? Please choose the model type (Use arrow keys)
-    ❯ Collection Type 
-      Single Type
-  ? Do you want to add attributes? No
-  You won't be able to manage entries from the admin, you can still add attributes later from the content type builder.
-  ? Where do you want to add this model? (Use arrow keys)
-    ❯ Add model to new API 
-      Add model to an existing API 
-      Add model to an existing plugin
-  ? Name of the new API? core-concept
-  ? Bootstrap API related files? Yes
-```
+7. Restart the server to automatically generate the new types for our renamed collection:
+   ```
+   yarn develop
+   ```
 
-Step 3: Copy over the attributes
+8. Check references in the codebase are using the new API ID (`api::product.category`):
+   - controllers
+   - routes
+   - services
+   - types/generated
+
+9. Confirm the renamed collection exists in the Strapi admin interface in the **Content-Type Builder** and the **Content Manager**.
+
+10. Enable **Draft and Publish** for the collection. 
+
+    🚨[TODO: add steps for this process here or elsewhere?]
+
+11. Update **permissions** for the api requests.
+
+    🚨[TODO: go through steps for this if needed]
+
+11. Final step to verify collection is working for API endpoint use.
+    - Create a new entry in the collection in the **Content Manager** to confirm expected behaviour. 
+
+    🚨[TODO: Address what expected behaviour should look like]
+    
+    - Create a GET request for the API endpoint in Postman (API test tool) to confirm data is received.
+
+    - Delete entry after verification.
