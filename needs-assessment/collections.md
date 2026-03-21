@@ -92,24 +92,52 @@ This convention ensures clear organization, consistent naming, and easier naviga
 
 ## How to Create a Collection
 
-Use this process when you need a new collection that follows the `<CoreConcept>.<SpecificAspect>` naming conventions. 
+Use this process when adding a new collection. 
 
 ### Before You Start
+- Review [Naming Conventions for the Strapi Collections](#naming-conventions-for-the-strapi-collections)
 - Decide whether the collection needs the two-level structure (`CoreConcept.SpecificAspect`) or just `SpecificAspect`.
-- Identify the**CoreConcept** and **SpecificAspect** for the new collection.
+- Identify the **CoreConcept** and **SpecificAspect** for the new collection.
 - Review the [Strapi Content-Type Builder overview](https://docs.strapi.io/cms/features/content-type-builder#overview).
 
 **Note:** Strapi does not support dotted collection names natively. Create the collection in the admin panel using only the **SpecificAspect**, then rename it via CLI to align with the naming conventions if a two-level name is required.
 
 ---
-### Part 1 - Create the Collection in the Strapi Admin
+### Option 1 - Create a New Collection (SpecificAspect only) in the Strapi Admin 
+
+Use this when introducing a brand new concept or creating a collection before aligning it to naming conventions.
+
 1. Open the Strapi admin panel and go to **Content-Type Builder**.
 2. Select the icon to **Create new collection type**.
 3. In **Display name**, enter the **SpecificAspect** (for example, `Category`).
 4. In **Advanced Settings**, enable **Draft and Publish**.
-5. Click [TODO - ensure the correct label is here] Continue.
+5. Click **Continue**.
 6. Add the required fields for the collection and configure their settings.
-7. Click Save to update the collection.
+7. Click **Save** to update the collection.
+
+If this collection needs to be renamed so it aligns with the two-level naming structure (`<CoreConcept>.<SpecificAspect>`) and the **CoreConcept** does not already exist, continue to [How to Rename a Collection]().
+
+### Option 2 - Add a new Collection Under an Existing CoreConcept
+
+Use this when the CoreConcept already exists (e.g., `NeedsAssessment`) and you're creating another collection for that parent category with a new SpecificAspect (e.g., `Report`).
+
+1. Decide which **CoreConcept** this collection belongs to (e.g., `NeedsAssessment`).
+2. Follow the steps in [Option 1](#option-1---create-a-new-collection-specificaspect-only-in-the-strapi-admin).
+3. Back in the code editor, create a new folder for the **SpecificAspect** in the content-types folder of the already existing **CoreConcept folder**:
+
+🚨[TODO: Put image here for this step]
+
+4. Drag the schema.json file from the new collection Strapi made and drop it into the newly created **SpecificAspect** folder:
+
+🚨[TODO: Put image here for this step]
+
+5. Update the "displayName" in the schema.json file to align with the naming structure `<CoreConcept>.<SpecificAspect>`:
+
+   ```
+   "displayName": "NeedsAssessment.Report"
+   ```
+6. Drag the SpecificAspect.ts file from the controllers folder in the new collection Strapi made and drop it into the controllers folder of the CoreConcept folder:
+
 ---
 
 ### Part 2 - Rename the Collection to Use `<CoreConcept>.<SpecificAspect>` (CLI)
