@@ -14,7 +14,7 @@ These collections provide a structured data source that supports efficient query
 - [What's in a Collection](#whats-in-a-collection)
 - [Naming Conventions for the Strapi Collections](#naming-conventions-for-the-strapi-collections)
 - How to Create a Collection
-- How to rename a Collection
+- How to Rename a Collection
 - List of Strapi Collections Related to the Needs Assessment
 
 ## What's in a Collection
@@ -160,29 +160,35 @@ Use this when the CoreConcept already exists (e.g., `NeedsAssessment`) and you'r
 
 11. Proceed to [Confirm and Verify Collection]().
 
-## 
+## How to Rename a Collection  
 
-Use this procedure when the collection must follow the two-level naming structure and the API ID needs to be aligned.
+All renaming scenarios follow the **General Renaming Pattern** below. Differences are only in the **CLI prompt answers** (specific to each scenario).
 
-### Example Scenario 
-You want a collection named `Product.Category`. 
-Strapi will initially name the API ID `api::category.category` but you want the API ID `api::product.category`.
+### General Renaming Pattern
 
-A real instance from the repo: 
-
-- Strapi initially created `api::survey.survey`. 
-- The API ID was adjusted to `api::assessment.survey`. 
-- After further refinement, the collection was renamed to _NeedsAssessment.Survey_, and the API ID became `api::needs-assessment.survey`.
-
-Steps
 1. Open a terminal at the project root.
-2. Run the Strapi generator.
+2. **Run CLI generator** (`yarn strapi generate`)
+3. **Answer prompts** with target API ID values (scenario-specific)
+4. **Copy attributes** from the initial Strapi collection schema.json file to the newly renamed collection schema.json file.
+5. **Delete** the initial Strapi collection created (`rm -rf src/api/[initial-collection]` - use the name of the original collection in the square brackets of the command)
+6. **Restart** the server to update types (`yarn develop`)
+7. **Check** API ID references are updated in the codebase.
 
-   ```
-   yarn strapi generate
-   ```
+   - .ts files in controllers, routes, and services 
+   - types/generated
+8. [Confirm and Verify Collection]().
 
-3. When prompted, choose **content-type**:
+---
+
+#### Scenario 1 - Align a Collection to the Naming Conventions
+
+Use this when you need to rename a collection that does not have an existing **CoreConcept**, and is following the two-level naming structure.
+
+**Example:** 
+   - Content-Type Display name `Category` becomes `Product.Category`
+   - API ID changes from `api::category.category` to `api::product.category`
+
+**Prompt Answers:**
 
    ```
    ? Strapi Generators (Use arrow keys)
@@ -193,11 +199,6 @@ Steps
        middleware - Generate a middleware for an API 
        migration - Generate a migration 
        service - Generate a service for an API
-   ```
-
-4. Answer the prompts:
-
-   ```
    ? Content type display name Product.Category  # two-level structure
    ? Content type singular name category   # SpecificAspect
    ? Content type plural name categories
@@ -208,25 +209,24 @@ Steps
    ? Bootstrap API related files? Yes
    ```
 
-5. Copy over the attributes in the schema.json file from the original **SpecificAspect**-only API folder (`src/api/categpry/content-types/category`) into the new content-type schema.json file for the **CoreConcept.SpecificAspect** API folder (`src/api/product/content-types/category`).
+**Steps:** Follow the General Renaming Pattern above.
 
-6. Remove the old collection type to avoid types errors:
-   ```
-   rm -rf src/api/category
-   ```
+---
 
-7. Restart the server to automatically generate the new types for our renamed collection:
-   ```
-   yarn develop
-   ```
+#### Scenario 2 - Refine the Parent Category
+Use this to rename a collection that needs a refined **CoreConcept**.
 
-8. Check references in the codebase are using the new API ID (`api::product.category`):
-   - controllers
-   - routes
-   - services
-   - types/generated
+**Example:** 
+   - Content-Type Display name `Assessment.Survey` becomes `NeedsAssessment.Survey`
+   - API ID changes from `api::assessment.survey` to `api::needs-assessment.survey`.
 
-9. Confirm the renamed collection exists in the Strapi admin interface in the **Content-Type Builder** and the **Content Manager**.
+**Prompt Answers:**
+
+**Steps:**
+
+## Confirm and Verify Collection 
+
+Confirm the renamed collection exists in the Strapi admin interface in the **Content-Type Builder** and the **Content Manager**.
 
 10. Enable **Draft and Publish** for the collection. 
 
