@@ -99,6 +99,7 @@ Use this process when adding a new collection.
 - Decide whether the collection needs the two-level structure (`CoreConcept.SpecificAspect`) or just `SpecificAspect`.
 - Identify the **CoreConcept** and **SpecificAspect** for the new collection.
 - Review the [Strapi Content-Type Builder overview](https://docs.strapi.io/cms/features/content-type-builder#overview).
+- Start your server ([Instructions for Running a Local Site](https://github.com/distributeaid/aggregated-public-information#running-a-local-site))
 
 **Note:** Strapi does not support dotted collection names natively. Create the collection in the admin panel using only the **SpecificAspect**, then rename it via CLI to align with the naming conventions if a two-level name is required.
 
@@ -136,11 +137,30 @@ Use this when the CoreConcept already exists (e.g., `NeedsAssessment`) and you'r
    ```
    "displayName": "NeedsAssessment.Report"
    ```
-6. Drag the SpecificAspect.ts file from the controllers folder in the new collection Strapi made and drop it into the controllers folder of the CoreConcept folder:
+6. Drag the specificAspect.ts file from the controllers folder in the new collection Strapi just made and drop it into the controllers folder of the core-concept folder:
 
----
+🚨[TODO: Put image here for this step]
 
-### Part 2 - Rename the Collection to Use `<CoreConcept>.<SpecificAspect>` (CLI)
+7. Repeat Step 6 for the specificAspect.ts files in the routes and services folders.
+
+8. Delete the Strapi-made _SpecificAspect_ collection folder (along with all its contents):
+
+   ```
+   rm -rf src/api/report
+   ```
+9. Manually correct all the specificAspect.ts files in the controllers, routes, and services folder to hold the correct API ID (`api::report.report` becomes `api::needs-assessment.report`)
+   
+   Note: A type error may show up for the new API ID. This gets resolved in the next step.
+
+10. Manually update the types in the terminal:
+
+      ```
+      yarn strapi ts:generate-types
+      ```
+
+11. Proceed to [Confirm and Verify Collection]().
+
+## 
 
 Use this procedure when the collection must follow the two-level naming structure and the API ID needs to be aligned.
 
