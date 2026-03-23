@@ -13,8 +13,8 @@ These collections provide a structured data source that supports efficient query
 - [Overview of Needs Assessment Collections](#overview-of-needs-assessment-collections)
 - [What's in a Collection](#whats-in-a-collection)
 - [Naming Conventions for the Strapi Collections](#naming-conventions-for-the-strapi-collections)
-- How to Create a Collection
-- How to Rename a Collection
+- [How to Create a Collection](#how-to-create-a-collection)
+- [How to Rename a Collection](#how-to-rename-a-collection)
 - List of Strapi Collections Related to the Needs Assessment
 
 ## What's in a Collection
@@ -104,7 +104,7 @@ Use this process when adding a new collection.
 **Note:** Strapi does not support dotted collection names natively. Create the collection in the admin panel using only the **SpecificAspect**, then rename it via CLI to align with the naming conventions if a two-level name is required.
 
 ---
-### Option 1 - Create a New Collection (SpecificAspect only) in the Strapi Admin 
+### Option 1 - Create a New Collection (SpecificAspect only) in the Strapi Admin Panel
 
 Use this when introducing a brand new concept or creating a collection before aligning it to naming conventions.
 
@@ -116,7 +116,7 @@ Use this when introducing a brand new concept or creating a collection before al
 6. Add the required fields for the collection and configure their settings.
 7. Click **Save** to update the collection.
 
-If this collection needs to be renamed so it aligns with the two-level naming structure (`<CoreConcept>.<SpecificAspect>`) and the **CoreConcept** does not already exist, continue to [How to Rename a Collection]().
+If this collection needs to be renamed so it aligns with the two-level naming structure (`<CoreConcept>.<SpecificAspect>`) and the **CoreConcept** does not already exist, continue to [How to Rename a Collection](#how-to-rename-a-collection).
 
 ### Option 2 - Add a new Collection Under an Existing CoreConcept
 
@@ -162,11 +162,11 @@ Use this when the CoreConcept already exists (e.g., `NeedsAssessment`) and you'r
 
 ## How to Rename a Collection  
 
-All renaming scenarios follow the **General Renaming Pattern** below. Differences are only in the **CLI prompt answers** (specific to each scenario).
-
 ### General Renaming Pattern
 
-1. Open a terminal at the project root.
+Most renaming scenarios follow this sequence. Variations do occur for the order of the steps and are noted in individual scenarios. **CLI prompt answers** will also differ as they are specific to each scenario.
+
+1. **Open** a terminal at the project root.
 2. **Run CLI generator** (`yarn strapi generate`)
 3. **Answer prompts** with target API ID values (scenario-specific)
 4. **Copy attributes** from the initial Strapi collection schema.json file to the newly renamed collection schema.json file.
@@ -176,7 +176,7 @@ All renaming scenarios follow the **General Renaming Pattern** below. Difference
 
    - .ts files in controllers, routes, and services 
    - types/generated
-8. [Confirm and Verify Collection]().
+8. **Proceed** to [Confirm and Verify Collection]().
 
 ---
 
@@ -199,13 +199,13 @@ Use this when you need to rename a collection that does not have an existing **C
        middleware - Generate a middleware for an API 
        migration - Generate a migration 
        service - Generate a service for an API
-   ? Content type display name Product.Category  # two-level structure
-   ? Content type singular name category   # SpecificAspect
+   ? Content type display name Product.Category    # two-level structure
+   ? Content type singular name category           # SpecificAspect
    ? Content type plural name categories
    ? Please choose the model type  Collection Type 
    ? Do you want to add attributes? No
    ? Where do you want to add this model? Add model to new API 
-   ? Name of the new API? product  # CoreConcept
+   ? Name of the new API? product                  # CoreConcept
    ? Bootstrap API related files? Yes
    ```
 
@@ -213,34 +213,98 @@ Use this when you need to rename a collection that does not have an existing **C
 
 ---
 
-#### Scenario 2 - Refine the Parent Category
+#### Scenario 2 - Refine the Subcomponent (**SpecificAspect**)
+Use this to rename a collection where the **CoreConcept** is already established and the **SpecificAspect** needs to be more descriptive.
+
+**Example:** 
+   - Content-Type Display name `Financial.Currency` becomes `Financial.CurrencyConversion`
+   - API ID changes from `api::financial.currency` to `api::financial.currency-conversion`.
+
+**Prompt Answers:**
+
+```
+   ? Strapi Generators (Use arrow keys)
+       api - Generate a basic API 
+       controller - Generate a controller for an API 
+     ❯ content-type - Generate a content type for an API 
+       policy - Generate a policy for an API 
+       middleware - Generate a middleware for an API 
+       migration - Generate a migration 
+       service - Generate a service for an API
+   ? Content type display name Financial.CurrencyConversion    # two-level structure
+   ? Content type singular name currency-conversion            # SpecificAspect
+   ? Content type plural name currency-conversions
+   ? Please choose the model type  Collection Type 
+   ? Do you want to add attributes? No
+   ? Where do you want to add this model? Add model to an existing API 
+   ? Which API is this for? financial                          # CoreConcept
+   ? Bootstrap API related files? Yes
+   ```
+
+**Steps:** Follow the General Renaming Pattern above.
+
+---
+
+#### Scenario 3 - Refine the Parent Category (**CoreConcept**)
 Use this to rename a collection that needs a refined **CoreConcept**.
 
 **Example:** 
    - Content-Type Display name `Assessment.Survey` becomes `NeedsAssessment.Survey`
    - API ID changes from `api::assessment.survey` to `api::needs-assessment.survey`.
 
-**Prompt Answers:**
+**Steps: (Order Variation from the General Pattern occurs)** 
 
-**Steps:**
+1. **Open** a terminal at the project root.
+2. **Copy attributes** from the initial Strapi collection schema.json file:
+   ```
+   ## In our example, you would copy the attributes from this file:
 
-## Confirm and Verify Collection 
+   src/api/assessment/content-types/survey/schema.json
+   ```
 
-Confirm the renamed collection exists in the Strapi admin interface in the **Content-Type Builder** and the **Content Manager**.
+3. **Delete** the initial Strapi collection created: 
+   ```
+   rm -rf src/api/[initial-collection] 
+   
+   ## Replace [initial-collection] with your original collection name
+   ## Example: rm -rf src/api/assessment
+   ```
+4. **Verify** all references of the initial collection have been removed from:
+   
+   - src/api/
+   -  types/generated/contentTypes.d.ts
 
-10. Enable **Draft and Publish** for the collection. 
+5. **Run CLI generator** (`yarn strapi generate`)
+6. **Answer prompts** with target API ID values:
+   ```
+   ? Strapi Generators (Use arrow keys)
+       api - Generate a basic API 
+       controller - Generate a controller for an API 
+     ❯ content-type - Generate a content type for an API 
+       policy - Generate a policy for an API 
+       middleware - Generate a middleware for an API 
+       migration - Generate a migration 
+       service - Generate a service for an API
+   ? Content type display name NeedsAssessment.Survey    # two-level structure
+   ? Content type singular name survey                   # SpecificAspect
+   ? Content type plural name surveys
+   ? Please choose the model type  Collection Type 
+   ? Do you want to add attributes? No
+   ? Where do you want to add this model? Add model to new API 
+   ? Name of the new API? needs-assessment               # CoreConcept
+   ? Bootstrap API related files? Yes
+   ```
+7. **Paste** the copied attributes from Step 2 into the newly renamed collection schema.json file.
+   ```
+   ## In our example, you would paste the attributes into this file:
 
-    🚨[TODO: add steps for this process here or elsewhere?]
+   src/api/needs-assessment/content-types/survey/schema.json
+   ```
+8. **Restart** the server to update types (`yarn develop`)
+9. **Check** API ID references are updated in the codebase.
 
-11. Update **permissions** for the api requests.
+   - .ts files in controllers, routes, and services 
+   - types/generated
+10. **Proceed** to [Confirm and Verify Collection]().
 
-    🚨[TODO: go through steps for this if needed]
 
-11. Final step to verify collection is working for API endpoint use.
-    - Create a new entry in the collection in the **Content Manager** to confirm expected behaviour. 
-
-    🚨[TODO: Address what expected behaviour should look like]
-    
-    - Create a GET request for the API endpoint in Postman (API test tool) to confirm data is received.
-
-    - Delete entry after verification.
