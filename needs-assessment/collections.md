@@ -95,10 +95,10 @@ This convention ensures clear organization, consistent naming, and easier naviga
 Use this process when adding a new collection. 
 
 ### Before You Start
-- Review [Naming Conventions for the Strapi Collections](#naming-conventions-for-the-strapi-collections)
+- Review [Naming Conventions for the Strapi Collections](#naming-conventions-for-the-strapi-collections).
 - Decide whether the collection needs the two-level structure (`CoreConcept.SpecificAspect`) or just `SpecificAspect`.
 - Identify the **CoreConcept** and **SpecificAspect** for the new collection.
-- Review the [Strapi Content-Type Builder overview](https://docs.strapi.io/cms/features/content-type-builder#overview).
+- Review [Strapi Content-Type Builder overview](https://docs.strapi.io/cms/features/content-type-builder#overview).
 - Start your server ([Instructions for Running a Local Site](https://github.com/distributeaid/aggregated-public-information#running-a-local-site))
 
 **Note:** Strapi does not support dotted collection names natively. Create the collection in the admin panel using only the **SpecificAspect**, then rename it via CLI to align with the naming conventions if a two-level name is required.
@@ -128,7 +128,7 @@ Use this when the CoreConcept already exists (e.g., `NeedsAssessment`) and you'r
 
 <figure>
   <img src="../images/add-collection-to-core-concept-step-three.png" alt="New SpecificAspect folder created inside existing CoreConcept folder" style="max-width: 80%; height: auto;">
-  <figcaption><strong>Figure 4.1.</strong> Create SpecificAspect folder inside existing CoreConcept folder (e.g., needs-assessment/content-types/).</figcaption>
+  <figcaption><strong>Figure 4.1.</strong> Create the SpecificAspect folder inside existing CoreConcept folder (e.g., needs-assessment/content-types/).</figcaption>
 </figure>
 
 4. Drag the schema.json file from the new collection Strapi made and drop it into the newly created **SpecificAspect** folder (See Figure 4.2).
@@ -149,7 +149,7 @@ Use this when the CoreConcept already exists (e.g., `NeedsAssessment`) and you'r
 
 <figure>
   <img src="../images/add-collection-to-core-concept-step-six-lm.png" alt="Dragging initial controllers file to the controllers folder of the core-concept." style="max-width: 80%; height: auto;">
-  <figcaption><strong>Figure 4.3.</strong> Move controller file (e.g., report.ts) to the controllers folder of the core-concept (e.g., needs-assessment/controller/).</figcaption>
+  <figcaption><strong>Figure 4.3.</strong> Move controller file (e.g., report.ts) to the controllers folder of the core-concept (e.g., needs-assessment/controllers/).</figcaption>
 </figure>
 
 7. Repeat Step 6 for the specificAspect.ts files in the routes and services folders.
@@ -180,12 +180,12 @@ Use this when the CoreConcept already exists (e.g., `NeedsAssessment`) and you'r
 Most renaming scenarios follow this sequence. Variations do occur for the order of the steps and are noted in individual scenarios. **CLI prompt answers** will also differ as they are specific to each scenario.
 
 1. **Open** a terminal at the project root.
-2. **Run CLI generator** (`yarn strapi generate`)
-3. **Answer prompts** with target API ID values (scenario-specific)
+2. **Run CLI generator** (`yarn strapi generate`).
+3. **Answer prompts** with target API ID values (scenario-specific).
 4. **Copy attributes** from the initial Strapi collection schema.json file to the newly renamed collection schema.json file.
 5. **Delete** the initial Strapi collection created (`rm -rf src/api/[initial-collection]` - use the name of the original collection in the square brackets of the command)
-6. **Restart** the server to update types (`yarn develop`)
-7. **Check** API ID references are updated in the codebase.
+6. **Restart** the server to update types (`yarn develop`).
+7. **Check** API ID references are updated in the codebase:
 
    - .ts files in controllers, routes, and services 
    - types/generated
