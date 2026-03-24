@@ -110,7 +110,7 @@ Use this when introducing a brand new concept or creating a collection before al
 
 1. Open the Strapi admin panel and go to **Content-Type Builder**.
 2. Select the icon to **Create new collection type**.
-3. In **Display name**, enter the **SpecificAspect** (for example, `Category`).
+3. In **Display name**, enter the **SpecificAspect** (for example, `Request`).
 4. In **Advanced Settings**, enable **Draft and Publish**.
 5. Click **Continue**.
 6. Add the required fields for the collection and configure their settings.
@@ -123,7 +123,7 @@ If this collection needs to be renamed so it aligns with the two-level naming st
 Use this when the CoreConcept already exists (e.g., `NeedsAssessment`) and you're creating another collection for that parent category with a new SpecificAspect (e.g., `Report`).
 
 1. Decide which **CoreConcept** this collection belongs to (e.g., `NeedsAssessment`).
-2. Follow the steps in [Option 1](#option-1---create-a-new-collection-specificaspect-only-in-the-strapi-admin).
+2. Follow the steps in **Option 1**, then return here.
 3. Back in the code editor, create a new folder for the **SpecificAspect** in the content-types folder of the already existing **CoreConcept folder** (See Figure 4.1). 
 
 <figure>
@@ -171,7 +171,12 @@ Use this when the CoreConcept already exists (e.g., `NeedsAssessment`) and you'r
       yarn strapi ts:generate-types
       ```
 
-11. Proceed to [Confirm and Verify Collection]().
+11. Restart the server:
+
+      ```
+      yarn develop
+      ```
+12. Proceed to [Confirm and Verify Collection]().
 
 ## How to Rename a Collection  
 
@@ -198,8 +203,8 @@ Most renaming scenarios follow this sequence. Variations do occur for the order 
 Use this when you need to rename a collection that does not have an existing **CoreConcept**, and is following the two-level naming structure.
 
 **Example:** 
-   - Content-Type Display name `Category` becomes `Product.Category`
-   - API ID changes from `api::category.category` to `api::product.category`
+   - Content-Type Display name `Request` becomes `Aid.Request`
+   - API ID changes from `api::request.request` to `api::aid.request`
 
 **Prompt Answers:**
 
@@ -212,17 +217,17 @@ Use this when you need to rename a collection that does not have an existing **C
        middleware - Generate a middleware for an API 
        migration - Generate a migration 
        service - Generate a service for an API
-   ? Content type display name Product.Category    # two-level structure
-   ? Content type singular name category           # SpecificAspect
-   ? Content type plural name categories
+   ? Content type display name Aid.Request        # two-level structure
+   ? Content type singular name request           # SpecificAspect
+   ? Content type plural name requests
    ? Please choose the model type  Collection Type 
    ? Do you want to add attributes? No
    ? Where do you want to add this model? Add model to new API 
-   ? Name of the new API? product                  # CoreConcept
+   ? Name of the new API? aid                     # CoreConcept
    ? Bootstrap API related files? Yes
    ```
 
-**Steps:** Follow the General Renaming Pattern above.
+**Steps:** Follow the [General Renaming Pattern](#general-renaming-pattern) above.
 
 ---
 
@@ -230,8 +235,8 @@ Use this when you need to rename a collection that does not have an existing **C
 Use this to rename a collection where the **CoreConcept** is already established and the **SpecificAspect** needs to be more descriptive.
 
 **Example:** 
-   - Content-Type Display name `Financial.Currency` becomes `Financial.CurrencyConversion`
-   - API ID changes from `api::financial.currency` to `api::financial.currency-conversion`.
+   - Content-Type Display name `Aid.Request` becomes `Aid.DonationRequest`
+   - API ID changes from `api::aid.request` to `api::aid.donation-request`.
 
 **Prompt Answers:**
 
@@ -244,17 +249,26 @@ Use this to rename a collection where the **CoreConcept** is already established
        middleware - Generate a middleware for an API 
        migration - Generate a migration 
        service - Generate a service for an API
-   ? Content type display name Financial.CurrencyConversion    # two-level structure
-   ? Content type singular name currency-conversion            # SpecificAspect
-   ? Content type plural name currency-conversions
+   ? Content type display name Aid.DonationRequest    # two-level structure
+   ? Content type singular name donation-request      # SpecificAspect
+   ? Content type plural name donation-requests
    ? Please choose the model type  Collection Type 
    ? Do you want to add attributes? No
    ? Where do you want to add this model? Add model to an existing API 
-   ? Which API is this for? financial                          # CoreConcept
+   ? Which API is this for? aid                       # CoreConcept
    ? Bootstrap API related files? Yes
    ```
 
-**Steps:** Follow the General Renaming Pattern above.
+**Steps:** Follow the [General Renaming Pattern](#general-renaming-pattern). 
+
+⚠️ **Step 5 Variation:** Be sure to keep the **CoreConcept** folder and _only_ delete the initial **SpecificAspect** collection and its related files.
+
+   ```
+   ## In our example, you would delete the following files with this command:
+
+   rm -rf src/api/aid/content-types/request src/api/aid/controllers/request.ts src/api/aid/routes/request.ts src/api/aid/services/request.ts
+   ```
+Continue remaining steps as written.
 
 ---
 
@@ -262,8 +276,8 @@ Use this to rename a collection where the **CoreConcept** is already established
 Use this to rename a collection that needs a refined **CoreConcept**.
 
 **Example:** 
-   - Content-Type Display name `Assessment.Survey` becomes `NeedsAssessment.Survey`
-   - API ID changes from `api::assessment.survey` to `api::needs-assessment.survey`.
+   - Content-Type Display name `Aid.DonationRequest` becomes `CommunityAid.DonationRequest`
+   - API ID changes from `api::aid.donation-request` to `api::community-aid.donation-request`.
 
 **Steps: (Order Variation from the General Pattern occurs)** 
 
@@ -272,7 +286,7 @@ Use this to rename a collection that needs a refined **CoreConcept**.
    ```
    ## In our example, you would copy the attributes from this file:
 
-   src/api/assessment/content-types/survey/schema.json
+   src/api/aid/content-types/donation-request/schema.json
    ```
 
 3. **Delete** the initial Strapi collection created: 
@@ -280,7 +294,7 @@ Use this to rename a collection that needs a refined **CoreConcept**.
    rm -rf src/api/[initial-collection] 
    
    ## Replace [initial-collection] with your original collection name
-   ## Example: rm -rf src/api/assessment
+   ## Example: rm -rf src/api/aid
    ```
 4. **Verify** all references of the initial collection have been removed from:
    
@@ -298,20 +312,20 @@ Use this to rename a collection that needs a refined **CoreConcept**.
        middleware - Generate a middleware for an API 
        migration - Generate a migration 
        service - Generate a service for an API
-   ? Content type display name NeedsAssessment.Survey    # two-level structure
-   ? Content type singular name survey                   # SpecificAspect
-   ? Content type plural name surveys
+   ? Content type display name CommunityAid.DonationRequest  # two-level structure
+   ? Content type singular name donation-request             # SpecificAspect
+   ? Content type plural name donation-requests
    ? Please choose the model type  Collection Type 
    ? Do you want to add attributes? No
    ? Where do you want to add this model? Add model to new API 
-   ? Name of the new API? needs-assessment               # CoreConcept
+   ? Name of the new API? community-aid                      # CoreConcept
    ? Bootstrap API related files? Yes
    ```
 7. **Paste** the copied attributes from Step 2 into the newly renamed collection schema.json file.
    ```
    ## In our example, you would paste the attributes into this file:
 
-   src/api/needs-assessment/content-types/survey/schema.json
+   src/api/community-aid/content-types/donation-request/schema.json
    ```
 8. **Restart** the server to update types (`yarn develop`)
 9. **Check** API ID references are updated in the codebase.
