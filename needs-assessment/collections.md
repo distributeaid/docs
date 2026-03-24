@@ -25,22 +25,22 @@ A **collection** is one of Strapi's three content-types (formally called a _coll
 To view a collection in Strapi:
 1. Ensure the **Strapi Admin Panel** is running in your browser.
 
-2. Select the **Content Manager** icon from the navigation menu (see Figure 1). A list of available collections will appear.
+2. Select the **Content Manager** icon from the navigation menu (see Figure 2.1). A list of available collections will appear.
 
 <figure>
   <img src="../images/content-manager.png" alt="Content Manager icon in the Strapi navigation menu that opens Collection Types column" style="max-width: 80%; height: auto;">
-  <figcaption><strong>Figure 1.</strong> Strapi Content Manager icon in the navigation menu.</figcaption>
+  <figcaption><strong>Figure 2.1.</strong> Strapi Content Manager icon in the navigation menu.</figcaption>
 </figure>
 
 3. Click the name of the collection you want to view (for example, `Product.Category`)
 
 4. The main panel should now display the collection title and a table showing several of its fields. If entries exist, they'll appear as rows in the table.
 
-5. To view or customize the displayed fields, select the **View settings** toggle above the top-right corner of the table (see Figure 2). 
+5. To view or customize the displayed fields, select the **View settings** toggle above the top-right corner of the table (see Figure 2.2). 
 
 <figure>
   <img src="../images/view-settings.png" alt="View settings toggle" style="max-width: 80%; height: auto;">
-  <figcaption><strong>Figure 2.</strong> View settings toggle.</figcaption>
+  <figcaption><strong>Figure 2.2.</strong> View settings toggle.</figcaption>
 </figure>
 
 - In this panel, you can:
