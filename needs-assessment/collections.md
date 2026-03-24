@@ -124,31 +124,44 @@ Use this when the CoreConcept already exists (e.g., `NeedsAssessment`) and you'r
 
 1. Decide which **CoreConcept** this collection belongs to (e.g., `NeedsAssessment`).
 2. Follow the steps in [Option 1](#option-1---create-a-new-collection-specificaspect-only-in-the-strapi-admin).
-3. Back in the code editor, create a new folder for the **SpecificAspect** in the content-types folder of the already existing **CoreConcept folder**:
+3. Back in the code editor, create a new folder for the **SpecificAspect** in the content-types folder of the already existing **CoreConcept folder** (See Figure 4.1). 
 
-🚨[TODO: Put image here for this step]
+<figure>
+  <img src="../images/add-collection-to-core-concept-step-three.png" alt="New SpecificAspect folder created inside existing CoreConcept folder" style="max-width: 80%; height: auto;">
+  <figcaption><strong>Figure 4.1.</strong> Create SpecificAspect folder inside existing CoreConcept folder (e.g., needs-assessment/content-types/).</figcaption>
+</figure>
 
-4. Drag the schema.json file from the new collection Strapi made and drop it into the newly created **SpecificAspect** folder:
+4. Drag the schema.json file from the new collection Strapi made and drop it into the newly created **SpecificAspect** folder (See Figure 4.2).
 
-🚨[TODO: Put image here for this step]
+<figure>
+  <img src="../images/add-collection-to-core-concept-step-four-lm.png" alt="Dragging schema.json file to the new SpecificAspect folder." style="max-width: 80%; height: auto;">
+  <figcaption><strong>Figure 4.2.</strong> Moving schema.json  to new SpecificAspect folder (e.g., needs-assessment/content-types/report/).</figcaption>
+</figure>
 
 5. Update the "displayName" in the schema.json file to align with the naming structure `<CoreConcept>.<SpecificAspect>`:
 
    ```
-   "displayName": "NeedsAssessment.Report"
-   ```
-6. Drag the specificAspect.ts file from the controllers folder in the new collection Strapi just made and drop it into the controllers folder of the core-concept folder:
+   ## In our example, this would be:
 
-🚨[TODO: Put image here for this step]
+   "displayName": "NeedsAssessment.Report"   
+   ```
+6. Drag the specificAspect.ts file from the controllers folder in the new collection Strapi just made and drop it into the controllers folder of the core-concept folder (See Figure 4.3).
+
+<figure>
+  <img src="../images/add-collection-to-core-concept-step-six-lm.png" alt="Dragging initial controllers file to the controllers folder of the core-concept." style="max-width: 80%; height: auto;">
+  <figcaption><strong>Figure 4.3.</strong> Move controller file (e.g., report.ts) to the controllers folder of the core-concept (e.g., needs-assessment/controller/).</figcaption>
+</figure>
 
 7. Repeat Step 6 for the specificAspect.ts files in the routes and services folders.
 
 8. Delete the Strapi-made _SpecificAspect_ collection folder (along with all its contents):
 
    ```
+   ## In our example:
+
    rm -rf src/api/report
    ```
-9. Manually correct all the specificAspect.ts files in the controllers, routes, and services folder to hold the correct API ID (`api::report.report` becomes `api::needs-assessment.report`)
+9. Manually correct all the specificAspect.ts files in the controllers, routes, and services folder to hold the correct API ID (e.g., `api::report.report` becomes `api::needs-assessment.report`)
    
    Note: A type error may show up for the new API ID. This gets resolved in the next step.
 
