@@ -15,6 +15,7 @@ These collections provide a structured data source that supports efficient query
 - [Naming Conventions for the Strapi Collections](#naming-conventions-for-the-strapi-collections)
 - [How to Create a Collection](#how-to-create-a-collection)
 - [How to Rename a Collection](#how-to-rename-a-collection)
+- [How to Confirm and Verify a Collection](#how-to-confirm-and-verify-a-collection)
 - List of Strapi Collections Related to the Needs Assessment
 
 ## What's in a Collection
@@ -176,7 +177,7 @@ Use this when the CoreConcept already exists (e.g., `NeedsAssessment`) and you'r
       ```bash
       yarn develop
       ```
-12. Proceed to [Confirm and Verify Collection]().
+12. Proceed to [How to Confirm and Verify a Collection](#how-to-confirm-and-verify-a-collection).
 
 ## How to Rename a Collection  
 
@@ -194,7 +195,7 @@ Most renaming scenarios follow this sequence. Variations do occur for the order 
 
    - .ts files in controllers, routes, and services 
    - types/generated
-8. **Proceed** to [Confirm and Verify Collection]().
+8. **Proceed** to [How to Confirm and Verify a Collection](#how-to-confirm-and-verify-a-collection).
 
 ---
 
@@ -332,6 +333,81 @@ Use this to rename a collection that needs a refined **CoreConcept**.
 
    - .ts files in controllers, routes, and services 
    - types/generated
-10. **Proceed** to [Confirm and Verify Collection]().
+10. **Proceed** to [How to Confirm and Verify a Collection](#how-to-confirm-and-verify-a-collection).
+
+## How to Confirm and Verify a Collection
+Use this process to confirm that a collection was created or renamed correctly and that it is accessible via the API.
+
+### 1. Confirm the Collection in Content-Type Builder
+1. In the Strapi admin panel, open **Content-Type Builder**.
+2. Confirm the collection appears in the list and open it.
+3. Verify that all required fields are present.
+4. Check that **Draft and Publish** is enabled.
+
+   - Click **Edit** to view the collection settings.
+   - Open the **Advanced Settings** tab.
+   - Ensure **Draft and Publish** is selected.
+   - Click **Finish**, then **Save**.
+   - Wait for Strapi to restart.
+
+5. In your code editor, confirm `draftAndPublish` is enabled in the schema.json file: 
+      ```json
+      "options": {
+         "draftAndPublish": true
+      },
+      ```
+
+### 2. Enable Permissions for the Collection
+Updating permissions allows the collection to be accessed via the public API.
+
+1. In the Strapi Admin panel, go to **Settings**.
+2. Under **Users & Permissions Plugin**, select **Roles**.
+3. Select the **Public** role.
+4. In **Permissions**, expand the entry for the collection to defines actions for the api plugin.
+
+   🚨[TODO] Add image here for permissions
+
+5. Select the actions to allow for this collection (for example, **find**, **findOne**). 
+
+   🚨[TODO] Confirm with Taylor what our default here will be for docs (Select All?)
+
+6. Click **Save**.
+
+### 3. Confirm the Collection in Content Manager
+1. In the navigation bar, select **Content Manager**.
+2. Confirm the collection appears in the list and select it.
+3. Click **Create new entry**.
+4. Enter values for the collection fields.
+5. Click **Save** (to save as a draft) or **Publish**.
+6. Confirm that:
+
+   - The entry appears in the list.
+   - A document ID is assigned.
+
+   Expected behaviour: You can add values to all required fields, save or publish without errors, and see the entry in the collection list with an ID.
+
+### 4. Verify the API Endpoint Returns Data
+1. Open your API test tool (for example, Postman or Bruno).
+2. Send a GET request to the collection endpoint:
+
+   ```bash
+   [base_url]/api/[pluralName of collection]?populate=*
+   ```
+
+   Example:
+   ```bash    
+   http://localhost:1337/api/donation-requests?populate=*
+   ```
+3. Confirm that:
+
+    - The response status is a `200 OK`.
+    - The `data` array contains the entry or entries you created.
+    - Nested data is included when `?populate=*` is used.
+
+   **Note:** If the collection has no entries, the request returns `200 OK` with an empty `data` array.
+
+### 5. Clean Up Test Data
+1. In **Content Manager**, open the collection.
+2. Delete all test entries created during verification.
 
 
