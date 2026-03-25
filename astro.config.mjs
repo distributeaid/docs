@@ -11,6 +11,10 @@ export default defineConfig({
 			logo: {
 				src: './src/assets/da-logo.svg',
 			},
+			components: {
+				// Override with empty component until we have a dark-mode logo
+				ThemeSelect: './src/components/ThemeSelect.astro',
+			},
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/distributeaid/docs' }],
 			customCss: ['./src/styles/custom.css'],
 			sidebar: [
