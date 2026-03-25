@@ -3,12 +3,9 @@ title: Strapi IDs
 description: The difference between Strapi ID numbers and document IDs.
 ---
 
-import { Image } from 'astro:assets';
-import strapiDocumentId from '../../../assets/strapi_document-id.png';
-
 There is a distinct difference between the Strapi _ID number_ (seen as id) and the _document id_, as noted in the image below:
 
-<Image src={strapiDocumentId} alt="Strapi id number and document id in json data" />
+![Strapi id number and document id in json data](../../../assets/strapi_document-id.png)
 
 Will need to discuss different id references to distinguish them from each other and what ids we use where:
 

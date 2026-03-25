@@ -3,10 +3,6 @@ title: Strapi Collections
 description: Overview of Strapi collections used in the Distribute Aid needs assessment.
 ---
 
-import { Image } from 'astro:assets';
-import contentManager from '../../../assets/content-manager.png';
-import viewSettings from '../../../assets/view-settings.png';
-
 The **Needs Assessment** compiles global data on the needs of various groups across countries, regions, and subregions.
 
 This data is modeled in **Strapi** as a set of **collections**, each representing specific aspects of the data.
@@ -25,10 +21,8 @@ To view a collection in Strapi:
 
 2. Select the **Content Manager** icon from the navigation menu (see Figure 1). A list of available collections will appear.
 
-<figure>
-  <Image src={contentManager} alt="Content Manager icon in the Strapi navigation menu that opens Collection Types column" />
-  <figcaption><strong>Figure 1.</strong> Strapi Content Manager icon in the navigation menu.</figcaption>
-</figure>
+![Content Manager icon in the Strapi navigation menu](../../../assets/content-manager.png)
+**Figure 1.** Strapi Content Manager icon in the navigation menu.
 
 3. Click the name of the collection you want to view (for example, `Product.Category`)
 
@@ -36,10 +30,8 @@ To view a collection in Strapi:
 
 5. To view or customize the displayed fields, select the **View settings** toggle above the top-right corner of the table (see Figure 2).
 
-<figure>
-  <Image src={viewSettings} alt="View settings toggle" />
-  <figcaption><strong>Figure 2.</strong> View settings toggle.</figcaption>
-</figure>
+![View settings toggle](../../../assets/view-settings.png)
+**Figure 2.** View settings toggle.
 
 - In this panel, you can:
     * Choose which fields to display
