@@ -27,8 +27,8 @@ export default defineConfig({
 					autogenerate: { directory: 'needs-assessment' },
 				},
 				{
-					label: 'Next Website',
-					autogenerate: { directory: 'next-website' },
+					label: 'Website',
+					autogenerate: { directory: 'website' },
 				},
 				{
 					label: 'Aggregated Public Information',
