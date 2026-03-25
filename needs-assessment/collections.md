@@ -140,7 +140,7 @@ Use this when the CoreConcept already exists (e.g., `NeedsAssessment`) and you'r
 
 5. Update the "displayName" in the schema.json file to align with the naming structure `<CoreConcept>.<SpecificAspect>`:
 
-   ```
+   ```bash
    ## In our example, this would be:
 
    "displayName": "NeedsAssessment.Report"   
@@ -156,7 +156,7 @@ Use this when the CoreConcept already exists (e.g., `NeedsAssessment`) and you'r
 
 8. Delete the Strapi-made _SpecificAspect_ collection folder (along with all its contents):
 
-   ```
+   ```bash
    ## In our example:
 
    rm -rf src/api/report
@@ -167,13 +167,13 @@ Use this when the CoreConcept already exists (e.g., `NeedsAssessment`) and you'r
 
 10. Manually update the types in the terminal:
 
-      ```
+      ```bash
       yarn strapi ts:generate-types
       ```
 
 11. Restart the server:
 
-      ```
+      ```bash
       yarn develop
       ```
 12. Proceed to [Confirm and Verify Collection]().
@@ -208,7 +208,7 @@ Use this when you need to rename a collection that does not have an existing **C
 
 **Prompt Answers:**
 
-   ```
+   ```bash
    ? Strapi Generators (Use arrow keys)
        api - Generate a basic API 
        controller - Generate a controller for an API 
@@ -240,7 +240,7 @@ Use this to rename a collection where the **CoreConcept** is already established
 
 **Prompt Answers:**
 
-```
+```bash
    ? Strapi Generators (Use arrow keys)
        api - Generate a basic API 
        controller - Generate a controller for an API 
@@ -263,7 +263,7 @@ Use this to rename a collection where the **CoreConcept** is already established
 
 ⚠️ **Step 5 Variation:** Be sure to keep the **CoreConcept** folder and _only_ delete the initial **SpecificAspect** collection and its related files.
 
-   ```
+   ```bash
    ## In our example, you would delete the following files with this command:
 
    rm -rf src/api/aid/content-types/request src/api/aid/controllers/request.ts src/api/aid/routes/request.ts src/api/aid/services/request.ts
@@ -283,14 +283,14 @@ Use this to rename a collection that needs a refined **CoreConcept**.
 
 1. **Open** a terminal at the project root.
 2. **Copy attributes** from the initial Strapi collection schema.json file:
-   ```
+   ```bash
    ## In our example, you would copy the attributes from this file:
 
    src/api/aid/content-types/donation-request/schema.json
    ```
 
 3. **Delete** the initial Strapi collection created: 
-   ```
+   ```bash
    rm -rf src/api/[initial-collection] 
    
    ## Replace [initial-collection] with your original collection name
@@ -303,7 +303,7 @@ Use this to rename a collection that needs a refined **CoreConcept**.
 
 5. **Run CLI generator** (`yarn strapi generate`)
 6. **Answer prompts** with target API ID values:
-   ```
+   ```bash
    ? Strapi Generators (Use arrow keys)
        api - Generate a basic API 
        controller - Generate a controller for an API 
@@ -322,7 +322,7 @@ Use this to rename a collection that needs a refined **CoreConcept**.
    ? Bootstrap API related files? Yes
    ```
 7. **Paste** the copied attributes from Step 2 into the newly renamed collection schema.json file.
-   ```
+   ```bash
    ## In our example, you would paste the attributes into this file:
 
    src/api/community-aid/content-types/donation-request/schema.json
