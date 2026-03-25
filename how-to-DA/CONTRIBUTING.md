@@ -133,6 +133,8 @@ The usual best practices apply:
 
 ### Making a Pull Request
 
+> **Note:** Only organisation members can open pull requests. If you're not yet a member, [reach out to us](mailto:tech@distributeaid.org) to get onboarded first.
+
 - Include the purpose of the Pull Request and link the issue related to the PR (with the `#` sign)
 - Consider providing an overview of why the work is taking place (with any relevant links). Don't assume familiarity with the history
 - Be explicit about what feedback you want, if any: a quick pair of 👀 on the code, discussion on the technical approach, critique on design, a review copy
