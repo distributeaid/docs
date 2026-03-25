@@ -3,7 +3,7 @@ title: Contributing
 description: How to contribute to Distribute Aid's projects.
 ---
 
-Welcome! We're glad you want to contribute to our work at Distribute Aid! We're not currently set up for async-only contributions so if you're interested in joining, we encourage you to get in touch with our tech team lead at <tech@distributeaid.org> to get properly onboarded.
+Welcome! We're glad you want to contribute to our work at Distribute Aid! 💖 We're not currently set up for async-only contributions so if you're interested in joining, we encourage you to get in touch with our tech team lead at <tech@distributeaid.org> to get properly onboarded.
 
 ## Expectations
 
@@ -114,9 +114,11 @@ The usual best practices apply:
 
 ### Making a Pull Request
 
+> **Note:** Only organisation members can open pull requests. If you're not yet a member, [reach out to us](mailto:tech@distributeaid.org) to get onboarded first.
+
 - Include the purpose of the Pull Request and link the issue related to the PR (with the `#` sign)
 - Consider providing an overview of why the work is taking place (with any relevant links). Don't assume familiarity with the history
-- Be explicit about what feedback you want, if any: a quick pair of eyes on the code, discussion on the technical approach, critique on design, a review copy
+- Be explicit about what feedback you want, if any: a quick pair of 👀 on the code, discussion on the technical approach, critique on design, a review copy
 - Be explicit about when you want feedback, if the Pull Request is a work in progress, say so. Prefix the title of your PR with [WIP]
 - Each repo is configured to require a review from the repo's review team, but if you'd like to add review requests from specific individuals (like if you've already discussed them reviewing the PR ahead of time, for instance, or if you want their particular input), that's fine!
 
