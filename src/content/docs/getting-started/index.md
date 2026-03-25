@@ -1,6 +1,6 @@
 ---
 title: Getting Started
-description: Learn how to contribute to DistributeAid.
+description: Learn how to contribute to Distribute Aid.
 ---
 
-Welcome to DistributeAid! This section will help you get up and running as a contributor.
+Welcome to Distribute Aid! This section will help you get up and running as a contributor.

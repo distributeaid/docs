@@ -7,7 +7,7 @@ export default defineConfig({
 	site: 'https://distributeaid.github.io',
 	integrations: [
 		starlight({
-			title: 'DistributeAid Docs',
+			title: 'Distribute Aid Docs',
 			logo: {
 				src: './src/assets/da-logo.svg',
 			},
