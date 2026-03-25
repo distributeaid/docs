@@ -3,12 +3,9 @@ title: Strapi ID Number
 description: How Strapi ID numbers work and their role in populating relational fields.
 ---
 
-import { Image } from 'astro:assets';
-import strapiIdNumber from '../../../assets/strapi_id-number.png';
-
 The Strapi ID number is a unique id assigned to each entry upon creation. It is usually the first field you will see of each entry line. Its value is different than the [document id](/needs-assessment/ids/) that is also assigned to each entry in Strapi. When accessing a relation field from a separate collection, this ID number is what will be required in order to populate the specific relation field type value in the desired collection (it must be included in the POST method for uploading data).
 
-<Image src={strapiIdNumber} alt="The id number field in a Strapi collection" />
+![The id number field in a Strapi collection](../../../assets/strapi_id-number.png)
 
 For example:
 * the **category** for a specific item in the _Product.Item_ collection will exist in the _Product.Category_ collection. In order to populate the category field in the item collection, you must first get the ID number for that category from the _Product.Category_ collection. Then use that ID number in the GET and POST method of the scripts in order to check if the item with that category already exists, and if not, create the new item that populates the category field using that ID number.
