@@ -1,6 +1,6 @@
-# DistributeAid Docs
+# Distribute Aid Docs
 
-Public documentation for [DistributeAid](https://distributeaid.org), built with [Astro Starlight](https://starlight.astro.build).
+Public documentation for [Distribute Aid](https://distributeaid.org), built with [Astro Starlight](https://starlight.astro.build).
 
 ## Technologies Used
 
