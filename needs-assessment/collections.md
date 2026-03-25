@@ -13,8 +13,8 @@ These collections provide a structured data source that supports efficient query
 - [Overview of Needs Assessment Collections](#overview-of-needs-assessment-collections)
 - [What's in a Collection](#whats-in-a-collection)
 - [Naming Conventions for the Strapi Collections](#naming-conventions-for-the-strapi-collections)
-- How to create a Collection
-- How to rename a Collection
+- [How to Create a Collection](#how-to-create-a-collection)
+- [How to Rename a Collection](#how-to-rename-a-collection)
 - List of Strapi Collections Related to the Needs Assessment
 
 ## What's in a Collection
@@ -25,22 +25,22 @@ A **collection** is one of Strapi's three content-types (formally called a _coll
 To view a collection in Strapi:
 1. Ensure the **Strapi Admin Panel** is running in your browser.
 
-2. Select the **Content Manager** icon from the navigation menu (see Figure 1). A list of available collections will appear.
+2. Select the **Content Manager** icon from the navigation menu (see Figure 2.1). A list of available collections will appear.
 
 <figure>
   <img src="../images/content-manager.png" alt="Content Manager icon in the Strapi navigation menu that opens Collection Types column" style="max-width: 80%; height: auto;">
-  <figcaption><strong>Figure 1.</strong> Strapi Content Manager icon in the navigation menu.</figcaption>
+  <figcaption><strong>Figure 2.1.</strong> Strapi Content Manager icon in the navigation menu.</figcaption>
 </figure>
 
 3. Click the name of the collection you want to view (for example, `Product.Category`)
 
 4. The main panel should now display the collection title and a table showing several of its fields. If entries exist, they'll appear as rows in the table.
 
-5. To view or customize the displayed fields, select the **View settings** toggle above the top-right corner of the table (see Figure 2). 
+5. To view or customize the displayed fields, select the **View settings** toggle above the top-right corner of the table (see Figure 2.2). 
 
 <figure>
   <img src="../images/view-settings.png" alt="View settings toggle" style="max-width: 80%; height: auto;">
-  <figcaption><strong>Figure 2.</strong> View settings toggle.</figcaption>
+  <figcaption><strong>Figure 2.2.</strong> View settings toggle.</figcaption>
 </figure>
 
 - In this panel, you can:
@@ -90,4 +90,248 @@ Most Strapi collection names follow a **two-level naming structure** that reflec
 ### Purpose
 This convention ensures clear organization, consistent naming, and easier navigation of collections across the Strapi admin and codebase. It supports scalability as new aspects are added under existing core parent categories.
 
- 
+## How to Create a Collection
+
+Use this process when adding a new collection. 
+
+### Before You Start
+- Review [Naming Conventions for the Strapi Collections](#naming-conventions-for-the-strapi-collections).
+- Decide whether the collection needs the two-level structure (`CoreConcept.SpecificAspect`) or just `SpecificAspect`.
+- Identify the **CoreConcept** and **SpecificAspect** for the new collection.
+- Review [Strapi Content-Type Builder overview](https://docs.strapi.io/cms/features/content-type-builder#overview).
+- Start your server ([Instructions for Running a Local Site](https://github.com/distributeaid/aggregated-public-information#running-a-local-site))
+
+**Note:** Strapi does not support dotted collection names natively. Create the collection in the admin panel using only the **SpecificAspect**, then rename it via CLI to align with the naming conventions if a two-level name is required.
+
+---
+### Option 1 - Create a New Collection (SpecificAspect only) in the Strapi Admin Panel
+
+Use this when introducing a brand new concept or creating a collection before aligning it to naming conventions.
+
+1. Open the Strapi admin panel and go to **Content-Type Builder**.
+2. Select the icon to **Create new collection type**.
+3. In **Display name**, enter the **SpecificAspect** (for example, `Request`).
+4. In **Advanced Settings**, enable **Draft and Publish**.
+5. Click **Continue**.
+6. Add the required fields for the collection and configure their settings.
+7. Click **Save** to update the collection.
+
+If this collection needs to be renamed so it aligns with the two-level naming structure (`<CoreConcept>.<SpecificAspect>`) and the **CoreConcept** does not already exist, continue to [How to Rename a Collection](#how-to-rename-a-collection).
+
+### Option 2 - Add a new Collection Under an Existing CoreConcept
+
+Use this when the CoreConcept already exists (e.g., `NeedsAssessment`) and you're creating another collection for that parent category with a new SpecificAspect (e.g., `Report`).
+
+1. Decide which **CoreConcept** this collection belongs to (e.g., `NeedsAssessment`).
+2. Follow the steps in **Option 1**, then return here.
+3. Back in the code editor, create a new folder for the **SpecificAspect** in the content-types folder of the already existing **CoreConcept folder** (See Figure 4.1). 
+
+<figure>
+  <img src="../images/add-collection-to-core-concept-step-three.png" alt="New SpecificAspect folder created inside existing CoreConcept folder" style="max-width: 80%; height: auto;">
+  <figcaption><strong>Figure 4.1.</strong> Create the SpecificAspect folder inside existing CoreConcept folder (e.g., needs-assessment/content-types/).</figcaption>
+</figure>
+
+4. Drag the schema.json file from the new collection Strapi made and drop it into the newly created **SpecificAspect** folder (See Figure 4.2).
+
+<figure>
+  <img src="../images/add-collection-to-core-concept-step-four-lm.png" alt="Dragging schema.json file to the new SpecificAspect folder." style="max-width: 80%; height: auto;">
+  <figcaption><strong>Figure 4.2.</strong> Moving schema.json  to new SpecificAspect folder (e.g., needs-assessment/content-types/report/).</figcaption>
+</figure>
+
+5. Update the "displayName" in the schema.json file to align with the naming structure `<CoreConcept>.<SpecificAspect>`:
+
+   ```bash
+   ## In our example, this would be:
+
+   "displayName": "NeedsAssessment.Report"   
+   ```
+6. Drag the specificAspect.ts file from the controllers folder in the new collection Strapi just made and drop it into the controllers folder of the core-concept folder (See Figure 4.3).
+
+<figure>
+  <img src="../images/add-collection-to-core-concept-step-six-lm.png" alt="Dragging initial controllers file to the controllers folder of the core-concept." style="max-width: 80%; height: auto;">
+  <figcaption><strong>Figure 4.3.</strong> Move controller file (e.g., report.ts) to the controllers folder of the core-concept (e.g., needs-assessment/controllers/).</figcaption>
+</figure>
+
+7. Repeat Step 6 for the specificAspect.ts files in the routes and services folders.
+
+8. Delete the Strapi-made _SpecificAspect_ collection folder (along with all its contents):
+
+   ```bash
+   ## In our example:
+
+   rm -rf src/api/report
+   ```
+9. Manually correct all the specificAspect.ts files in the controllers, routes, and services folder to hold the correct API ID (e.g., `api::report.report` becomes `api::needs-assessment.report`)
+   
+   Note: A type error may show up for the new API ID. This gets resolved in the next step.
+
+10. Manually update the types in the terminal:
+
+      ```bash
+      yarn strapi ts:generate-types
+      ```
+
+11. Restart the server:
+
+      ```bash
+      yarn develop
+      ```
+12. Proceed to [Confirm and Verify Collection]().
+
+## How to Rename a Collection  
+
+### General Renaming Pattern
+
+Most renaming scenarios follow this sequence. Variations do occur for the order of the steps and are noted in individual scenarios. **CLI prompt answers** will also differ as they are specific to each scenario.
+
+1. **Open** a terminal at the project root.
+2. **Run CLI generator** (`yarn strapi generate`).
+3. **Answer prompts** with target API ID values (scenario-specific).
+4. **Copy attributes** from the initial Strapi collection schema.json file to the newly renamed collection schema.json file.
+5. **Delete** the initial Strapi collection created (`rm -rf src/api/[initial-collection]` - use the name of the original collection in the square brackets of the command)
+6. **Restart** the server to update types (`yarn develop`).
+7. **Check** API ID references are updated in the codebase:
+
+   - .ts files in controllers, routes, and services 
+   - types/generated
+8. **Proceed** to [Confirm and Verify Collection]().
+
+---
+
+#### Scenario 1 - Align a Collection to the Naming Conventions
+
+Use this when you need to rename a collection that does not have an existing **CoreConcept**, and is following the two-level naming structure.
+
+**Example:** 
+   - Content-Type Display name `Request` becomes `Aid.Request`
+   - API ID changes from `api::request.request` to `api::aid.request`
+
+**Prompt Answers:**
+
+   ```bash
+   ? Strapi Generators (Use arrow keys)
+       api - Generate a basic API 
+       controller - Generate a controller for an API 
+     ❯ content-type - Generate a content type for an API 
+       policy - Generate a policy for an API 
+       middleware - Generate a middleware for an API 
+       migration - Generate a migration 
+       service - Generate a service for an API
+   ? Content type display name Aid.Request        # two-level structure
+   ? Content type singular name request           # SpecificAspect
+   ? Content type plural name requests
+   ? Please choose the model type  Collection Type 
+   ? Do you want to add attributes? No
+   ? Where do you want to add this model? Add model to new API 
+   ? Name of the new API? aid                     # CoreConcept
+   ? Bootstrap API related files? Yes
+   ```
+
+**Steps:** Follow the [General Renaming Pattern](#general-renaming-pattern) above.
+
+---
+
+#### Scenario 2 - Refine the Subcomponent (**SpecificAspect**)
+Use this to rename a collection where the **CoreConcept** is already established and the **SpecificAspect** needs to be more descriptive.
+
+**Example:** 
+   - Content-Type Display name `Aid.Request` becomes `Aid.DonationRequest`
+   - API ID changes from `api::aid.request` to `api::aid.donation-request`.
+
+**Prompt Answers:**
+
+```bash
+   ? Strapi Generators (Use arrow keys)
+       api - Generate a basic API 
+       controller - Generate a controller for an API 
+     ❯ content-type - Generate a content type for an API 
+       policy - Generate a policy for an API 
+       middleware - Generate a middleware for an API 
+       migration - Generate a migration 
+       service - Generate a service for an API
+   ? Content type display name Aid.DonationRequest    # two-level structure
+   ? Content type singular name donation-request      # SpecificAspect
+   ? Content type plural name donation-requests
+   ? Please choose the model type  Collection Type 
+   ? Do you want to add attributes? No
+   ? Where do you want to add this model? Add model to an existing API 
+   ? Which API is this for? aid                       # CoreConcept
+   ? Bootstrap API related files? Yes
+   ```
+
+**Steps:** Follow the [General Renaming Pattern](#general-renaming-pattern). 
+
+⚠️ **Step 5 Variation:** Be sure to keep the **CoreConcept** folder and _only_ delete the initial **SpecificAspect** collection and its related files.
+
+   ```bash
+   ## In our example, you would delete the following files with this command:
+
+   rm -rf src/api/aid/content-types/request src/api/aid/controllers/request.ts src/api/aid/routes/request.ts src/api/aid/services/request.ts
+   ```
+Continue remaining steps as written.
+
+---
+
+#### Scenario 3 - Refine the Parent Category (**CoreConcept**)
+Use this to rename a collection that needs a refined **CoreConcept**.
+
+**Example:** 
+   - Content-Type Display name `Aid.DonationRequest` becomes `CommunityAid.DonationRequest`
+   - API ID changes from `api::aid.donation-request` to `api::community-aid.donation-request`.
+
+**Steps: (Order Variation from the General Pattern occurs)** 
+
+1. **Open** a terminal at the project root.
+2. **Copy attributes** from the initial Strapi collection schema.json file:
+   ```bash
+   ## In our example, you would copy the attributes from this file:
+
+   src/api/aid/content-types/donation-request/schema.json
+   ```
+
+3. **Delete** the initial Strapi collection created: 
+   ```bash
+   rm -rf src/api/[initial-collection] 
+   
+   ## Replace [initial-collection] with your original collection name
+   ## Example: rm -rf src/api/aid
+   ```
+4. **Verify** all references of the initial collection have been removed from:
+   
+   - src/api/
+   -  types/generated/contentTypes.d.ts
+
+5. **Run CLI generator** (`yarn strapi generate`)
+6. **Answer prompts** with target API ID values:
+   ```bash
+   ? Strapi Generators (Use arrow keys)
+       api - Generate a basic API 
+       controller - Generate a controller for an API 
+     ❯ content-type - Generate a content type for an API 
+       policy - Generate a policy for an API 
+       middleware - Generate a middleware for an API 
+       migration - Generate a migration 
+       service - Generate a service for an API
+   ? Content type display name CommunityAid.DonationRequest  # two-level structure
+   ? Content type singular name donation-request             # SpecificAspect
+   ? Content type plural name donation-requests
+   ? Please choose the model type  Collection Type 
+   ? Do you want to add attributes? No
+   ? Where do you want to add this model? Add model to new API 
+   ? Name of the new API? community-aid                      # CoreConcept
+   ? Bootstrap API related files? Yes
+   ```
+7. **Paste** the copied attributes from Step 2 into the newly renamed collection schema.json file.
+   ```bash
+   ## In our example, you would paste the attributes into this file:
+
+   src/api/community-aid/content-types/donation-request/schema.json
+   ```
+8. **Restart** the server to update types (`yarn develop`)
+9. **Check** API ID references are updated in the codebase.
+
+   - .ts files in controllers, routes, and services 
+   - types/generated
+10. **Proceed** to [Confirm and Verify Collection]().
+
+
