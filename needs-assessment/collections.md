@@ -363,11 +363,11 @@ Updating permissions allows the collection to be accessed via the public API.
 1. In the Strapi Admin panel, go to **Settings**.
 2. Under **Users & Permissions Plugin**, select **Roles**.
 3. Select the **Public** role.
-4. In **Permissions**, expand the entry for the collection to define actions for the api plugin.
+4. In **Permissions**, expand the entry for the collection to define actions for the api plugin (See Figure 6.1).
 
   <figure>
-  <img src="../images/update-collection-permissions.png" alt="Collection entry expanded for allowed actions selection." style="max-width: 80%; height: auto;">
-  <figcaption><strong>Figure 6.1.</strong> Collection entry expanded for allowed actions selection.</figcaption>
+  <img src="../images/update-collection-permissions.png" alt="Collection entry expanded for selection of allowed actions." style="max-width: 80%; height: auto;">
+  <figcaption><strong>Figure 6.1.</strong> Collection entry expanded for selection of allowed actions.</figcaption>
    </figure>
 
 5. Select the actions to allow for this collection (for example, **find**, **findOne**). 
@@ -380,15 +380,18 @@ Updating permissions allows the collection to be accessed via the public API.
 3. Click **Create new entry**.
 4. Enter values for the collection fields.
 5. Click **Save** (to save as a draft) or **Publish**.
+
+   **Note:** Only **published** entries are accessible via API requests. Use **Publish** for API verification.
+
 6. Confirm that:
 
-   - The entry appears in the list.
-   - A document ID is assigned.
+   - A document ID appears above the entry.
+   - The entry appears in the list (select **Back** to verify).
 
    Expected behaviour: You can add values to all required fields, save or publish without errors, and see the entry in the collection list with an ID.
 
 ### 4. Verify the API Endpoint Returns Data
-1. Open your API test tool (for example, Postman or Bruno).
+1. Open an API test tool (for example, Postman or Bruno).
 2. Send a GET request to the collection endpoint:
 
    ```bash
