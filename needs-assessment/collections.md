@@ -189,7 +189,7 @@ Most renaming scenarios follow this sequence. Variations do occur for the order 
 2. **Run CLI generator** (`yarn strapi generate`).
 3. **Answer prompts** with target API ID values (scenario-specific).
 4. **Copy attributes** from the initial Strapi collection schema.json file to the newly renamed collection schema.json file.
-5. **Delete** the initial Strapi collection created (`rm -rf src/api/[initial-collection]` - use the name of the original collection in the square brackets of the command)
+5. **Delete** the initial Strapi collection created (`rm -rf src/api/[initial-collection]` - replace the brackets with the name of the original collection)
 6. **Restart** the server to update types (`yarn develop`).
 7. **Check** API ID references are updated in the codebase:
 
