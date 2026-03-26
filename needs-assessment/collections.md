@@ -363,13 +363,14 @@ Updating permissions allows the collection to be accessed via the public API.
 1. In the Strapi Admin panel, go to **Settings**.
 2. Under **Users & Permissions Plugin**, select **Roles**.
 3. Select the **Public** role.
-4. In **Permissions**, expand the entry for the collection to defines actions for the api plugin.
+4. In **Permissions**, expand the entry for the collection to define actions for the api plugin.
 
-   🚨[TODO] Add image here for permissions
+  <figure>
+  <img src="../images/update-collection-permissions.png" alt="Collection entry expanded for allowed actions selection." style="max-width: 80%; height: auto;">
+  <figcaption><strong>Figure 6.1.</strong> Collection entry expanded for allowed actions selection.</figcaption>
+   </figure>
 
 5. Select the actions to allow for this collection (for example, **find**, **findOne**). 
-
-   🚨[TODO] Confirm with Taylor what our default here will be for docs (Select All?)
 
 6. Click **Save**.
 
