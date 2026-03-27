@@ -334,4 +334,26 @@ Use this to rename a collection that needs a refined **CoreConcept**.
    - types/generated
 10. **Proceed** to [Confirm and Verify Collection]().
 
+## List of Strapi Collections Related to the Needs Assessment
 
+The following collections support the Needs Assessment:
+
+### Collections
+
+   - [`NeedsAssessment.Need`](./needs-collection.md) - Stores historic needs.
+   - [`NeedsAssessment.Survey`](./survey-collection.md) - Stores surveys used to assess needs across areas. 
+   - [`Geo.region`](./region-collection.md) - Stores regions where needs have been established. 
+   - [`Geo.subregion`](./subregion-collection.md) - Stores subregions where needs have been established. 
+   - [`Product.Item`](./item-collection.md) - Stores items requested across areas. 
+
+### Relations
+`NeedsAssessment.Need` includes **relation fields** to:
+- `NeedsAssessment.Survey` 
+- `Geo.region` 
+- `Geo.subregion`
+- `Product.Item` 
+
+For **relation field** details, see [field-types](./field-types.md).
+
+### Current Inventory
+View the full list of collections in the aggregated public information repo, through **Content Manager** or **Content-Type Builder** in the Strapi admin panel.   
