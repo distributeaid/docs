@@ -15,7 +15,7 @@ These collections provide a structured data source that supports efficient query
 - [Naming Conventions for the Strapi Collections](#naming-conventions-for-the-strapi-collections)
 - [How to Create a Collection](#how-to-create-a-collection)
 - [How to Rename a Collection](#how-to-rename-a-collection)
-- List of Strapi Collections Related to the Needs Assessment
+- [List of Strapi Collections Related to the Needs Assessment](#list-of-strapi-collections-related-to-the-needs-assessment)
 
 ## What's in a Collection
 
@@ -356,4 +356,4 @@ The following collections support the Needs Assessment:
 For **relation field** details, see [field-types](./field-types.md).
 
 ### Current Inventory
-View the full list of collections in the aggregated public information repo, through **Content Manager** or **Content-Type Builder** in the Strapi admin panel.   
+View the full list of collections available in our Strapi CMS through **Content Manager** or **Content-Type Builder** in the Strapi admin panel.   
