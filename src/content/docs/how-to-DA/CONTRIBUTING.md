@@ -1,6 +1,8 @@
 ---
 title: Contributing
 description: How to contribute to Distribute Aid's projects.
+prev: false
+next: false
 ---
 
 Welcome! We're glad you want to contribute to our work at Distribute Aid! 💖 We're not currently set up for async-only contributions so if you're interested in joining, we encourage you to get in touch with our tech team lead at <tech@distributeaid.org> to get properly onboarded.
