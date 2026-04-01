@@ -34,20 +34,20 @@ To view a collection in Strapi:
 **Figure 2.** View settings toggle.
 
 - In this panel, you can:
-    * Choose which fields to display
-    * Reset the default view
-    * Configure the display order of fields
+  - Choose which fields to display
+  - Reset the default view
+  - Configure the display order of fields
 
 ### Automatically Generated Fields
 
 Strapi automatically creates and populates the following fields in every collection:
 
-* `id`
-* `createdAt`
-* `createdBy`
-* `documentId`
-* `updatedAt`
-* `updatedBy`
+- `id`
+- `createdAt`
+- `createdBy`
+- `documentId`
+- `updatedAt`
+- `updatedBy`
 
 Other fields (such as `name`) are determined by the data requirements specific to each collection and are added manually during collection creation or during updates.
 
@@ -65,17 +65,17 @@ Most Strapi collection names follow a **two-level naming structure** that reflec
 
 `<CoreConcept>.<SpecificAspect>`
 
-* **CoreConcept** - Represents the parent or umbrella category (e.g. `Product`, `Geo`, `NeedsAssessment`).
-* **SpecificAspect** - Distinct subcomponent within that category.
+- **CoreConcept** - Represents the parent or umbrella category (e.g. `Product`, `Geo`, `NeedsAssessment`).
+- **SpecificAspect** - Distinct subcomponent within that category.
 
 #### Examples
 
-| Collection Name   | Core Concept   | Specific Aspect   | Description   |
-|--------------------|-----------------|---------------|----------------------------|
-|`Product.Category`|Product|Category| List of product categories.|
-|`Product.Item`|Product|Item| List of product items.|
-|`NeedsAssessment.Survey`|NeedsAssessment|Survey|Surveys for the needs assessment.|
-|`NeedsAssessment.Need`|NeedsAssessment|Need|Collected needs from previous assessments.|
+| Collection Name          | Core Concept    | Specific Aspect | Description                                |
+| ------------------------ | --------------- | --------------- | ------------------------------------------ |
+| `Product.Category`       | Product         | Category        | List of product categories.                |
+| `Product.Item`           | Product         | Item            | List of product items.                     |
+| `NeedsAssessment.Survey` | NeedsAssessment | Survey          | Surveys for the needs assessment.          |
+| `NeedsAssessment.Need`   | NeedsAssessment | Need            | Collected needs from previous assessments. |
 
 ### Purpose
 
