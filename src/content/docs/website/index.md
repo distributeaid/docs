@@ -3,6 +3,8 @@ title: Website
 description: Documentation for the Distribute Aid website (next-website-v2).
 ---
 
+> **Note:** This page is mirrored from the [next-website-v2 README](https://github.com/distributeaid/next-website-v2). Please make edits there.
+
 This repository contains the scaffolding for DA's new website, powered by Next.js, TypeScript & Strapi. For most information about contributing to DA (e.g. our dev process and asking for help), please refer first to the [general contributing guide](/getting-started/contributing/).
 
 ## Technologies Used
