@@ -30,7 +30,7 @@
   "lint-staged": {
     "*.md": [
       "prettier --write",
-      "markdownlint-cli2",
+      "markdownlint-cli2 --no-globs",
       "cspell --no-must-find-files"
     ],
     "*.{js,mjs,ts,css,json,yaml,yml}": [
