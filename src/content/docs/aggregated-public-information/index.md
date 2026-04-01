@@ -1,6 +1,8 @@
 ---
 title: Aggregated Public Information
 description: Documentation for the Distribute Aid Strapi CMS backend.
+prev: false
+next: false
 ---
 
 > **Note:** This page is mirrored from the [aggregated-public-information README](https://github.com/distributeaid/aggregated-public-information). Please make edits there.

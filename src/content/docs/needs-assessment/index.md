@@ -1,6 +1,7 @@
 ---
 title: Needs Assessment
 description: Overview of the Distribute Aid needs assessment system and its data pipeline.
+prev: false
 ---
 
 The current needs assessment information utilized for this documentation was obtained from the historic needs data. It is filtered through scripts that process the data to ensure specific requirements are met prior to uploading the information to the Strapi collections. The data can then be accessed through Strapi API endpoints for frontend integration.

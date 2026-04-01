@@ -1,6 +1,8 @@
 ---
 title: Website
 description: Documentation for the Distribute Aid website (next-website-v2).
+prev: false
+next: false
 ---
 
 > **Note:** This page is mirrored from the [next-website-v2 README](https://github.com/distributeaid/next-website-v2). Please make edits there.

@@ -1,6 +1,7 @@
 ---
 title: Types
 description: Notes on TypeScript types used in the needs assessment scripts.
+next: false
 ---
 
 Information regarding specific types relating to the needs assessment scripts.
