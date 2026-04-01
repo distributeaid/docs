@@ -80,7 +80,7 @@ This project uses several tools to maintain code quality. They run automatically
 
 ## Contributing
 
-See [CONTRIBUTING.md](./how-to-DA/CONTRIBUTING.md) for guidelines on how to contribute. Bug reports and feature requests are welcome as GitHub issues.
+See [CONTRIBUTING.md](./src/content/docs/how-to-DA/CONTRIBUTING.md) for guidelines on how to contribute. Bug reports and feature requests are welcome as GitHub issues.
 
 ## License
 
