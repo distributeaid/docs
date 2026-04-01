@@ -16,7 +16,7 @@ These collections provide a structured data source that supports efficient query
 - [How to Create a Collection](#how-to-create-a-collection)
 - [How to Rename a Collection](#how-to-rename-a-collection)
 - [How to Confirm and Verify a Collection](#how-to-confirm-and-verify-a-collection)
-- List of Strapi Collections Related to the Needs Assessment
+- [List of Strapi Collections Related to the Needs Assessment](#list-of-strapi-collections-related-to-the-needs-assessment)
 
 ## What's in a Collection
 
@@ -414,4 +414,26 @@ Updating permissions allows the collection to be accessed via the public API.
 1. In **Content Manager**, open the collection.
 2. Delete all test entries created during verification.
 
+## List of Strapi Collections Related to the Needs Assessment
 
+The following collections support the Needs Assessment:
+
+### Collections
+
+   - [`NeedsAssessment.Need`](./needs-collection.md) - Stores historic needs.
+   - [`NeedsAssessment.Survey`](./survey-collection.md) - Stores surveys used to assess needs across areas. 
+   - [`Geo.region`](./region-collection.md) - Stores regions where needs have been established. 
+   - [`Geo.subregion`](./subregion-collection.md) - Stores subregions where needs have been established. 
+   - [`Product.Item`](./item-collection.md) - Stores items requested across areas. 
+
+### Relations
+`NeedsAssessment.Need` includes **relation fields** to:
+- `NeedsAssessment.Survey` 
+- `Geo.region` 
+- `Geo.subregion`
+- `Product.Item` 
+
+For **relation field** details, see [field-types](./field-types.md).
+
+### Current Inventory
+View the full list of collections available in our Strapi CMS through **Content Manager** or **Content-Type Builder** in the Strapi admin panel.  
