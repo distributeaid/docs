@@ -78,7 +78,7 @@ yarn test
 
 If you are running locally, your site should be available in the output after you run `yarn develop` - you will see something like:
 
-```
+```text
 One more thing...
 Create your first administrator by going to the administration panel at:
 ┌─────────────────────────────┐

@@ -150,7 +150,7 @@ The usual best practices apply:
 
 ### Review Process
 
-**Initial Review Timeline**: Expect an initial review within **3-5 business days**. Complex PRs may take longer. If you haven't heard anything from the team (a verbal response or an emoji reaction on the `#tech-gitbub-chat` channel in Slack) within a week, please post again
+**Initial Review Timeline**: Expect an initial review within **3-5 business days**. Complex PRs may take longer. If you haven't heard anything from the team (a verbal response or an emoji reaction on the `#tech-github-chat` channel in Slack) within a week, please post again
 
 **Follow-up Reviews**: After addressing feedback, please click "Re-request review" and post in Slack again
 

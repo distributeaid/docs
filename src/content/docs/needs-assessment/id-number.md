@@ -8,6 +8,7 @@ The Strapi ID number is a unique id assigned to each entry upon creation. It is 
 ![The id number field in a Strapi collection](../../../assets/strapi_id-number.png)
 
 For example:
-* the **category** for a specific item in the _Product.Item_ collection will exist in the _Product.Category_ collection. In order to populate the category field in the item collection, you must first get the ID number for that category from the _Product.Category_ collection. Then use that ID number in the GET and POST method of the scripts in order to check if the item with that category already exists, and if not, create the new item that populates the category field using that ID number.
+
+- the **category** for a specific item in the _Product.Item_ collection will exist in the _Product.Category_ collection. In order to populate the category field in the item collection, you must first get the ID number for that category from the _Product.Category_ collection. Then use that ID number in the GET and POST method of the scripts in order to check if the item with that category already exists, and if not, create the new item that populates the category field using that ID number.
 
 > **Note**: It looks like using this ID number in API calls is going to be phased out and it is strongly encouraged to start using the [document id](/needs-assessment/ids/) in API calls with Strapi 5 and beyond. ([Strapi documentation](https://docs.strapi.io/cms/migration/v4-to-v5/breaking-changes/use-document-id))
