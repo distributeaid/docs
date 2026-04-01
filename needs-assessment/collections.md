@@ -385,7 +385,7 @@ Updating permissions allows the collection to be accessed via the public API.
 
 6. Confirm that:
 
-   - A document ID appears above the entry.
+   - A document ID or name/title appears above the entry.
    - The entry appears in the list (select **Back** to verify).
 
    Expected behaviour: You can add values to all required fields, save or publish without errors, and see the entry in the collection list with an ID.
