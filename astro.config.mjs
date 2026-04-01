@@ -25,8 +25,8 @@ export default defineConfig({
       customCss: ['./src/styles/custom.css'],
       sidebar: [
         {
-          label: 'Getting Started',
-          autogenerate: { directory: 'getting-started' },
+          label: 'How to DA',
+          autogenerate: { directory: 'how-to-DA' },
         },
         {
           label: 'Needs Assessment',
