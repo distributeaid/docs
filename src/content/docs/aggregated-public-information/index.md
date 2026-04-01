@@ -3,6 +3,8 @@ title: Aggregated Public Information
 description: Documentation for the Distribute Aid Strapi CMS backend.
 ---
 
+> **Note:** This page is mirrored from the [aggregated-public-information README](https://github.com/distributeaid/aggregated-public-information). Please make edits there.
+
 This project uses [Strapi](https://strapi.io) as a CMS backend. For most information about contributing to DA (e.g. our dev process and asking for help), please refer to the [general DA contributing guide](/getting-started/contributing/).
 
 ## Dev Environment Setup
