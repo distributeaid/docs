@@ -13,7 +13,7 @@
     "lint:md": "markdownlint-cli2",
     "check:a11y": "yarn build && serve dist -p 4173 & sleep 2 && pa11y-ci --sitemap http://localhost:4173/sitemap.xml --sitemap-find 'http://localhost:[0-9]+' --sitemap-replace 'http://localhost:4173'; kill %1",
     "check:spelling": "cspell \"**/*.md\"",
-    "check:links": "linkinator ./dist/",
+    "check:links": "linkinator ./dist/ --skip 'https://distributeaid\\.github\\.io(?:/.*)?'",
     "prepare": "husky"
   },
   "dependencies": {
