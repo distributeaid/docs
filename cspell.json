@@ -1,0 +1,32 @@
+{
+  "version": "0.2",
+  "language": "en,en-GB",
+  "ignorePaths": ["node_modules", "dist", ".yarn", "yarn.lock"],
+  "words": [
+    "astro",
+    "starlight",
+    "distributeaid",
+    "strapi",
+    "tailwindcss",
+    "radix",
+    "nextjs",
+    "corepack",
+    "codespell",
+    "linkinator",
+    "markdownlint",
+    "cspell",
+    "husky",
+    "prettierrc",
+    "prettierignore",
+    "figcaption",
+    "subcomponent",
+    "gitbash",
+    "libc",
+    "msvc",
+    "Canva",
+    "webservers",
+    "adduser",
+    "usermod",
+    "WCAG"
+  ]
+}

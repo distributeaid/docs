@@ -1,12 +1,17 @@
-# Contributing to Distribute Aid
+---
+title: Contributing
+description: How to contribute to Distribute Aid's projects.
+prev: false
+next: false
+---
 
-Welcome! We're glad you want to contribute to our work at Distribute Aid! 💖 We’re not currently set up for async-only contributions so if you’re interested in joining, we encourage you to get in touch with our tech team lead at <tech@distributeaid.org> to get properly onboarded.
+Welcome! We're glad you want to contribute to our work at Distribute Aid! 💖 We're not currently set up for async-only contributions so if you're interested in joining, we encourage you to get in touch with our tech team lead at <tech@distributeaid.org> to get properly onboarded.
 
 ## Expectations
 
-Most of our contributors put in an average of 5h a week. Volunteer participation fluctuates as people’s lives do, so we ask contributors to communicate proactively.
+Most of our contributors put in an average of 5h a week. Volunteer participation fluctuates as people's lives do, so we ask contributors to communicate proactively.
 
-A lot of our team communication happens in virtual meetings: 1 sprint meeting/month and 2 tech hangs/week where we hang out and collaborate. We’ve seen that people who show up to these consistently are having a better experience, make more progress, growing in skills, personal abilities, and confidence!
+A lot of our team communication happens in virtual meetings: 1 sprint meeting/month and 2 tech hangs/week where we hang out and collaborate. We've seen that people who show up to these consistently are having a better experience, make more progress, growing in skills, personal abilities, and confidence!
 
 Tech hangs: every Wednesday and Thursday from 6 to 8 pm CET/CEST
 Sprint meetings: first hour of the tech hang on the first Wednesday of the month
@@ -16,48 +21,26 @@ Any other collaboration usually happens via Slack.
 **Join our contributor team if:**
 
 - You communicate clearly
-- You’re reliable, organised and focused
+- You're reliable, organised and focused
 - You have some availability overlapping with Central European Time
 - You can make it to at least 1 tech hang per month
 - You can come to at least 1 sprint meeting per quarter
 
-## Table of Contents
-
-- [Ways to Contribute](#ways-to-contribute)
-- [What We Offer](#what-we-offer)
-- [Finding an Issue](#finding-an-issue)
-- [Creating Issues](#creating-issues)
-  - [Sub Issues](#sub-issues)
-- [Setting Up a Dev Environment](#setting-up-a-dev-environment)
-- [Asking for Help](#asking-for-help)
-- [Dev Process](#dev-process)
-  - [Branch Strategy](#branch-strategy)
-  - [Norms for Commits](#norms-for-commits)
-  - [While You're Working](#while-youre-working)
-  - [Making a Pull Request](#making-a-pull-request)
-  - [Signaling Readiness](#signaling-readiness)
-  - [Review Process](#review-process)
-  - [Handling Common Situations](#handling-common-situations)
-    - [Abandoned Pull Requests](#abandoned-pull-requests)
-    - [Follow-Up Work](#follow-up-work)
-  - [After Your PR is Approved](#after-your-pr-is-approved)
-- [Code of Conduct](#code-of-conduct)
-
 ## Ways to Contribute
 
-We’re looking for experienced engineers and designers, but you don’t need to already know our full stack as long as you know how to onboard yourself and ask for help if needed. Some experience with contributing to OSS is helpful. We welcome many different types of contributions, including:
+We're looking for experienced engineers and designers, but you don't need to already know our full stack as long as you know how to onboard yourself and ask for help if needed. Some experience with contributing to OSS is helpful. We welcome many different types of contributions, including:
 
 - [Frontend](https://github.com/distributeaid/next-website-v2)
-  - As a Frontend Developer at Distribute Aid, you’ll create new pages for, update, and maintain the Distribute Aid website, often working closely with our designers or other devs
+  - As a Frontend Developer at Distribute Aid, you'll create new pages for, update, and maintain the Distribute Aid website, often working closely with our designers or other devs
   - Stack: NextJS, TypeScript, Strapi, Radix UI
 - [Backend](https://github.com/distributeaid/aggregated-public-information)
-  - As a Backend Developer at Distribute Aid, you’ll develop and maintain our backend for our website, work with APIs to share and structure collected needs data for our needs assessment as well as data visualisations to show our work. You’ll most likely collaborate with other Backend devs.
-  - Stack: Strapi (our website’s backend), TypeScript, APIs
+  - As a Backend Developer at Distribute Aid, you'll develop and maintain our backend for our website, work with APIs to share and structure collected needs data for our needs assessment as well as data visualisations to show our work. You'll most likely collaborate with other Backend devs.
+  - Stack: Strapi (our website's backend), TypeScript, APIs
 - Design
-  - As a designer at Distribute Aid, you’ll create designs for our website and any app we’re working on to make the lives of aid workers easier and more effective. You’ll collaborate with frontend developers and are expected to learn to create issues on GitHub.
+  - As a designer at Distribute Aid, you'll create designs for our website and any app we're working on to make the lives of aid workers easier and more effective. You'll collaborate with frontend developers and are expected to learn to create issues on GitHub.
   - Stack: Figma, Canva, GitHub issues
 - Data
-  - Part data engineer, part data analyst, you’ll work with historical data from our Needs Assessment as well as future incoming Needs Assessment data. One of your main responsibilities will be to structure and present the data, creating visualisations that we can use on the website or show to partners to emphasise our impact.
+  - Part data engineer, part data analyst, you'll work with historical data from our Needs Assessment as well as future incoming Needs Assessment data. One of your main responsibilities will be to structure and present the data, creating visualisations that we can use on the website or show to partners to emphasise our impact.
   - Stack: Strapi, APIs, Salesforce
 - [Documentation](https://github.com/distributeaid/docs)
 
@@ -65,7 +48,7 @@ We’re looking for experienced engineers and designers, but you don’t need to
 
 Having a team structure in place allows us to foster both collaboration and individual growth. We emphasise doing peer reviews and encourage contributors who are willing to take on more responsibility to step up and get on track to become maintainers.
 
-Regular contributors get access to periodic 1on1s with our tech lead to check in and enable personal development and growth at Distribute Aid. We’re also happy to write references for regular contributors as needed.
+Regular contributors get access to periodic 1on1s with our tech lead to check in and enable personal development and growth at Distribute Aid. We're also happy to write references for regular contributors as needed.
 
 If this sounds interesting to you, [get in touch](mailto:tech@distributeaid.org) and tell us a bit about yourself.
 
@@ -139,7 +122,7 @@ The usual best practices apply:
 - Consider providing an overview of why the work is taking place (with any relevant links). Don't assume familiarity with the history
 - Be explicit about what feedback you want, if any: a quick pair of 👀 on the code, discussion on the technical approach, critique on design, a review copy
 - Be explicit about when you want feedback, if the Pull Request is a work in progress, say so. Prefix the title of your PR with [WIP]
-- Each repo is configured to require a review from the repo's review team, but if you'd like to add review requests from specific individuals (like if you’ve already discussed them reviewing the PR ahead of time, for instance, or if you want their particular input), that's fine!
+- Each repo is configured to require a review from the repo's review team, but if you'd like to add review requests from specific individuals (like if you've already discussed them reviewing the PR ahead of time, for instance, or if you want their particular input), that's fine!
 
 ### Signaling Readiness
 
@@ -150,7 +133,7 @@ The usual best practices apply:
 
 ### Review Process
 
-**Initial Review Timeline**: Expect an initial review within **3-5 business days**. Complex PRs may take longer. If you haven't heard anything from the team (a verbal response or an emoji reaction on the `#tech-gitbub-chat` channel in Slack) within a week, please post again
+**Initial Review Timeline**: Expect an initial review within **3-5 business days**. Complex PRs may take longer. If you haven't heard anything from the team (a verbal response or an emoji reaction on the `#tech-github-chat` channel in Slack) within a week, please post again
 
 **Follow-up Reviews**: After addressing feedback, please click "Re-request review" and post in Slack again
 

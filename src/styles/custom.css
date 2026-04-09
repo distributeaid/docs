@@ -1,0 +1,14 @@
+/* Distribute Aid brand colors for Starlight */
+
+:root {
+  /* Force light mode until we have a dark-mode logo */
+  color-scheme: light;
+
+  /* Navy primary - used for accent/links */
+  --sl-color-accent-low: #051e5e;
+  --sl-color-accent: #082b76;
+  --sl-color-accent-high: #dee5f4;
+
+  --sl-hue-accent: 222;
+  --sl-hue-blue: 222;
+}

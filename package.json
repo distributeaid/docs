@@ -7,7 +7,14 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint:md": "markdownlint-cli2",
+    "check:a11y": "yarn build && serve dist -p 4173 & sleep 2 && pa11y-ci --sitemap http://localhost:4173/sitemap.xml --sitemap-find 'http://localhost:[0-9]+' --sitemap-replace 'http://localhost:4173'; kill %1",
+    "check:spelling": "cspell \"**/*.md\"",
+    "check:links": "linkinator ./dist/ --skip 'https://distributeaid\\.github\\.io(?:/.*)?'",
+    "prepare": "husky"
   },
   "dependencies": {
     "@astrojs/starlight": "^0.36.0",
@@ -19,5 +26,25 @@
     "node": ">=20.0.0 <=24.11.0",
     "npm": "please-use-yarn",
     "yarn": ">=4.4.0"
+  },
+  "lint-staged": {
+    "*.md": [
+      "prettier --write",
+      "markdownlint-cli2 --no-globs",
+      "cspell --no-must-find-files"
+    ],
+    "*.{js,mjs,ts,css,json,yaml,yml}": [
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "cspell": "^9.7.0",
+    "husky": "^9.1.7",
+    "linkinator": "^7.6.1",
+    "lint-staged": "^16.4.0",
+    "markdownlint-cli2": "^0.22.0",
+    "pa11y-ci": "^4.1.0",
+    "prettier": "^3.8.1",
+    "serve": "^14.2.6"
   }
 }
