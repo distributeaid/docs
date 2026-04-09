@@ -1,10 +1,10 @@
 name: Deploy to GitHub Pages
 
 on:
-  # Trigger the workflow every time you push to the `saga` branch
-  # Using a different branch name? Replace `saga` with your branch’s name
   push:
-    branches: [ saga ]
+    branches: [main]
+  pull_request:
+    branches: [main]
   # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
 
@@ -15,7 +15,24 @@ permissions:
   id-token: write
 
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout your repository using git
+        uses: actions/checkout@v6
+      - name: Enable corepack
+        run: corepack enable
+      - name: Install dependencies
+        run: yarn install --immutable
+      - name: Check formatting
+        run: yarn format:check
+      - name: Lint markdown
+        run: yarn lint:md
+      - name: Check spelling
+        run: yarn check:spelling
+
   build:
+    needs: lint
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
@@ -24,15 +41,30 @@ jobs:
         run: corepack enable
       - name: Install, build, and upload your site
         uses: withastro/action@v6
-        # with:
-          # path: . # The root location of your Astro project inside the repository. (optional)
-          # node-version: 20 # The specific version of Node that should be used to build your site. Defaults to 20. (optional)
-          # package-manager: yarn@4.9.2 # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
-        # env:
-          # PUBLIC_POKEAPI: 'https://pokeapi.co/api/v2' # Use single quotation marks for the variable value. (optional)
+
+  a11y:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout your repository using git
+        uses: actions/checkout@v6
+      - name: Enable corepack
+        run: corepack enable
+      - name: Install dependencies
+        run: yarn install --immutable
+      - name: Build site
+        run: yarn build
+      - name: Check accessibility
+        run: |
+          npx serve dist -p 4173 &
+          sleep 3
+          yarn pa11y-ci --sitemap http://localhost:4173/sitemap.xml --sitemap-find 'http://localhost:[0-9]+' --sitemap-replace 'http://localhost:4173'
+      - name: Check links
+        run: yarn check:links
 
   deploy:
-    needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: [build, a11y]
     runs-on: ubuntu-latest
     environment:
       name: github-pages

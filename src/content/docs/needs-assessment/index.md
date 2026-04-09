@@ -1,15 +1,12 @@
-# Needs Assessment Information - Historic Data
+---
+title: Needs Assessment
+description: Overview of the Distribute Aid needs assessment system and its data pipeline.
+prev: false
+---
 
-The current needs assessment information utilized for this documentation was obtained from the historic needs data. It is filtered through scripts that process the data to ensure specific requirements are met prior to uploading the information to the Strapi collections. The data can then be accessed through Strapi API endpoints for frontend integration. (See the diagram below for an overview of this process.)
+The current needs assessment information utilized for this documentation was obtained from the historic needs data. It is filtered through scripts that process the data to ensure specific requirements are met prior to uploading the information to the Strapi collections. The data can then be accessed through Strapi API endpoints for frontend integration.
 
-![Data Processing Pipeline](../images/data-transfer.png)
-
-## Table of Contents
-
-- [Needs Assessment Information - Historical Data](#needs-assessment-information---historic-data)
-- Data Processing Scripts
-- Strapi Collections
-- [Troubleshooting](#troubleshooting)
+![Data processing pipeline overview](../../../assets/data-transfer.png)
 
 ## Troubleshooting
 
@@ -19,30 +16,22 @@ Before you start, ensure you have the required packages and dependencies install
 
 If you require further assistance, reach out to the team on the `#tech` channel on Slack.
 
-### Common Issues
-
-1. [Strapi admin build fails because environment keys are missing](#strapi-admin-build-fails-because-environment-keys-are-missing)
-2. [Local environment setup (Windows OS)](#local-environment-setup-windows-os)
-
----
-
 ### Strapi admin build fails because environment keys are missing
 
-#### Error Message
+**Error Message:**
 
 `Missing admin.auth.secret configuration. The SessionManager requires a JWT secret`
 
-#### Applies To
+**Applies To:**
 
 - Any OS
-
 - Especially when using Windows PowerShell or Command Prompt, where `./setup.bash` may not run correctly
 
-#### Cause
+**Cause:**
 
-Strapi requires several environment keys (for example `APP_KEYS`, `ADMIN_JWT_SECRET`, and others) to be defined in a `.env` file. The helper script `./setup.bash`, which auto‑generates these keys, may fail to run depending on your shell or OS. When the keys are not properly set, Strapi cannot start the admin panel and reports a missing JWT secret.
+Strapi requires several environment keys (for example `APP_KEYS`, `ADMIN_JWT_SECRET`, and others) to be defined in a `.env` file. The helper script `./setup.bash`, which auto-generates these keys, may fail to run depending on your shell or OS. When the keys are not properly set, Strapi cannot start the admin panel and reports a missing JWT secret.
 
-#### Solution
+**Solution:**
 
 1. Open a Git Bash terminal in your code editor.
 
@@ -50,10 +39,7 @@ Strapi requires several environment keys (for example `APP_KEYS`, `ADMIN_JWT_SEC
 
    **In VS Code:** Terminal -> New Terminal -> select "Git Bash"
 
-    <figure>
-    <img src="../images/gitbash-terminal-selection.png" alt="Git Bash selected in the terminal options" style="max-width: 80%; height: auto;">
-    <figcaption><strong>Figure 1.</strong> Git Bash selected as the new terminal.</figcaption>
-    </figure>
+   ![Git Bash selected in the terminal options](../../../assets/gitbash-terminal-selection.png)
 
 2. Try running the setup script.
 
@@ -75,18 +61,15 @@ Strapi requires several environment keys (for example `APP_KEYS`, `ADMIN_JWT_SEC
    ```
 
    - Run this command, repeatedly, until you have generated each of the required keys. (There are currently 8 keys required).
-   - For each placeholder in `.env` (for example `"key1=="`), replace it with one of the generated values.
-   - Keep the same structure (quotes, commas) as shown in `.env.example`.
+     - For each placeholder in `.env` (for example `"key1=="`), replace it with one of the generated values.
+     - Keep the same structure (quotes, commas) as shown in `.env.example`.
 
-6. Start the Strapi server
-
-   From either a Powershell or Git Bash terminal, run:
-
+6. Start the Strapi server. From either a Powershell or Git Bash terminal, run:
    ```bash
    yarn develop
    ```
 
-#### Verification
+**Verification:**
 
 - The Strapi server starts without "missing ... secret" or other key-related errors.
 - The admin panel loads in a browser and you can log in or register a new admin user.
@@ -96,16 +79,16 @@ Strapi requires several environment keys (for example `APP_KEYS`, `ADMIN_JWT_SEC
 
 ### Local environment setup (Windows OS)
 
-#### Windows Setup Error Message
+**Error Message:**
 
 `@swc/core "Failed to load native binding"`
 
-#### Windows Setup Applies To
+**Applies To:**
 
 - Windows OS
 - Local development using Yarn and Strapi
 
-#### Windows Setup Cause
+**Cause:**
 
 `@swc/core` uses native binaries that must match your OS and CPU architecture. On Windows, this error often occurs when:
 
@@ -113,7 +96,7 @@ Strapi requires several environment keys (for example `APP_KEYS`, `ADMIN_JWT_SEC
 - Platform/architecture are not locked, or
 - The correct Windows SWC binary is not installed.
 
-#### Windows Setup Solution
+**Solution:**
 
 1. Configure Yarn to use classic `node_modules` and lock to the current platform.
 
@@ -139,17 +122,17 @@ Strapi requires several environment keys (for example `APP_KEYS`, `ADMIN_JWT_SEC
    ```bash
    corepack enable
    yarn set version 4.12.0
-
-   // Note: This version may update with the project
    ```
+
+   Note: This version may update with the project.
 
 3. Confirm the Yarn version is correct:
 
    ```bash
    yarn -v
-
-   // should show 4.12.0 (or the updated version used in the project)
    ```
+
+   Should show 4.12.0 (or the updated version used in the project).
 
 4. Clean and reinstall core dependencies:
 
@@ -161,14 +144,12 @@ Strapi requires several environment keys (for example `APP_KEYS`, `ADMIN_JWT_SEC
    yarn add @strapi/strapi@^5 better-sqlite3 react@18 react-dom@18
    ```
 
-5. Install the correct Windows SWC binary
+5. Install the correct Windows SWC binary.
 
    Determine your CPU architecture in Powershell:
 
    ```powershell
    echo $env:PROCESSOR_ARCHITECTURE
-
-   // will be either AMD64 or ARM
    ```
 
    Then install the matching SWC packages:
@@ -187,7 +168,7 @@ Strapi requires several environment keys (for example `APP_KEYS`, `ADMIN_JWT_SEC
    yarn install
    ```
 
-#### Windows Setup Verification
+**Verification:**
 
 - Running the dev server no longer shows the `@swc/core "Failed to load native binding"` error.
 - Strapi starts successfully and your local environment behaves as expected.
