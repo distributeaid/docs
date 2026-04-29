@@ -1,12 +1,22 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import starlightOpenAPI, { openAPISidebarGroups } from 'starlight-openapi';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://distributeaid.github.io',
   integrations: [
     starlight({
+      plugins: [
+        starlightOpenAPI([
+          {
+            base: 'api-reference',
+            label: 'API Reference',
+            schema: './schemas/aggregated-public-information.json',
+          },
+        ]),
+      ],
       title: 'Distribute Aid Docs',
       logo: {
         src: './src/assets/da-logo.svg',
@@ -40,6 +50,7 @@ export default defineConfig({
           label: 'Aggregated Public Information',
           autogenerate: { directory: 'aggregated-public-information' },
         },
+        ...openAPISidebarGroups,
       ],
     }),
   ],
