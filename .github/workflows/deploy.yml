@@ -20,6 +20,10 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v6
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
       - name: Enable corepack
         run: corepack enable
       - name: Install dependencies
@@ -41,6 +45,8 @@ jobs:
         run: corepack enable
       - name: Install, build, and upload your site
         uses: withastro/action@v6
+        with:
+          node-version: 22
 
   a11y:
     needs: build
@@ -48,6 +54,10 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v6
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
       - name: Enable corepack
         run: corepack enable
       - name: Install dependencies
