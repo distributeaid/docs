@@ -6,6 +6,7 @@ Public documentation for [Distribute Aid](https://distributeaid.org), built with
 
 - [Astro](https://astro.build/) - Web framework
 - [Starlight](https://starlight.astro.build/) - Documentation theme for Astro
+- [starlight-openapi](https://github.com/HiDeoo/starlight-openapi) - API reference docs from OpenAPI specs
 - [Yarn](https://yarnpkg.com/) - Package manager
 
 ## Setup
@@ -14,7 +15,7 @@ Public documentation for [Distribute Aid](https://distributeaid.org), built with
 
 You'll need the following installed on your machine:
 
-- [Node.js](https://nodejs.org/) version >=20.0.0 <=24.11.0
+- [Node.js](https://nodejs.org/) version >=22.12.0 <=24.11.0
 - [Corepack](https://nodejs.org/api/corepack.html) - Ships with Node.js but needs to be enabled
 
 ### Enable Corepack
@@ -77,6 +78,19 @@ This project uses several tools to maintain code quality. They run automatically
 - [cspell](https://cspell.org/) - Spell checker
 - [linkinator](https://github.com/JustinBeckwith/linkinator) - Broken link checker
 - [pa11y-ci](https://github.com/pa11y/pa11y-ci) - Accessibility testing (WCAG2AA via axe-core)
+
+## API Reference
+
+The API reference docs are auto-generated from an [OpenAPI spec](./schemas/aggregated-public-information.json) produced by the [aggregated-public-information](https://github.com/distributeaid/aggregated-public-information) Strapi backend.
+
+To regenerate the spec after API changes:
+
+```sh
+cd path/to/aggregated-public-information
+yarn strapi openapi generate --output path/to/docs/schemas/aggregated-public-information.json
+```
+
+This requires the aggregated-public-information repo to be set up locally with dependencies installed and a `.env` file configured (see that repo's README).
 
 ## Contributing
 
