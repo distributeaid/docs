@@ -12,3 +12,23 @@
   --sl-hue-accent: 222;
   --sl-hue-blue: 222;
 }
+
+/* Card CTA buttons: bottom-aligned across a row, with a guaranteed gap
+   above so the button never crowds the description in denser cards. */
+.sl-markdown-content .card {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1.2rem;
+}
+.sl-markdown-content .card .body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.sl-markdown-content .card .body > p {
+  margin-bottom: 1.5rem;
+}
+.sl-markdown-content .card .sl-link-button {
+  margin-top: auto;
+  align-self: flex-start;
+}

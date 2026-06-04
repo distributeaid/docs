@@ -4,31 +4,31 @@ description: Documentation for Distribute Aid's projects, tools, and processes.
 template: doc
 ---
 
-import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+import { Card, CardGrid, LinkButton } from '@astrojs/starlight/components';
 
 Documentation for Distribute Aid's projects, tools, and processes.
 
 ## Projects
 
 <CardGrid>
-  <LinkCard
-    title="Needs Assessment"
-    href="/needs-assessment/"
-    description="Data collection and analysis for understanding aid distribution needs across regions."
-  />
-  <LinkCard
-    title="Website"
-    href="/website/"
-    description="The next generation of the Distribute Aid public website."
-  />
-  <LinkCard
-    title="Aggregated Public Information"
-    href="/aggregated-public-information/"
-    description="Collecting and organizing publicly available aid-related data."
-  />
-  <LinkCard
-    title="Getting Started"
-    href="/how-to-da/contributing/"
-    description="New to Distribute Aid? Start here to learn how to contribute."
-  />
+<Card title="Needs Assessment" icon="document">
+Data collection and analysis for understanding aid distribution needs across regions.
+
+<LinkButton href="/needs-assessment/" variant="secondary" icon="right-arrow">Needs Assessment docs</LinkButton>
+</Card>
+<Card title="Website" icon="laptop">
+The next generation of the Distribute Aid public website.
+
+<LinkButton href="/website/" variant="secondary" icon="right-arrow">Website docs</LinkButton>
+</Card>
+<Card title="Aggregated Public Information" icon="information">
+Collecting and organizing publicly available aid-related data.
+
+<LinkButton href="/aggregated-public-information/" variant="secondary" icon="right-arrow">API docs</LinkButton>
+</Card>
+<Card title="Getting Started" icon="rocket">
+New to Distribute Aid? Start here to learn how to contribute.
+
+<LinkButton href="/how-to-da/contributing/" variant="secondary" icon="right-arrow">Get started</LinkButton>
+</Card>
 </CardGrid>
