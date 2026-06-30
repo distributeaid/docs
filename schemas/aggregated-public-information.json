@@ -7,6 +7,12 @@
     "description": "API documentation for aggregated-public-information v0.1.0",
     "version": "0.1.0"
   },
+  "servers": [
+    {
+      "url": "https://localhost:1337/api",
+      "description": "Local development"
+    }
+  ],
   "paths": {
     "/currency-conversions": {
       "get": {
