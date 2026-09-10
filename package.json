@@ -19,7 +19,7 @@
   "dependencies": {
     "@astrojs/starlight": "^0.38.4",
     "astro": "^6.1.10",
-    "sharp": "^0.34.3"
+    "sharp": "^0.35.4"
   },
   "packageManager": "yarn@4.9.4",
   "engines": {
