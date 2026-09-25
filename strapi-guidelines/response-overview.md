@@ -10,14 +10,14 @@ Entries from this collection are used to create response cards on the Response O
 
 ## Open the collection
 
-## Top-level fields
+## Top-level fields 
 | Field name   | Field type              | What to enter                                                                                  | Example                                         | Required? | Where it appears                 |
 | ------------ | ----------------------- | ---------------------------------------------------------------------------------------------- | ----------------------------------------------- | --------- | -------------------------------- |
 | name         | Short text              | Enter the name for this response.  | Levant Response                              | Yes       | - **Detailed Response page:** page heading<br> - **Response Overview page:** card heading |
 | subheading   | Short text | Enter a brief one sentence description of the response.                  | We source harm reduction kits with ...<details><summary>**Click to expand**</summary>medical equipment that our partners then distribute to trans people who take injection-based gender affirming hormone therapy.</details> | No        | - **Detailed Response page:** below page heading      |
 | description  | Rich text               | Enter a detailed description of what we provide for this response.                                           | We deliver supplies to ...<details><summary>**Click to expand**</summary>refugee camps, community centers, and grassroots groups serving people on the move. We also work with a network of organizations across the continent to help them be more sustainable and effective by reducing costs and acquiring new sources of aid.</details>                    | Yes       | - **Detailed response page:** full description in About section<br> - **Response Overview page:** description preview followed by `...` in the card                |
 | imageGallery  | Repeatable component               | Add one entry for each image. See the component instructions below. [TODO - add link to this component]                                           | ———                   | No       | - **Detailed Response page:** All images appear in the About section<br> - **Response Overview page:** The first image entered appears on the response card                |
-| processImageMobile  | Strapi Media               | Select the image that accurately conveys the process the project follows. The process in the image should flow vertically.                                           | [TODO]Figure out how to get an image in the table so it's hidden until clicked                     | No       | Process section of the detailed response page on **smaller** screens.                |
+|<a id="field-process-image-mobile"></a> processImageMobile  | Strapi Media               | Select or upload the image that accurately displays the process the response follows. See [Process image mobile](#process-image-mobile) for the display example and image requirements.                                           | [View example](#process-image-mobile)                     | No       | - **Detailed response page:** How We Work section on mobile layouts                |
 | processImageDesktop  | Strapi Media               | Select the image that accurately conveys the process the project follows. The process in the image should flow horizontally.                                           | [TODO]Figure out how to get an image in the table so it's hidden until clicked                    | No       | Process section of the detailed response page on **larger** screens.                |
 | callToActionCards  | Repeatable component               | [TODO]                                           | [TODO]                    | No       | Cards that appear in the section on how to get involved on the detailed response page.                |
 | faqs  | Repeatable component               | [TODO]                                          | [TODO]                    | No       | In the FAQ section of the detailed response page.                |
@@ -36,6 +36,21 @@ Entries from this collection are used to create response cards on the Response O
 ### statistics
 
 ### cta
+
+## Image display examples
+
+### Process image mobile
+
+**Strapi field name:** `processImageMobile`
+<details>
+<summary>Click to view the image example</summary>
+
+![Example process image on mobile](./assets/process-image-mobile-example.png)
+</details>
+
+[↩ Back to the `processImageMobile` field in the Top-level fields table](#field-process-image-mobile)
+
+### Process image - desktop
 
 ## Save and publish
 
