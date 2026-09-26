@@ -37,7 +37,7 @@ Entries from this collection are used to create response cards on the Response O
 
 ### cta
 
-## Image display examples
+## Process Image display examples
 
 ### Process image mobile
 
@@ -70,6 +70,94 @@ Entries from this collection are used to create response cards on the Response O
 </details>
 
 [↩ Back to the `processImageDesktop` field in the table](#field-process-image-desktop)
+
+## Image input methods
+The correct image input method depends on the field you are completing. Check the table below before entering an image.
+
+| Field  | Required input | Use these instructions |
+|---|---|---|
+| `processImageMobile` and `processImageDesktop`<br> - new image available on your computer | Strapi Media Library asset | [Upload a Media Library asset](#upload-a-new-asset-from-you-computer) |
+| `processImageMobile` and `processImageDesktop`<br> - image already exists in Strapi | Strapi Media Library asset | [Select a Media Library asset](#select-an-existing-media-library-asset) |
+| `processImageMobile` and `processImageDesktop`<br> - approved image exists only in Cloudinary | Strapi Media Library asset | [Add a Cloudinary image to the Media Library](#add-a-cloudinary-image-to-the-media-library) |
+| `imageGallery` | Cloudinary URL | [Copy and enter a Cloudinary URL](#copy-and-enter-a-cloudinary-url) |
+| `callToActionCard` image fields | Cloudinary URL | [Copy and enter a Cloudinary URL](#copy-and-enter-a-cloudinary-url) |
+
+### Upload or select a Media Library asset
+
+Use this workflow for fields that require an asset in the Strapi Media Library, including the `processImageMobile` and `processImageDesktop` fields.
+
+#### Upload a new asset from you computer
+
+1. Confirm that you are using the approved image file.
+2. In the image field, select the plus icon **(+)**, or drag and drop an image into the field.
+3. Select **Add more assets**.
+4. Confirm that the **From Computer** tab is highlighted.
+5. Choose the image file from your computer.
+6. Click **Upload asset to the library**.
+7. Wait for the upload to complete.
+8. Select **Finish**.
+9. Confirm that the image appears in the field.
+10. Save the entry.
+
+#### Select an existing Media Library asset
+
+Use this option when the correct image has already been uploaded to Strapi.
+
+1. In the image field, select the plus icon **(+)**.
+2. Locate and select the approved image from available assets.
+3. Click **Finish**.
+4. Confirm that the image appears in the field.
+5. Save the entry.
+
+### Copy and enter a Cloudinary URL
+
+Use this workflow for fields that specifically require a Cloudinary URL, such as `imageGallery` and the CTA card image fields in the `callToActionCards`.
+
+#### Copy the URL from Cloudinary
+
+1. Open the Cloudinary account.
+2. Navigate to the appropriate folder:
+    - **Response images:** open the `responses` folder, then the folder for the specific response to access the available response images.
+3. Select the chosen image.
+4. Hover over the image and select (<>) **Copy URL**.
+
+#### Enter the URL in Strapi
+
+1. In Strapi, select **+ Add an entry**. 
+2. Paste the Cloudinary URL into the image URL field.
+3. Confirm that the URL was pasted correctly.
+4. Save the entry.
+
+### Add a Cloudinary image to the Media Library
+
+Use this workflow only when all of the following are true:
+
+ - The field requires a Strapi Media Library asset.
+ - The approved image is not already available in the Strapi Media Library.
+ - The same approved image already exists in Cloudinary.
+ - You have confirmed that the image can be reused.
+
+For example, the process images used for an existing response such as **How We Work** may be reused for a new response if the process is identical and the image has been approved for reuse. In that situation, the existing `processImageMobile` and `processImageDesktop` images can be located in Cloudinary and added to the new Strapi entry as Media Library assets. 
+
+#### Copy the URL from Cloudinary
+
+1. Open the Cloudinary account.
+2. For process images, open the `aggregated-public-information` folder, then the `production` folder for access to the images.
+3. Select the chosen image.
+4. Hover over the image and select (<>) **Copy URL**.
+5. Return to the relevant image field in Strapi.
+6. Select the plus icon **(+)** to add an asset.
+7. Select **Add more assets**.
+8. Click the **From URL** tab.
+9. Paste the Cloudinary URL.
+10. Click **Next**.
+11. Click **Upload asset to the library**.
+12. Wait for the upload to complete.
+13. Select **Finish**.
+14. Confirm that the image appears in the field.
+15. Save the entry. 
+
+> This workflow creates or adds a Media Library asset from the Cloudinary URL. It is different from pasting a Cloudinary URL directly into a URL field.
 
 ## Save and publish
 
