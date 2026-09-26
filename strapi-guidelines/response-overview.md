@@ -43,9 +43,9 @@ Entries from this collection are used to create response cards on the Response O
 
 **Strapi field name:** `processImageMobile` </br>
 **Source:** Strapi Media Library </br>
-**What to enter:** Select an approved image from the Media Library or upload a new approved image from your computer. </br>
-**Reuse option:** If this image is already used by another response process, follow [Reuse an existing Cloudinary image](). [TODO] test this</br>
-**Note:** The process flows <u>vertically</u> in this image.
+**What to enter:** Upload a new approved image, select an existing Media Library asset, or add the approved Cloudinary image to the Media Library using its URL. </br>
+**Requirement:** The process flows <u>vertically</u> in this image. <br>
+**Instructions:** [Choose the correct image input method](#image-input-methods)</br>
 
 <details>
 <summary>Click to view the image example</summary>
@@ -59,9 +59,9 @@ Entries from this collection are used to create response cards on the Response O
 
 **Strapi field name:** `processImageDesktop` </br>
 **Source:** Strapi Media Library </br>
-**What to enter:** Select an approved image from the Media Library or upload a new approved image from your computer. </br>
-**Reuse option:** If this image is already used by another response process, follow [Reuse an existing Cloudinary image](). [TODO] TEST THIS</br>
-**Note:** The process flows horizontally in this image.
+**What to enter:** Upload a new approved image, select an existing Media Library asset, or add the approved Cloudinary image to the Media Library using its URL. </br>
+**Requirement:** The process flows <u>horizontally</u> in this image. <br>
+**Instructions:** [Choose the correct image input method](#image-input-methods)</br>
 
 <details>
 <summary>Click to view the image example</summary>
@@ -99,6 +99,9 @@ Use this workflow for fields that require an asset in the Strapi Media Library, 
 9. Confirm that the image appears in the field.
 10. Save the entry.
 
+[↩ Back to Image input methods](#image-input-methods)  
+[↩ Back to the top-level fields table](#top-level-fields)
+
 #### Select an existing Media Library asset
 
 Use this option when the correct image has already been uploaded to Strapi.
@@ -108,6 +111,9 @@ Use this option when the correct image has already been uploaded to Strapi.
 3. Click **Finish**.
 4. Confirm that the image appears in the field.
 5. Save the entry.
+
+[↩ Back to Image input methods](#image-input-methods)  
+[↩ Back to the top-level fields table](#top-level-fields)
 
 ### Add a Cloudinary image to the Media Library
 
@@ -143,6 +149,9 @@ For example, the process images used for an existing response such as **How We W
 
 > This workflow creates or adds a Media Library asset from the Cloudinary URL. It is different from pasting a Cloudinary URL directly into a URL field.
 
+[↩ Back to Image input methods](#image-input-methods)  
+[↩ Back to the top-level fields table](#top-level-fields)
+
 ### Copy and enter a Cloudinary URL
 
 Use this workflow for fields that specifically require a Cloudinary URL, such as `imageGallery` and the CTA card image fields in the `callToActionCards`.
@@ -161,6 +170,9 @@ Use this workflow for fields that specifically require a Cloudinary URL, such as
 6. Paste the Cloudinary URL into the image URL field.
 7. Confirm that the URL was pasted correctly.
 8. Save the entry.
+
+[↩ Back to Image input methods](#image-input-methods)  
+[↩ Back to the top-level fields table](#top-level-fields)
 
 ## Save and publish
 
