@@ -76,7 +76,7 @@ The correct image input method depends on the field you are completing. Check th
 
 | Field  | Required input | Use these instructions |
 |---|---|---|
-| `processImageMobile` and `processImageDesktop`<br> - new image available on your computer | Strapi Media Library asset | [Upload a Media Library asset](#upload-a-new-asset-from-you-computer) |
+| `processImageMobile` and `processImageDesktop`<br> - new approved image file available | Strapi Media Library asset | [Upload a Media Library asset](#upload-a-new-asset-from-you-computer) |
 | `processImageMobile` and `processImageDesktop`<br> - image already exists in Strapi | Strapi Media Library asset | [Select a Media Library asset](#select-an-existing-media-library-asset) |
 | `processImageMobile` and `processImageDesktop`<br> - approved image exists only in Cloudinary | Strapi Media Library asset | [Add a Cloudinary image to the Media Library](#add-a-cloudinary-image-to-the-media-library) |
 | `imageGallery` | Cloudinary URL | [Copy and enter a Cloudinary URL](#copy-and-enter-a-cloudinary-url) |
@@ -109,25 +109,6 @@ Use this option when the correct image has already been uploaded to Strapi.
 4. Confirm that the image appears in the field.
 5. Save the entry.
 
-### Copy and enter a Cloudinary URL
-
-Use this workflow for fields that specifically require a Cloudinary URL, such as `imageGallery` and the CTA card image fields in the `callToActionCards`.
-
-#### Copy the URL from Cloudinary
-
-1. Open the Cloudinary account.
-2. Navigate to the appropriate folder:
-    - **Response images:** open the `responses` folder, then the folder for the specific response to access the available response images.
-3. Select the chosen image.
-4. Hover over the image and select (<>) **Copy URL**.
-
-#### Enter the URL in Strapi
-
-1. In Strapi, select **+ Add an entry**. 
-2. Paste the Cloudinary URL into the image URL field.
-3. Confirm that the URL was pasted correctly.
-4. Save the entry.
-
 ### Add a Cloudinary image to the Media Library
 
 Use this workflow only when all of the following are true:
@@ -145,6 +126,9 @@ For example, the process images used for an existing response such as **How We W
 2. For process images, open the `aggregated-public-information` folder, then the `production` folder for access to the images.
 3. Select the chosen image.
 4. Hover over the image and select (<>) **Copy URL**.
+
+#### Add the image to the Strapi Media Library
+
 5. Return to the relevant image field in Strapi.
 6. Select the plus icon **(+)** to add an asset.
 7. Select **Add more assets**.
@@ -158,6 +142,25 @@ For example, the process images used for an existing response such as **How We W
 15. Save the entry. 
 
 > This workflow creates or adds a Media Library asset from the Cloudinary URL. It is different from pasting a Cloudinary URL directly into a URL field.
+
+### Copy and enter a Cloudinary URL
+
+Use this workflow for fields that specifically require a Cloudinary URL, such as `imageGallery` and the CTA card image fields in the `callToActionCards`.
+
+#### Copy the URL from Cloudinary
+
+1. Open the Cloudinary account.
+2. Navigate to the appropriate folder:
+    - **Response images:** open the `responses` folder, then the folder for the specific response to access the available response images.
+3. Select the chosen image.
+4. Hover over the image and select (<>) **Copy URL**.
+
+#### Enter the URL in Strapi
+
+5. In Strapi, select **+ Add an entry**. 
+6. Paste the Cloudinary URL into the image URL field.
+7. Confirm that the URL was pasted correctly.
+8. Save the entry.
 
 ## Save and publish
 
