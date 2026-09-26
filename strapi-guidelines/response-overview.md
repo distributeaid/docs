@@ -16,7 +16,7 @@ Entries from this collection are used to create response cards on the Response O
 | name         | Short text              | Enter the name for this response.  | Levant Response                              | Yes       | - **Detailed Response page:** page heading<br> - **Response Overview page:** card heading |
 | subheading   | Short text | Enter a brief one sentence description of the response.                  | We source harm reduction kits with ...<details><summary>**Click to expand**</summary>medical equipment that our partners then distribute to trans people who take injection-based gender affirming hormone therapy.</details> | No        | - **Detailed Response page:** below page heading      |
 | description  | Rich text               | Enter a detailed description of what we provide for this response.                                           | We deliver supplies to ...<details><summary>**Click to expand**</summary>refugee camps, community centers, and grassroots groups serving people on the move. We also work with a network of organizations across the continent to help them be more sustainable and effective by reducing costs and acquiring new sources of aid.</details>                    | Yes       | - **Detailed response page:** full description in About section<br> - **Response Overview page:** description preview followed by `...` in the card                |
-| imageGallery  | Repeatable component               | Add one entry for each image. See the component instructions below. [TODO - add link to this component]                                           | ———                   | No       | - **Detailed Response page:** All images appear in the About section<br> - **Response Overview page:** The first image entered appears on the response card                |
+| imageGallery  | Repeatable component               | Add one entry for each image. See the [component](#imagegallery) instructions below.                                           | ———                   | No       | - **Detailed Response page:** All images appear in the About section<br> - **Response Overview page:** The first image entered appears on the response card                |
 |<a id="field-process-image-mobile"></a> processImageMobile  | Strapi Media               | Select or upload the image that accurately displays the process the response follows. See [Process image mobile](#process-image-mobile) for the display example and image requirements.                                           | [View example](#process-image-mobile)                     | No       | - **Detailed response page:** How We Work section on mobile layouts                |
 | <a id="field-process-image-desktop"></a> processImageDesktop  | Strapi Media               | Select or upload the image that accurately displays the process the response follows. See [Process image desktop](#process-image-desktop) for the display example and image requirements.                                           | [View example](#process-image-desktop)                    | No       | - **Detailed response page:** How We Work section on desktop layouts                |
 | callToActionCards  | Repeatable component               | [TODO]                                           | [TODO]                    | No       | Cards that appear in the section on how to get involved on the detailed response page.                |
@@ -30,6 +30,22 @@ Entries from this collection are used to create response cards on the Response O
 | fundraisers  | Relation               | Choose the fundraiser that is associated with the response. If applicable, choose additional fundraisers that can be associated with the response.                                           | [TODO]                    | No       | [TODO]                |
 
 ## Component fields
+
+### imageGallery
+
+**Strapi field name:** `imageGallery`<br>
+**Field type:** Repeatable component<br>
+**Requirement:** Add an entry for <u>each</u> image that will be displayed in this response.<br>
+**Note:** The first entry will be used for both the **Response Overview** page, as well as the **Detailed Response** page.
+
+This component contains additional fields. Complete each field as follows:
+
+| Subfield   | Field type              | What to enter                                                                                  | Example                                         | Required? | Where it appears                 |
+| ------------ | ----------------------- | ---------------------------------------------------------------------------------------------- | ----------------------------------------------- | --------- | -------------------------------- |
+| imageURL         | text              | Enter the Cloudinary URL for this image. See [Copy and enter a Cloudinary URL](#copy-and-enter-a-cloudinary-url).  | https://res.cloudinary.com/<details><summary>Click to expand</summary>dthervbn8/image/upload/v1734689078/Events/Trips/Greece%20Visit/LHI/WhatsApp_Image_2023-06-16_at_17.59.26_ftrgr3.jpg</details>                              | Yes       | Image appears in the About section of the response pages.  |
+| altText         | text              | Enter the descriptive text that will appear if the image fails to load.  | Stacked boxes filled with aid supplies sitting in a warehouse.           | No       | Anywhere the image fails to load. |
+| attributionName         | text              | Enter the name of the organization that provided the image.  | Anera                              | No       | Displays in the bottom corner of the image on the response pages.  |
+| attributionURL         | text              | Enter the URL for the organization that provided this image.  | https://anera.org/                              | No       | As a link for the organization on the image in the response pages. |
 
 ### impactStatistics
 
