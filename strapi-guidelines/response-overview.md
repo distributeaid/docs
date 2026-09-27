@@ -98,14 +98,14 @@ This component contains additional fields. Complete each field as follows:
 
 | Subfield   | Field type              | What to enter                                                                                  | Example                                         | Required? | Where it appears                 |
 | ------------ | ----------------------- | ---------------------------------------------------------------------------------------------- | ----------------------------------------------- | --------- | -------------------------------- |
-| subfield name         | field type              | What to enter  | example                              | Yes/No       | where it appears  |
-| subfield name         | field type              | What to enter  | example                              | Yes/No       | where it appears  |
-| subfield name         | field type              | What to enter  | example                              | Yes/No       | where it appears  |
-| subfield name         | field type              | What to enter  | example                              | Yes/No       | where it appears  |
-| subfield name         | field type              | What to enter  | example                              | Yes/No       | where it appears  |
-| subfield name         | field type              | What to enter  | example                              | Yes/No       | where it appears  |
-| subfield name         | field type              | What to enter  | example                              | Yes/No       | where it appears  |
-| subfield name         | field type              | What to enter  | example                              | Yes/No       | where it appears  |
+| title         | enumeration              | Select one of the options available for the associated call to action.  | donate supplies                              | Yes       | As the heading for the call to action card.  |
+| description         | text              | [TODO]  | If you or your organization want to make ...<details><summary>Click to expand</summary>a tax-deductible donation of clothing, hygiene products, medical tools, or other supplies, please get in touch.</details>                              | Yes       | Under the heading in the card on the response pages.  |
+| imageLink         | text              | Enter the Cloudinary URL for this image. See [Copy and enter a Cloudinary URL](#copy-and-enter-a-cloudinary-url).  | [TODO]<br>NEED TO CONFIRM WHAT LINK TO USE FOR EXAMPLE<details><summary>Click to expand</summary></details>                              | Yes       | The image for this link appears on the card in the response pages.  |
+| imageAltText         | text              | Enter the descriptive text that will appear if the image fails to load.  | Stacked boxes filled with aid supplies sitting in a warehouse.           | No       | Anywhere the image fails to load. |
+| imageAttributionName         | text              | Enter the name of the organization that provided the image.  | Anera                              | No       | Displays in the bottom corner of the image on the card in the response pages.  |
+| imageAttributionURL         | text              | Enter the URL for the organization that provided this image.  | https://anera.org/                              | No       | As a link for the organization on the image in the card on the response pages. |
+| buttonText         | text              | A call to action  | Reach out to donate in kind                              | Yes       | On the button to click for that card.  |
+| buttonLink         | text              | The link associated with that call to action.  | mailto:donate-aid@distributeaid.org                              | Yes       | When you hover over the button to click for that card.  |
 
 ### faq
 
