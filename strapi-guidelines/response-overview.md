@@ -35,8 +35,9 @@ Entries from this collection are used to create response cards on the Response O
 
 **Strapi field name:** `imageGallery`<br>
 **Field type:** Repeatable component<br>
+**Component:** Image Reference<br>
 **Requirement:** Add an entry for <u>each</u> image that will be displayed in this response.<br>
-**Note:** The first entry will be used for both the **Response Overview** page, as well as the **Detailed Response** page.
+**Note:** The first entry will be used for the **Response Overview** page, as well as the **Detailed Response** page.
 
 This component contains additional fields. Complete each field as follows:
 
@@ -49,9 +50,88 @@ This component contains additional fields. Complete each field as follows:
 
 ### impactStatistics
 
+**Strapi field name:** ``<br>
+**Field type:** Repeatable component<br>
+**Component:** <br>
+**Requirement:** Add an entry for <u>each</u> [TODO] that will be displayed in this response.<br>
+
+This component contains additional fields. Complete each field as follows:
+
+| Subfield   | Field type              | What to enter                                                                                  | Example                                         | Required? | Where it appears                 |
+| ------------ | ----------------------- | ---------------------------------------------------------------------------------------------- | ----------------------------------------------- | --------- | -------------------------------- |
+| subfield name         | field type              | What to enter  | example                              | Yes/No       | where it appears  |
+
 ### statistics
 
+**Strapi field name:** ``<br>
+**Field type:** Repeatable component<br>
+**Component:** <br>
+**Requirement:** Add an entry for <u>each</u> [TODO] that will be displayed in this response.<br>
+
+This component contains additional fields. Complete each field as follows:
+
+| Subfield   | Field type              | What to enter                                                                                  | Example                                         | Required? | Where it appears                 |
+| ------------ | ----------------------- | ---------------------------------------------------------------------------------------------- | ----------------------------------------------- | --------- | -------------------------------- |
+| subfield name         | field type              | What to enter  | example                              | Yes/No       | where it appears  |
+
 ### cta
+
+**Strapi field name:** ``<br>
+**Field type:** Repeatable component<br>
+**Component:** <br>
+**Requirement:** Add an entry for <u>each</u> [TODO] that will be displayed in this response.<br>
+
+This component contains additional fields. Complete each field as follows:
+
+| Subfield   | Field type              | What to enter                                                                                  | Example                                         | Required? | Where it appears                 |
+| ------------ | ----------------------- | ---------------------------------------------------------------------------------------------- | ----------------------------------------------- | --------- | -------------------------------- |
+| subfield name         | field type              | What to enter  | example                              | Yes/No       | where it appears  |
+
+### callToActionCards
+
+**Strapi field name:** `callToActionCards`<br>
+**Field type:** Repeatable component<br>
+**Component:** Call To Action<br>
+**Requirement:** Add an entry for <u>each</u> Call To Action card that will be displayed in this response.<br>
+
+This component contains additional fields. Complete each field as follows:
+
+| Subfield   | Field type              | What to enter                                                                                  | Example                                         | Required? | Where it appears                 |
+| ------------ | ----------------------- | ---------------------------------------------------------------------------------------------- | ----------------------------------------------- | --------- | -------------------------------- |
+| subfield name         | field type              | What to enter  | example                              | Yes/No       | where it appears  |
+| subfield name         | field type              | What to enter  | example                              | Yes/No       | where it appears  |
+| subfield name         | field type              | What to enter  | example                              | Yes/No       | where it appears  |
+| subfield name         | field type              | What to enter  | example                              | Yes/No       | where it appears  |
+| subfield name         | field type              | What to enter  | example                              | Yes/No       | where it appears  |
+| subfield name         | field type              | What to enter  | example                              | Yes/No       | where it appears  |
+| subfield name         | field type              | What to enter  | example                              | Yes/No       | where it appears  |
+| subfield name         | field type              | What to enter  | example                              | Yes/No       | where it appears  |
+
+### faq
+
+**Strapi field name:** ``<br>
+**Field type:** Repeatable component<br>
+**Component:** <br>
+**Requirement:** Add an entry for <u>each</u> [TODO] that will be displayed in this response.<br>
+
+This component contains additional fields. Complete each field as follows:
+
+| Subfield   | Field type              | What to enter                                                                                  | Example                                         | Required? | Where it appears                 |
+| ------------ | ----------------------- | ---------------------------------------------------------------------------------------------- | ----------------------------------------------- | --------- | -------------------------------- |
+| subfield name         | field type              | What to enter  | example                              | Yes/No       | where it appears  |
+
+### details
+
+**Strapi field name:** ``<br>
+**Field type:** Repeatable component<br>
+**Component:** <br>
+**Requirement:** Add an entry for <u>each</u> [TODO] that will be displayed in this response.<br>
+
+This component contains additional fields. Complete each field as follows:
+
+| Subfield   | Field type              | What to enter                                                                                  | Example                                         | Required? | Where it appears                 |
+| ------------ | ----------------------- | ---------------------------------------------------------------------------------------------- | ----------------------------------------------- | --------- | -------------------------------- |
+| subfield name         | field type              | What to enter  | example                              | Yes/No       | where it appears  |
 
 ## Process Image display examples
 
