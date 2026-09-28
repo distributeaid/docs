@@ -1,33 +1,36 @@
 # Response.Overview Content Guide
 
 ## Purpose
+
 The Response.Overview collection holds entries for each response that Distribute Aid is or has been involved with.
 
 ## How this content reaches the website
-Entries from this collection are used to create response cards on the Response Overview page, as well as individual response pages that provide greater detail relating to that specific project. Only entries that are **published** will display on the website. 
+
+Entries from this collection are used to create response cards on the Response Overview page, as well as individual response pages that provide greater detail relating to that specific project. Only entries that are **published** will display on the website.
 
 ## Before you begin
 
 ## Open the collection
 
-## Top-level fields 
-| Field name   | Field type              | What to enter                                                                                  | Example                                         | Required? | Where it appears                 |
-| ------------ | ----------------------- | ---------------------------------------------------------------------------------------------- | ----------------------------------------------- | --------- | -------------------------------- |
-| name         | Short text              | Enter the name for this response.  | Levant Response                              | Yes       | - **Detailed Response page:** page heading<br> - **Response Overview page:** card heading |
-| subheading   | Short text | Enter a brief one sentence description of the response.                  | We source harm reduction kits with ...<details><summary>**Click to expand**</summary>medical equipment that our partners then distribute to trans people who take injection-based gender affirming hormone therapy.</details> | No        | - **Detailed Response page:** below page heading      |
-| description  | Rich text               | Enter a detailed description of what we provide for this response.                                           | We deliver supplies to ...<details><summary>**Click to expand**</summary>refugee camps, community centers, and grassroots groups serving people on the move. We also work with a network of organizations across the continent to help them be more sustainable and effective by reducing costs and acquiring new sources of aid.</details>                    | Yes       | - **Detailed response page:** full description in About section<br> - **Response Overview page:** description preview followed by `...` in the card                |
-| <a id="field-image-gallery"></a> imageGallery  | Repeatable component               | Add one entry for each image. See the [component](#imagegallery) instructions below.                                           | ———                   | No       | - **Detailed Response page:** all images appear in the About section<br> - **Response Overview page:** the first image entered appears on the response card                |
-|<a id="field-process-image-mobile"></a> processImageMobile  | Strapi Media               | Select or upload the image that accurately displays the process the response follows. See [Process image mobile](#process-image-mobile) for the display example and image requirements.                                           | [View example](#process-image-mobile)                     | No       | - **Detailed response page:** How We Work section on mobile layouts                |
-| <a id="field-process-image-desktop"></a> processImageDesktop  | Strapi Media               | Select or upload the image that accurately displays the process the response follows. See [Process image desktop](#process-image-desktop) for the display example and image requirements.                                           | [View example](#process-image-desktop)                    | No       | - **Detailed response page:** How We Work section on desktop layouts                |
-| <a id="field-call-to-action-cards"></a> callToActionCards  | Repeatable component               | Add one entry for each call to action. See the [component](#calltoactioncards) instructions below.                                           | ———                   | No       | **Detailed response page:** How To Get Involved section                |
-| <a id="field-faqs"></a> faqs  | Repeatable component               | [TODO]                                          | [TODO]                    | No       | **Detailed response page:** FAQ section                |
-| slug   | Short text | No input required. This field autofills.                   | [TODO] | No        | No visual display but is used to distinguish each response.      |
-| <a id="field-impact-statistics"></a> impactStatistics | Single component    | [TODO]                | —                                               | Yes        | **Detailed response page:** By The Numbers section         |
-| aboutHeading  | Short text               | Enter "About The" + the project name                                           | About The US Disaster Preparedness Project                    | No       | **Detailed response page:** heading for the About section               |
-| <a id="field-details"></a> details  | Repeatable component               | [TODO]                                           | [TODO]                    | No       | **Detailed response page:** below the images in the About section, if applicable.                |
-| processHeading  | Short text               | [TODO]Enter "About The" + the project name                                           | [TODO]                    | No       | **Detailed response page:** heading for the process image.                |
-| processFootnote  | Short text               | [TODO]Enter "About The" + the project name                                           | [TODO]                    | No       | **Detailed response page:** footnote for the process image                |
-| fundraisers  | Relation               | Choose the fundraiser that is associated with the response. If applicable, choose additional fundraisers that can be associated with the response.                                           | [TODO]                    | No       | No visual display. Used to connect the response to various fundraisers.                |
+## Top-level fields
+
+| Field name                                                   | Field type           | What to enter                                                                                                                                                                             | Example                                                                                                                                                                                                                                                                                                                                     | Required? | Where it appears                                                                                                                                            |
+| ------------------------------------------------------------ | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| name                                                         | Short text           | Enter the name for this response.                                                                                                                                                         | Levant Response                                                                                                                                                                                                                                                                                                                             | Yes       | - **Detailed Response page:** page heading<br> - **Response Overview page:** card heading                                                                   |
+| subheading                                                   | Short text           | Enter a brief one sentence description of the response.                                                                                                                                   | We source harm reduction kits with ...<details><summary>**Click to expand**</summary>medical equipment that our partners then distribute to trans people who take injection-based gender affirming hormone therapy.</details>                                                                                                               | No        | - **Detailed Response page:** below page heading                                                                                                            |
+| description                                                  | Rich text            | Enter a detailed description of what we provide for this response.                                                                                                                        | We deliver supplies to ...<details><summary>**Click to expand**</summary>refugee camps, community centers, and grassroots groups serving people on the move. We also work with a network of organizations across the continent to help them be more sustainable and effective by reducing costs and acquiring new sources of aid.</details> | Yes       | - **Detailed response page:** full description in About section<br> - **Response Overview page:** description preview followed by `...` in the card         |
+| <a id="field-image-gallery"></a> imageGallery                | Repeatable component | Add one entry for each image. See the [component](#imagegallery) instructions below.                                                                                                      | ———                                                                                                                                                                                                                                                                                                                                         | No        | - **Detailed Response page:** all images appear in the About section<br> - **Response Overview page:** the first image entered appears on the response card |
+| <a id="field-process-image-mobile"></a> processImageMobile   | Strapi Media         | Select or upload the image that accurately displays the process the response follows. See [Process image mobile](#process-image-mobile) for the display example and image requirements.   | [View example](#process-image-mobile)                                                                                                                                                                                                                                                                                                       | No        | - **Detailed response page:** How We Work section on mobile layouts                                                                                         |
+| <a id="field-process-image-desktop"></a> processImageDesktop | Strapi Media         | Select or upload the image that accurately displays the process the response follows. See [Process image desktop](#process-image-desktop) for the display example and image requirements. | [View example](#process-image-desktop)                                                                                                                                                                                                                                                                                                      | No        | - **Detailed response page:** How We Work section on desktop layouts                                                                                        |
+| <a id="field-call-to-action-cards"></a> callToActionCards    | Repeatable component | Add one entry for each call to action. See the [component](#calltoactioncards) instructions below.                                                                                        | ———                                                                                                                                                                                                                                                                                                                                         | No        | **Detailed response page:** How To Get Involved section                                                                                                     |
+| <a id="field-faqs"></a> faqs                                 | Repeatable component | [TODO]                                                                                                                                                                                    | [TODO]                                                                                                                                                                                                                                                                                                                                      | No        | **Detailed response page:** FAQ section                                                                                                                     |
+| slug                                                         | Short text           | No input required. This field autofills.                                                                                                                                                  | [TODO]                                                                                                                                                                                                                                                                                                                                      | No        | No visual display but is used to distinguish each response.                                                                                                 |
+| <a id="field-impact-statistics"></a> impactStatistics        | Single component     | [TODO]                                                                                                                                                                                    | —                                                                                                                                                                                                                                                                                                                                           | Yes       | **Detailed response page:** By The Numbers section                                                                                                          |
+| aboutHeading                                                 | Short text           | Enter "About The" + the project name                                                                                                                                                      | About The US Disaster Preparedness Project                                                                                                                                                                                                                                                                                                  | No        | **Detailed response page:** heading for the About section                                                                                                   |
+| <a id="field-details"></a> details                           | Repeatable component | [TODO]                                                                                                                                                                                    | [TODO]                                                                                                                                                                                                                                                                                                                                      | No        | **Detailed response page:** below the images in the About section, if applicable.                                                                           |
+| processHeading                                               | Short text           | [TODO]Enter "About The" + the project name                                                                                                                                                | [TODO]                                                                                                                                                                                                                                                                                                                                      | No        | **Detailed response page:** heading for the process image.                                                                                                  |
+| processFootnote                                              | Short text           | [TODO]Enter "About The" + the project name                                                                                                                                                | [TODO]                                                                                                                                                                                                                                                                                                                                      | No        | **Detailed response page:** footnote for the process image                                                                                                  |
+| fundraisers                                                  | Relation             | Choose the fundraiser that is associated with the response. If applicable, choose additional fundraisers that can be associated with the response.                                        | [TODO]                                                                                                                                                                                                                                                                                                                                      | No        | No visual display. Used to connect the response to various fundraisers.                                                                                     |
 
 ## Component fields
 
@@ -41,12 +44,12 @@ Entries from this collection are used to create response cards on the Response O
 
 This component contains additional fields. Complete each field as follows:
 
-| Subfield   | Field type              | What to enter                                                                                  | Example                                         | Required? | Where it appears                 |
-| ------------ | ----------------------- | ---------------------------------------------------------------------------------------------- | ----------------------------------------------- | --------- | -------------------------------- |
-| imageURL         | text              | Enter the Cloudinary URL for this image. See [Copy and enter a Cloudinary URL](#copy-and-enter-a-cloudinary-url).  | [TODO]<br>NEED TO CONFIRM WHAT LINK TO USE FOR EXAMPLE<details><summary>Click to expand</summary></details>                              | Yes       | Image appears in the About section of the response pages.  |
-| altText         | text              | Enter the descriptive text that will appear if the image fails to load.  | Stacked boxes filled with aid supplies sitting in a warehouse.           | No       | Anywhere the image fails to load. |
-| attributionName         | text              | Enter the name of the organization that provided the image.  | Anera                              | No       | Displays in the bottom corner of the image on the response pages.  |
-| attributionURL         | text              | Enter the URL for the organization that provided this image.  | https://anera.org/                              | No       | As a link for the organization on the image in the response pages. |
+| Subfield        | Field type | What to enter                                                                                                     | Example                                                                                                     | Required? | Where it appears                                                   |
+| --------------- | ---------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | --------- | ------------------------------------------------------------------ |
+| imageURL        | text       | Enter the Cloudinary URL for this image. See [Copy and enter a Cloudinary URL](#copy-and-enter-a-cloudinary-url). | [TODO]<br>NEED TO CONFIRM WHAT LINK TO USE FOR EXAMPLE<details><summary>Click to expand</summary></details> | Yes       | Image appears in the About section of the response pages.          |
+| altText         | text       | Enter the descriptive text that will appear if the image fails to load.                                           | Stacked boxes filled with aid supplies sitting in a warehouse.                                              | No        | Anywhere the image fails to load.                                  |
+| attributionName | text       | Enter the name of the organization that provided the image.                                                       | Anera                                                                                                       | No        | Displays in the bottom corner of the image on the response pages.  |
+| attributionURL  | text       | Enter the URL for the organization that provided this image.                                                      | https://anera.org/                                                                                          | No        | As a link for the organization on the image in the response pages. |
 
 [↩ Back to the `imageGallery` field in the table](#field-image-gallery)
 
@@ -59,9 +62,9 @@ This component contains additional fields. Complete each field as follows:
 
 This component contains additional fields. Complete each field as follows:
 
-| Subfield   | Field type              | What to enter                                                                                  | Example                                         | Required? | Where it appears                 |
-| ------------ | ----------------------- | ---------------------------------------------------------------------------------------------- | ----------------------------------------------- | --------- | -------------------------------- |
-| subfield name         | field type              | What to enter  | example                              | Yes/No       | where it appears  |
+| Subfield      | Field type | What to enter | Example | Required? | Where it appears |
+| ------------- | ---------- | ------------- | ------- | --------- | ---------------- |
+| subfield name | field type | What to enter | example | Yes/No    | where it appears |
 
 [↩ Back to the `impactStatistics` field in the table](#field-impact-statistics)
 
@@ -74,9 +77,9 @@ This component contains additional fields. Complete each field as follows:
 
 This component contains additional fields. Complete each field as follows:
 
-| Subfield   | Field type              | What to enter                                                                                  | Example                                         | Required? | Where it appears                 |
-| ------------ | ----------------------- | ---------------------------------------------------------------------------------------------- | ----------------------------------------------- | --------- | -------------------------------- |
-| subfield name         | field type              | What to enter  | example                              | Yes/No       | where it appears  |
+| Subfield      | Field type | What to enter | Example | Required? | Where it appears |
+| ------------- | ---------- | ------------- | ------- | --------- | ---------------- |
+| subfield name | field type | What to enter | example | Yes/No    | where it appears |
 
 [↩ Back to the `statistics` field in the table]()[<-TODO]
 
@@ -89,9 +92,9 @@ This component contains additional fields. Complete each field as follows:
 
 This component contains additional fields. Complete each field as follows:
 
-| Subfield   | Field type              | What to enter                                                                                  | Example                                         | Required? | Where it appears                 |
-| ------------ | ----------------------- | ---------------------------------------------------------------------------------------------- | ----------------------------------------------- | --------- | -------------------------------- |
-| subfield name         | field type              | What to enter  | example                              | Yes/No       | where it appears  |
+| Subfield      | Field type | What to enter | Example | Required? | Where it appears |
+| ------------- | ---------- | ------------- | ------- | --------- | ---------------- |
+| subfield name | field type | What to enter | example | Yes/No    | where it appears |
 
 [↩ Back to the `cta` field in the table]()[<-TODO]
 
@@ -104,16 +107,16 @@ This component contains additional fields. Complete each field as follows:
 
 This component contains additional fields. Complete each field as follows:
 
-| Subfield   | Field type              | What to enter                                                                                  | Example                                         | Required? | Where it appears                 |
-| ------------ | ----------------------- | ---------------------------------------------------------------------------------------------- | ----------------------------------------------- | --------- | -------------------------------- |
-| title         | enumeration              | Select one of the options available for the associated call to action.  | donate supplies                              | Yes       | As the heading for the call to action card.  |
-| description         | text              | [TODO]  | If you or your organization want to make ...<details><summary>Click to expand</summary>a tax-deductible donation of clothing, hygiene products, medical tools, or other supplies, please get in touch.</details>                              | Yes       | Under the heading in the card on the response pages.  |
-| imageLink         | text              | Enter the Cloudinary URL for this image. See [Copy and enter a Cloudinary URL](#copy-and-enter-a-cloudinary-url).  | [TODO]<br>NEED TO CONFIRM WHAT LINK TO USE FOR EXAMPLE<details><summary>Click to expand</summary></details>                              | Yes       | The image for this link appears on the card in the response pages.  |
-| imageAltText         | text              | Enter the descriptive text that will appear if the image fails to load.  | Stacked boxes filled with aid supplies sitting in a warehouse.           | No       | Anywhere the image fails to load. |
-| imageAttributionName         | text              | Enter the name of the organization that provided the image.  | Anera                              | No       | Displays in the bottom corner of the image on the card in the response pages.  |
-| imageAttributionURL         | text              | Enter the URL for the organization that provided this image.  | https://anera.org/                              | No       | As a link for the organization on the image in the card on the response pages. |
-| buttonText         | text              | A call to action  | Reach out to donate in kind                              | Yes       | On the button to click for that card.  |
-| buttonLink         | text              | The link associated with that call to action.  | mailto:donate-aid@distributeaid.org                              | Yes       | When you hover over the button to click for that card.  |
+| Subfield             | Field type  | What to enter                                                                                                     | Example                                                                                                                                                                                                          | Required? | Where it appears                                                               |
+| -------------------- | ----------- | ----------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ------------------------------------------------------------------------------ |
+| title                | enumeration | Select one of the options available for the associated call to action.                                            | donate supplies                                                                                                                                                                                                  | Yes       | As the heading for the call to action card.                                    |
+| description          | text        | [TODO]                                                                                                            | If you or your organization want to make ...<details><summary>Click to expand</summary>a tax-deductible donation of clothing, hygiene products, medical tools, or other supplies, please get in touch.</details> | Yes       | Under the heading in the card on the response pages.                           |
+| imageLink            | text        | Enter the Cloudinary URL for this image. See [Copy and enter a Cloudinary URL](#copy-and-enter-a-cloudinary-url). | [TODO]<br>NEED TO CONFIRM WHAT LINK TO USE FOR EXAMPLE<details><summary>Click to expand</summary></details>                                                                                                      | Yes       | The image for this link appears on the card in the response pages.             |
+| imageAltText         | text        | Enter the descriptive text that will appear if the image fails to load.                                           | Stacked boxes filled with aid supplies sitting in a warehouse.                                                                                                                                                   | No        | Anywhere the image fails to load.                                              |
+| imageAttributionName | text        | Enter the name of the organization that provided the image.                                                       | Anera                                                                                                                                                                                                            | No        | Displays in the bottom corner of the image on the card in the response pages.  |
+| imageAttributionURL  | text        | Enter the URL for the organization that provided this image.                                                      | https://anera.org/                                                                                                                                                                                               | No        | As a link for the organization on the image in the card on the response pages. |
+| buttonText           | text        | A call to action                                                                                                  | Reach out to donate in kind                                                                                                                                                                                      | Yes       | On the button to click for that card.                                          |
+| buttonLink           | text        | The link associated with that call to action.                                                                     | mailto:donate-aid@distributeaid.org                                                                                                                                                                              | Yes       | When you hover over the button to click for that card.                         |
 
 [↩ Back to the `callToActionCards` field in the table](#field-call-to-action-cards)
 
@@ -126,9 +129,9 @@ This component contains additional fields. Complete each field as follows:
 
 This component contains additional fields. Complete each field as follows:
 
-| Subfield   | Field type              | What to enter                                                                                  | Example                                         | Required? | Where it appears                 |
-| ------------ | ----------------------- | ---------------------------------------------------------------------------------------------- | ----------------------------------------------- | --------- | -------------------------------- |
-| subfield name         | field type              | What to enter  | example                              | Yes/No       | where it appears  |
+| Subfield      | Field type | What to enter | Example | Required? | Where it appears |
+| ------------- | ---------- | ------------- | ------- | --------- | ---------------- |
+| subfield name | field type | What to enter | example | Yes/No    | where it appears |
 
 [↩ Back to the `faq` field in the table](#field-faqs)
 
@@ -141,9 +144,9 @@ This component contains additional fields. Complete each field as follows:
 
 This component contains additional fields. Complete each field as follows:
 
-| Subfield   | Field type              | What to enter                                                                                  | Example                                         | Required? | Where it appears                 |
-| ------------ | ----------------------- | ---------------------------------------------------------------------------------------------- | ----------------------------------------------- | --------- | -------------------------------- |
-| subfield name         | field type              | What to enter  | example                              | Yes/No       | where it appears  |
+| Subfield      | Field type | What to enter | Example | Required? | Where it appears |
+| ------------- | ---------- | ------------- | ------- | --------- | ---------------- |
+| subfield name | field type | What to enter | example | Yes/No    | where it appears |
 
 [↩ Back to the `details` field in the table](#field-details)
 
@@ -161,6 +164,7 @@ This component contains additional fields. Complete each field as follows:
 <summary>Click to view the image example</summary>
 
 ![Example process image on mobile](./assets/process-image-mobile-example.png)
+
 </details>
 
 [↩ Back to the `processImageMobile` field in the table](#field-process-image-mobile)
@@ -177,20 +181,22 @@ This component contains additional fields. Complete each field as follows:
 <summary>Click to view the image example</summary>
 
 ![Example process image on desktop](./assets/process-image-desktop-example.png)
+
 </details>
 
 [↩ Back to the `processImageDesktop` field in the table](#field-process-image-desktop)
 
 ## Image input methods
+
 The correct image input method depends on the field you are completing. Check the table below before entering an image.
 
-| Field  | Required input | Use these instructions |
-|---|---|---|
-| `processImageMobile` and `processImageDesktop`<br> - new approved image file available | Strapi Media Library asset | [Upload a Media Library asset](#upload-a-new-asset-from-you-computer) |
-| `processImageMobile` and `processImageDesktop`<br> - image already exists in Strapi | Strapi Media Library asset | [Select a Media Library asset](#select-an-existing-media-library-asset) |
+| Field                                                                                         | Required input             | Use these instructions                                                                      |
+| --------------------------------------------------------------------------------------------- | -------------------------- | ------------------------------------------------------------------------------------------- |
+| `processImageMobile` and `processImageDesktop`<br> - new approved image file available        | Strapi Media Library asset | [Upload a Media Library asset](#upload-a-new-asset-from-you-computer)                       |
+| `processImageMobile` and `processImageDesktop`<br> - image already exists in Strapi           | Strapi Media Library asset | [Select a Media Library asset](#select-an-existing-media-library-asset)                     |
 | `processImageMobile` and `processImageDesktop`<br> - approved image exists only in Cloudinary | Strapi Media Library asset | [Add a Cloudinary image to the Media Library](#add-a-cloudinary-image-to-the-media-library) |
-| `imageGallery` | Cloudinary URL | [Copy and enter a Cloudinary URL](#copy-and-enter-a-cloudinary-url) |
-| `callToActionCard` image fields | Cloudinary URL | [Copy and enter a Cloudinary URL](#copy-and-enter-a-cloudinary-url) |
+| `imageGallery`                                                                                | Cloudinary URL             | [Copy and enter a Cloudinary URL](#copy-and-enter-a-cloudinary-url)                         |
+| `callToActionCard` image fields                                                               | Cloudinary URL             | [Copy and enter a Cloudinary URL](#copy-and-enter-a-cloudinary-url)                         |
 
 ### Upload or select a Media Library asset
 
@@ -229,12 +235,12 @@ Use this option when the correct image has already been uploaded to Strapi.
 
 Use this workflow only when all of the following are true:
 
- - The field requires a Strapi Media Library asset.
- - The approved image is not already available in the Strapi Media Library.
- - The same approved image already exists in Cloudinary.
- - You have confirmed that the image can be reused.
+- The field requires a Strapi Media Library asset.
+- The approved image is not already available in the Strapi Media Library.
+- The same approved image already exists in Cloudinary.
+- You have confirmed that the image can be reused.
 
-For example, the process images used for an existing response such as **How We Work** may be reused for a new response if the process is identical and the image has been approved for reuse. In that situation, the existing `processImageMobile` and `processImageDesktop` images can be located in Cloudinary and added to the new Strapi entry as Media Library assets. 
+For example, the process images used for an existing response such as **How We Work** may be reused for a new response if the process is identical and the image has been approved for reuse. In that situation, the existing `processImageMobile` and `processImageDesktop` images can be located in Cloudinary and added to the new Strapi entry as Media Library assets.
 
 #### Copy the URL from Cloudinary
 
@@ -255,7 +261,7 @@ For example, the process images used for an existing response such as **How We W
 12. Wait for the upload to complete.
 13. Select **Finish**.
 14. Confirm that the image appears in the field.
-15. Save the entry. 
+15. Save the entry.
 
 > This workflow creates or adds a Media Library asset from the Cloudinary URL. It is different from pasting a Cloudinary URL directly into a URL field.
 
@@ -270,13 +276,13 @@ Use this workflow for fields that specifically require a Cloudinary URL, such as
 
 1. Open the Cloudinary account.
 2. Navigate to the appropriate folder:
-    - **Response images:** open the `responses` folder, then the folder for the specific response to access the available response images.
+   - **Response images:** open the `responses` folder, then the folder for the specific response to access the available response images.
 3. Select the chosen image.
 4. Hover over the image and select (<>) **Copy URL**.
 
 #### Enter the URL in Strapi
 
-5. In Strapi, select **+ Add an entry**. 
+5. In Strapi, select **+ Add an entry**.
 6. Paste the Cloudinary URL into the image URL field.
 7. Confirm that the URL was pasted correctly.
 8. Save the entry.

@@ -7,6 +7,7 @@
 These documents provide guidance for admin/logistics/operations members entering content into the Strapi production site and how that content is used by the frontend website.
 
 ## Documents
+
 - [Content entry workflow]()
 - [Response.Overview guide](response-overview.md)
 - [Response.Fundraiser guide]()
@@ -27,6 +28,7 @@ Frontend website (displays the entry)
 ```
 
 ## Open decisions
+
 - Confirm the final location in the published documentation site.
 - Confirm the sidebar category and navigation labels, ensure they are all user friendly.
 - Confirm whether these guides are intended for administrators, contributors, or both.
