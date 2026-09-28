@@ -16,15 +16,15 @@ Entries from this collection are used to create response cards on the Response O
 | name         | Short text              | Enter the name for this response.  | Levant Response                              | Yes       | - **Detailed Response page:** page heading<br> - **Response Overview page:** card heading |
 | subheading   | Short text | Enter a brief one sentence description of the response.                  | We source harm reduction kits with ...<details><summary>**Click to expand**</summary>medical equipment that our partners then distribute to trans people who take injection-based gender affirming hormone therapy.</details> | No        | - **Detailed Response page:** below page heading      |
 | description  | Rich text               | Enter a detailed description of what we provide for this response.                                           | We deliver supplies to ...<details><summary>**Click to expand**</summary>refugee camps, community centers, and grassroots groups serving people on the move. We also work with a network of organizations across the continent to help them be more sustainable and effective by reducing costs and acquiring new sources of aid.</details>                    | Yes       | - **Detailed response page:** full description in About section<br> - **Response Overview page:** description preview followed by `...` in the card                |
-| imageGallery  | Repeatable component               | Add one entry for each image. See the [component](#imagegallery) instructions below.                                           | ———                   | No       | - **Detailed Response page:** all images appear in the About section<br> - **Response Overview page:** the first image entered appears on the response card                |
+| <a id="field-image-gallery"></a> imageGallery  | Repeatable component               | Add one entry for each image. See the [component](#imagegallery) instructions below.                                           | ———                   | No       | - **Detailed Response page:** all images appear in the About section<br> - **Response Overview page:** the first image entered appears on the response card                |
 |<a id="field-process-image-mobile"></a> processImageMobile  | Strapi Media               | Select or upload the image that accurately displays the process the response follows. See [Process image mobile](#process-image-mobile) for the display example and image requirements.                                           | [View example](#process-image-mobile)                     | No       | - **Detailed response page:** How We Work section on mobile layouts                |
 | <a id="field-process-image-desktop"></a> processImageDesktop  | Strapi Media               | Select or upload the image that accurately displays the process the response follows. See [Process image desktop](#process-image-desktop) for the display example and image requirements.                                           | [View example](#process-image-desktop)                    | No       | - **Detailed response page:** How We Work section on desktop layouts                |
-| callToActionCards  | Repeatable component               | [TODO]                                           | [TODO]                    | No       | **Detailed response page:** How To Get Involved section                |
-| faqs  | Repeatable component               | [TODO]                                          | [TODO]                    | No       | **Detailed response page:** FAQ section                |
+| <a id="field-call-to-action-cards"></a> callToActionCards  | Repeatable component               | Add one entry for each call to action. See the [component](#calltoactioncards) instructions below.                                           | ———                   | No       | **Detailed response page:** How To Get Involved section                |
+| <a id="field-faqs"></a> faqs  | Repeatable component               | [TODO]                                          | [TODO]                    | No       | **Detailed response page:** FAQ section                |
 | slug   | Short text | No input required. This field autofills.                   | [TODO] | No        | No visual display but is used to distinguish each response.      |
-| impactStatistics | Single component    | [TODO]                | —                                               | Yes        | **Detailed response page:** By The Numbers section         |
+| <a id="field-impact-statistics"></a> impactStatistics | Single component    | [TODO]                | —                                               | Yes        | **Detailed response page:** By The Numbers section         |
 | aboutHeading  | Short text               | Enter "About The" + the project name                                           | About The US Disaster Preparedness Project                    | No       | **Detailed response page:** heading for the About section               |
-| details  | Repeatable component               | [TODO]                                           | [TODO]                    | No       | **Detailed response page:** below the images in the About section, if applicable.                |
+| <a id="field-details"></a> details  | Repeatable component               | [TODO]                                           | [TODO]                    | No       | **Detailed response page:** below the images in the About section, if applicable.                |
 | processHeading  | Short text               | [TODO]Enter "About The" + the project name                                           | [TODO]                    | No       | **Detailed response page:** heading for the process image.                |
 | processFootnote  | Short text               | [TODO]Enter "About The" + the project name                                           | [TODO]                    | No       | **Detailed response page:** footnote for the process image                |
 | fundraisers  | Relation               | Choose the fundraiser that is associated with the response. If applicable, choose additional fundraisers that can be associated with the response.                                           | [TODO]                    | No       | No visual display. Used to connect the response to various fundraisers.                |
@@ -48,6 +48,8 @@ This component contains additional fields. Complete each field as follows:
 | attributionName         | text              | Enter the name of the organization that provided the image.  | Anera                              | No       | Displays in the bottom corner of the image on the response pages.  |
 | attributionURL         | text              | Enter the URL for the organization that provided this image.  | https://anera.org/                              | No       | As a link for the organization on the image in the response pages. |
 
+[↩ Back to the `imageGallery` field in the table](#field-image-gallery)
+
 ### impactStatistics
 
 **Strapi field name:** ``<br>
@@ -60,6 +62,8 @@ This component contains additional fields. Complete each field as follows:
 | Subfield   | Field type              | What to enter                                                                                  | Example                                         | Required? | Where it appears                 |
 | ------------ | ----------------------- | ---------------------------------------------------------------------------------------------- | ----------------------------------------------- | --------- | -------------------------------- |
 | subfield name         | field type              | What to enter  | example                              | Yes/No       | where it appears  |
+
+[↩ Back to the `impactStatistics` field in the table](#field-impact-statistics)
 
 ### statistics
 
@@ -74,6 +78,8 @@ This component contains additional fields. Complete each field as follows:
 | ------------ | ----------------------- | ---------------------------------------------------------------------------------------------- | ----------------------------------------------- | --------- | -------------------------------- |
 | subfield name         | field type              | What to enter  | example                              | Yes/No       | where it appears  |
 
+[↩ Back to the `statistics` field in the table]()[<-TODO]
+
 ### cta
 
 **Strapi field name:** ``<br>
@@ -86,6 +92,8 @@ This component contains additional fields. Complete each field as follows:
 | Subfield   | Field type              | What to enter                                                                                  | Example                                         | Required? | Where it appears                 |
 | ------------ | ----------------------- | ---------------------------------------------------------------------------------------------- | ----------------------------------------------- | --------- | -------------------------------- |
 | subfield name         | field type              | What to enter  | example                              | Yes/No       | where it appears  |
+
+[↩ Back to the `cta` field in the table]()[<-TODO]
 
 ### callToActionCards
 
@@ -107,6 +115,8 @@ This component contains additional fields. Complete each field as follows:
 | buttonText         | text              | A call to action  | Reach out to donate in kind                              | Yes       | On the button to click for that card.  |
 | buttonLink         | text              | The link associated with that call to action.  | mailto:donate-aid@distributeaid.org                              | Yes       | When you hover over the button to click for that card.  |
 
+[↩ Back to the `callToActionCards` field in the table](#field-call-to-action-cards)
+
 ### faq
 
 **Strapi field name:** ``<br>
@@ -120,6 +130,8 @@ This component contains additional fields. Complete each field as follows:
 | ------------ | ----------------------- | ---------------------------------------------------------------------------------------------- | ----------------------------------------------- | --------- | -------------------------------- |
 | subfield name         | field type              | What to enter  | example                              | Yes/No       | where it appears  |
 
+[↩ Back to the `faq` field in the table](#field-faqs)
+
 ### details
 
 **Strapi field name:** ``<br>
@@ -132,6 +144,8 @@ This component contains additional fields. Complete each field as follows:
 | Subfield   | Field type              | What to enter                                                                                  | Example                                         | Required? | Where it appears                 |
 | ------------ | ----------------------- | ---------------------------------------------------------------------------------------------- | ----------------------------------------------- | --------- | -------------------------------- |
 | subfield name         | field type              | What to enter  | example                              | Yes/No       | where it appears  |
+
+[↩ Back to the `details` field in the table](#field-details)
 
 ## Process Image display examples
 
