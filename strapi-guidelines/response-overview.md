@@ -245,7 +245,7 @@ Use this workflow only when all of the following are true:
 
 For example, the process images used for an existing response such as **How We Work** may be reused for a new response if the process is identical and the image has been approved for reuse. In that situation, the existing `processImageMobile` and `processImageDesktop` images can be located in Cloudinary and added to the new Strapi entry as Media Library assets.
 
-#### Copy the URL from Cloudinary
+#### Copy the process image URL from Cloudinary
 
 1. Open the Cloudinary account.
 2. For process images, open the `aggregated-public-information` folder, then the `production` folder for access to the images.
