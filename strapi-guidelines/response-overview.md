@@ -133,7 +133,7 @@ This component contains two required fields. Complete each field as follows:
 | Subfield      | Field type | What to enter | Example | Required? | Where it appears |
 | ------------- | ---------- | ------------- | ------- | --------- | ---------------- |
 | question | text | Enter one frequently asked question that this response answers. | Where does Distribute Aid work in the United States? | Yes    | Displays as a question in the **FAQs** section of the response page. |
-| answer | text | Enter a clear answer to the question in the `question` subfield. | Our network spans the country, with a particular focus on California, the Gulf Coast, and the Southeast. | Yes    | Displays when a visitor selects the corresponding question in the **FAQs** section.  |
+| answer | Rich text (Markdown) | Enter a clear answer to the question in the `question` subfield. | Our network spans the country, with a particular focus on California, the Gulf Coast, and the Southeast. | Yes    | Displays when a visitor selects the corresponding question in the **FAQs** section.  |
 
 [↩ Back to the `faq` field in the table](#field-faqs)
 
