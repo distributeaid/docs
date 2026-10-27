@@ -9,8 +9,7 @@ Follow authoring-collection-guides.md for guidance. -->
 
 ## How this content reaches the website
 
-[Explain where this content appears and what happens after publication.
-Include any verified update delay or additional publishing step.]
+[Explain where this content appears and what happens after publication. Include any verified update delay or additional publishing step.]
 
 ## Before you begin
 
@@ -27,14 +26,11 @@ Include any verified update delay or additional publishing step.]
 
 ## Save your progress
 
-You can save an entry before all information is available and return
-to complete it later. Be sure to save your progress as you work.
+You can save an entry before all information is available and return to complete it later. Be sure to save your progress as you work.
 
 Saving an entry does not publish it to the website. Strapi saves it as a **Draft** entry.
 
-Required fields may remain incomplete when saving. Strapi checks
-these requirements when you try to publish, so saving successfully
-does not mean the entry is ready for publication.
+Required fields may remain incomplete when saving. Strapi checks these requirements when you try to publish, so saving successfully does not mean the entry is ready for publication.
 
 ### Save an incomplete entry
 
@@ -50,11 +46,11 @@ Before publishing, complete the remaining fields and review the
 
 [Explain the meaning of “Required?” if needed.]
 
-| Field name | Field type | What to enter | Example | Required? | Where it appears |
-|---|---|---|---|---|---|
-| [FIELD LABEL] | [CONTENT-TYPE] | [ACTION AND RULES] | [EXAMPLE OR LINK] | [YES/NO] | [PAGE: LOCATION] |
+| Field name    | Field type     | What to enter      | Example           | Required? | Where it appears |
+| ------------- | -------------- | ------------------ | ----------------- | --------- | ---------------- |
+| [FIELD LABEL] | [CONTENT-TYPE] | [ACTION AND RULES] | [EXAMPLE OR LINK] | [YES/NO]  | [PAGE: LOCATION] |
 
-<!-- AUTHOR: Link component fields and image examples to the sections below. Long examples should use a clickable show/hide button to reveal the extended content. 
+<!-- AUTHOR: Link component fields and image examples to the sections below. Long examples should use a clickable show/hide button to reveal the extended content.
 Use the repository's tested method for field-row anchors. -->
 
 ## Component fields
@@ -71,18 +67,21 @@ Duplicate the subsection below for each component. -->
 
 This component contains additional fields. Complete each field as follows:
 
-| Subfield      | Field type | What to enter | Example | Required? | Where it appears |
-| ------------- | ---------- | ------------- | ------- | --------- | ---------------- |
-| [LABEL] | [CONTENT-TYPE] | [INSTRUCTION] | [EXAMPLE] | [Yes/No]    | [LOCATION] |
+| Subfield | Field type     | What to enter | Example   | Required? | Where it appears |
+| -------- | -------------- | ------------- | --------- | --------- | ---------------- |
+| [LABEL]  | [CONTENT-TYPE] | [INSTRUCTION] | [EXAMPLE] | [Yes/No]  | [LOCATION]       |
 
-[↩ Back to this field in the table](#REPLACE-WITH-VERIFIED-ANCHOR)
+<!-- AUTHOR: Add a return link to this field's row in the top-level fields table.
+Create or verify the destination anchor before adding the link.
+Example:
+[↩ Back to the `[EXACT IDENTFIER]` field in the table](#field-name)
+-->
 
 ## Visual examples
 
 <!-- AUTHOR: Optional section.
-Use this section for example images or website screenshots that help
-administrators understand a field. Follow the Visual examples guidance
-in authoring-collection-guides.md.
+Use this section for example images or website screenshots that help administrators understand a field.
+Follow the Visual examples guidance in authoring-collection-guides.md.
 
 Duplicate the subsection below for each example needed.
 Remove this section if no visual examples are needed.
@@ -94,9 +93,7 @@ Remove this section if no visual examples are needed.
 **Source:** [Strapi Media Library or image URL] </br>
 [Explain what the example shows and what the administrator should look for]</br>
 
-<!-- AUTHOR: For an image input field, add any field-specific
-requirements or image input instructions that are not already
-explained in the field table. Remove this comment when complete. -->
+<!-- AUTHOR: For an image input field, add any field-specific requirements or image input instructions that are not already explained in the field table. Remove this comment when complete. -->
 
 <details>
 <summary>Click to view the example</summary>
@@ -105,7 +102,11 @@ explained in the field table. Remove this comment when complete. -->
 
 </details>
 
-[↩ Back to [FIELD LABEL] in the table](#REPLACE-WITH-VERIFIED-ANCHOR)
+<!-- AUTHOR: Add a return link to this field's row in the top-level fields table.
+Create or verify the destination anchor before adding the link.
+Example:
+[↩ Back to the `[EXACT IDENTFIER]` field in the table](#field-name)
+-->
 
 ## Before publishing
 
@@ -124,21 +125,17 @@ You do not need to complete it just to save your progress.
 
 ## Publish and check the website
 
-Publish only when the entry is complete and approved. Only published
-entries appear on the website.
+Publish only when the entry is complete and approved. Only published entries appear on the website.
 
 1. Complete the [Before publishing checklist](#before-publishing).
 2. Select Publish.
-3. If Strapi displays validation warnings, correct the identified
-   fields and try publishing again.
+3. If Strapi displays validation warnings, correct the identified fields and try publishing again.
 4. Confirm that the entry is **Published**.
-5. Check the content on the website after the expected update process
-   has completed. 
-   
->>NOTE: You may need to refresh the page in the browser to view the updated content.
+5. Check the content on the website after the expected update process has completed.
 
-[Explain any verified delay or additional step before the content
-appears on the website.]
+> > NOTE: You may need to refresh the page in the browser to view the updated content.
+
+[Explain any verified delay or additional step before the content appears on the website.]
 
 ## Troubleshooting
 
