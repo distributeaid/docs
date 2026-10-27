@@ -74,7 +74,7 @@ This component contains additional fields. Complete each field as follows:
 <!-- AUTHOR: Add a return link to this field's row in the top-level fields table.
 Create or verify the destination anchor before adding the link.
 Example:
-[↩ Back to the `[EXACT IDENTFIER]` field in the table](#field-name)
+[↩ Back to the `[EXACT IDENTIFIER]` field in the table](#field-name)
 -->
 
 ## Visual examples
@@ -105,7 +105,7 @@ Remove this section if no visual examples are needed.
 <!-- AUTHOR: Add a return link to this field's row in the top-level fields table.
 Create or verify the destination anchor before adding the link.
 Example:
-[↩ Back to the `[EXACT IDENTFIER]` field in the table](#field-name)
+[↩ Back to the `[EXACT IDENTIFIER]` field in the table](#field-name)
 -->
 
 ## Before publishing
