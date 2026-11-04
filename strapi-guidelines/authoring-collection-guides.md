@@ -70,13 +70,116 @@ Use consistent formatting throughout the collection guides:
 
 ## Complete the collection guide
 
+Complete the following sections in the order provided by the template. Adapt the wording to the collection rather than retaining generic instructions that do not apply.
+
 ### Guide title
+
+Replace `[Collection Name]` with the name administrators recognize from the Strapi UI for the collection.
+
+If the guide title differs from the collection label in Strapi, identify the exact Strapi label in the introductory instructions.
+
 ### Purpose
+
+Explain:
+
+- What content the collection manages.
+- When administrators should use it.
+- What one entry represents.
+
+Keep this section brief and focused on the administrator's task. Do not describe backend implementation unless it is necessary to understand how to use the collection.
+
+Example:
+
+> Use this collection to create or update information for a response. Each entry provides content displayed on the response overview and detailed response pages.
+
+Replace this example with an explanation specific to the collection.
+
 ### How this content reaches the website
+
+Explain the relationship between the Strapi entry and the website.
+
+Identify:
+
+- Where administrators enter the content.
+- Which website pages or sections use it.
+- What must happen before the content becomes publicly visible.
+- Whether an additional update process or delay applies.
+
+Use plain language. Administrators should not need to understand API requests, frontend code, or deployment configuration.
+
+Do not assume that publication updates the website immediately. Confirm the actual behaviour and document any additional step that administrators must take. 
+
 ### Before you begin
+
+List what administrators need before starting, such as:
+
+- Access to the approved Strapi environment.
+- Permission to create or edit the relevant entries.
+- Available source information.
+- Approved images, documents, or links.
+- Collection-specific preparation.
+
+Distinguish what is needed to begin an entry from what is needed to publish it.
+
+If administrators can save incomplete entries, explain that they can start with the information available and return later. Do not imply that all content must be ready before they can begin.
+
+Include approval requirements here only when they affect preparation. Explain the final approval check in the Before publishing section.
+
 ### Open the collection
+
+Provide the steps administrators need to locate the collection and open an entry.
+
+Include:
+
+1. How to access the approved Strapi environment.
+2. How to open Content Manager.
+3. The exact collection label to select.
+4. How to create a new entry.
+5. How to find and open an existing entry.
+
+Separate creating and editing into short subsections if the actions differ enough to require separate insructions.
+
+When entries have similar names, explain how to identify the correct one before making changes.
+
 ### Save your progress
+
+Explain saving as a separate action from publishing.
+
+The instructions should tell administrators:
+
+- How to save the entry.
+- How to confirm that saving succeeded.
+- How to return to the entry later.
+- Whether incomplete required fields can remain when saving.
+- That saving successfully does not necessarily mean the entry is ready to publish.
+
+For the current collections, administrators can save incomplete entries and return later. Required-field warnings occur when attempting to publish rather than when saving. Confirm that this behaviour applies to the collection, including any custom validation, before keeping these statements.
+
+Verify what happens when administrators save changes to an entry that is already published. Explain whether the existing public content remains visible and when the saved changes become public.
+
+Do not assume every saved entry displays the same status label. Use the labels shown in the collection's Strapi interface.
+
+> In Strapi v5, newly created entries generally save as **Draft**, whereas updated entries save as **Modified**.
+
+Keep the publishing checklist out of the saving procedure. Administrators should not need to complete publication checks just to preserve unfinished work.
+
 ### Top-level fields
+
+Document the fields directly within the collection entry.
+
+Include a component (if applicable) as one row in this table, then link to its detailed instructions in Component fields. Do not place every nested subfield in the top-level table.
+
+Complete each column as follows:
+
+| Column | What to include |
+| --- | --- |
+| Field name | The exact field label administrators see in Strapi. |
+| Field type | A consistent, understandable description of the input type. |
+| What to enter | The action to take, the expected content, and relevant rules. |
+| Example | A realistic input or a link to a longer example. |
+| Required? | Yes, No, or the condition under which the field is required. |
+| Where it appears | The website page and visible element, or an explanation that the field is not publicly displayed. |
+
 ### Component fields
 ### Visual examples
 ### Before publishing
