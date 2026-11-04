@@ -48,7 +48,7 @@ Before publishing, complete the remaining fields and review the
 
 | Field name    | Field type     | What to enter      | Example           | Required? | Where it appears |
 | ------------- | -------------- | ------------------ | ----------------- | --------- | ---------------- |
-| [FIELD LABEL] | [CONTENT-TYPE] | [ACTION AND RULES] | [EXAMPLE OR LINK] | [YES/NO]  | [PAGE: LOCATION] |
+| [FIELD LABEL] | [FIELD-TYPE] | [ACTION AND RULES] | [EXAMPLE OR LINK] | [YES/NO]  | [PAGE: LOCATION] |
 
 <!-- AUTHOR: Link component fields and image examples to the sections below. Long examples should use a clickable show/hide button to reveal the extended content.
 Use the repository's tested method for field-row anchors. -->
