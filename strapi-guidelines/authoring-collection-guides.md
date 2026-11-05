@@ -363,11 +363,96 @@ Test all links in the rendered documentation.
 
 ### Before publishing
 
+Adapt the checklist to the collection.
+
+The checklist should help administrators confirm that the entry is complete, accurate, and approved before publication. It is not a prerequisite for saving unfinished work.
+
+Include relevant checks for:
+
+- Required fields.
+- Content accuracy.
+- Links and their destinations.
+- Images and field-specific image requirements.
+- Repeatable-item order.
+- Placeholder or test content.
+- Required approval.
+
+Remove checks that do not apply and add collection-specific checks where needed.
+
+Distinguish entry approval requirements from optional recommendations. Identify the approval process or contact when administrators need it.
+
+Keep publishing and post-publication website checks out of this checklist. Those actions belong in Publish and check the website.
+
 ### Publish and check the website
+
+Provide the verified steps for publishing the entry.
+
+Include:
+
+1. A link to the Before publishing checklist before the publishing action.
+2. The action administrators use to publish.
+3. What to do if validation warnings appear.
+4. How to confirm publication succeeded.
+5. When the website is expected to update.
+6. What to check on the website afterward.
+
+Explain any differences between publishing a new entry and publishing changes to an existing entry.
+
+Use the interface labels shown to the intended administrator role. Do not assume every administrator has permission to publish.
+
+If approval is required, explain how administrators know approval has been granted and what to do of someone else must publish the entry.
+
+Describe the actual website update process. Do not assume that refreshing the browser is sufficient or that changes appear immediately until testing has confirmed this.
+
+If a refresh is part of the verified procedure, place it after any required update process or waiting period.
+
+Tell administrators what to do if published content does not appear after the expected process has completed.
 
 ### Troubleshooting
 
+Organize troubleshooting by problems administrators can recognize.
+
+Use headings such as:
+
+- I saved the entry, but it is not on the website.
+- Strapi will not publish the entry.
+- The image is not displaying as expected.
+
+For each problem, explain:
+
+- What to check.
+- Which safe actions the administrator can take.
+- What result to expect.
+- Who to contact if the problem remains unresolved.
+
+Use verified causes and solutions. Do not add speculative fixes as though they are confirmed.
+
+Check publication status and the expected website update process before recommending browser-related actions.
+
+Do not direct administrators to change content schemas, permissions, deployment settings, or application code.
+
+When escalation is needed, recommend the administrator reach out in Slack to the appropriate channel and explain what information to provide, such as the collection name, entry name, action attempted, and visible error message.
+
+Do not ask administators to share passwords, access tokens, or other sensitive information.
+
 ### Content ownership and maintenance
+
+Replace the template placeholders with approved roles, teams, or contact routes.
+
+Include:
+
+ - Content questions: who confirms wording, facts, and approved assets.
+ - Technical problems: who handles interface, validation, or website issues.
+ - Guide owner: who is responsible for keeping the instructions current.
+ - Last verified: when the relevant instructions were checked.
+
+ Use contact information that is appropriate for the documentation's audience and visability.
+
+ Resolve ownership with the project maintainers before completing the guide.
+
+ Use Last verified to record when the instructions were checked against relevant interface and workflow. Do not update it just because the wording was edited.
+
+ Keep the detailed contributor maintenance process in this authoring guide rather than repeating it in every collection guide.
 
 ## Final review and submission
 
