@@ -458,9 +458,45 @@ Include:
 
 ### Review the content
 
+Before requesting review, confirm:
+
+- The guide identifies the correct collection and intended audience.
+- Field labels and instructions match the administrator interface.
+- Required settings and recommendations are clearly distinguished.
+- Saving and publishing behaviour has been identified.
+- Component and nested-component instructions are accurate, if applicable.
+- Website locations and display behaviour are correct.
+- Image input methods match the relevant fields.
+- Examples contain no sensitive or unapproved information.
+- Optional sections are retained only where useful.
+- Placeholders, unresolved questions, and author comments are removed.
+- Ownership and verification information is complete.
+
 ### Test navigation and rendering
 
+Preview the guide in the working environment and the documentation site's renderer when available.
+
+Check:
+
+- Table readability.
+- Heading structure.
+- Links to component instructions and visual examples.
+- Field-row anchors and return links.
+- Relative image paths.
+- Expandable examples.
+- Line breaks and other formatting.
+
+Use the repository's tested method for anchors. Avoid standalone HTML between Markdown table rows.
+
+Verify active links. Do not leave active links pointing to placeholder destinations.
+
+A link that works in a local editor preview must also be checked in the documentation site when that preview is available.
+
 ### Run repository checks
+
+Run the following checks:
+
+
 
 ### Request review
 
