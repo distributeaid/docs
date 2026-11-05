@@ -180,8 +180,186 @@ Complete each column as follows:
 | Required? | Yes, No, or the condition under which the field is required. |
 | Where it appears | The website page and visible element, or an explanation that the field is not publicly displayed. |
 
+In the Field type column, replace `[FIELD TYPE]` with the type of input the field accepts, such as Short text, Rich text, Strapi Media, or Repeatable component. Confirm the type against the collection's configuration.
+
+Explain what "Required?" means in the completed guide. Distinguish requirements enforced by Strapi from editorial recommendations. For example, a field may be optional in Strapi but recommended for a particular page. State that recommendation in the What to enter column rather than presenting it as a required field.
+
+#### Describe multiple website locations
+
+When one field appears in more than one location, list each page and its use separately.
+
+Example:
+
+- Detailed Response page: full description in About section.
+- Response Overview page: description preview followed by `...` in the card.
+
+Use consistent page names throughout the guide.
+
+#### Handle long examples
+
+Keep table cells concise. Use one of the following approaches when an example needs more space:
+
+- For images or screenshots, link to an expandable example outside the table.
+- For long text, use `<details` and `<summary>` within the Example cell when the documentation renderer supports it. 
+- If the expanded content makes the table difficult to read, place the example outside the table and link to it instead.
+
+Check that links and expandable examples work in the final documentation renderer.
+
+#### Images and screenshots
+
+In the completed collection guide, link directly to the relevant example subsection.
+
+The following is an illustrative example, not a working link in this authoring guide:
+
+```
+| Column | suggested content |
+| --- | --- |
+| What to enter | Upload the approved mobile process image. See [Process image mobile](#process-image-mobile) for the display example and image requirements. |
+| Example | [View example](#process-image-mobile) |
+```
+
+When adapting this example:
+
+1. Create the relevant example subsection in the collection guide.
+2. Replace the example wording with collection-specific instructions.
+3. Replace the link destination with the subsection's verified anchor.
+4. Test the link in the rendered collection guide.
+
+#### Long text
+
+Use descriptive summary label and include the complete example inside the expandable section.
+
+Example Markdown:
+
+```
+| Field name | Example |
+| --- | --- |
+| Description | <details><summary>**View full description example**</summary>We deliver supplies to refugee camps, community centers, and grassroots groups serving people on the move. We also work with a network of organizations across the continent to help them be more sustainable and effective by reducing costs and acquiring new sources of aid.</details> |
+```
+
+If a visible preview is useful, place a short opening sentence before the expandable section. Keep complete example inside it so administrators can read the full text in one place.
+
+Keep the table row on one source line. For examples requiring several paragraphs, lists, or complex formatting, place the example outside the table and link to it.
+
+Verify the expandable content in the collection guide's final documentation renderer.
+
 ### Component fields
+
+Keep this section when a component needs more explanation than the top-level table provides. Remove it when no component guidance is needed.
+
+Duplicate the template subsection for each component that needs detailed instructions.
+
+For each component:
+
+- Use a heading administrators can match to the field in Strapi.
+- Identify the exact field name where useful.
+- State whether it is a single or repeatable component.
+- Explain what one component entry represents.
+- Describe any verified minimum, maximum, ordering, or conditional rules.
+- Document its subfields in a table.
+- Add a return link to the relevant parent field.
+
+Explain repeatable components in terms of the content administrators are adding.
+
+For example:
+
+> Add one entry for each approved statistic. Arrange the entries in the order they should appear on the website.
+
+Confirm the rule before documenting it by manually testing to verify the outcome.
+
+Include a technical component name only if it helps administrators identify the correct component.
+
+#### Nested components
+
+Use a seperate subsection when a component contains another component that needs explanation.
+
+Make the relationship clear through headings and introductory text. Do not rely only on technical identifiers to explain the hierarchy.
+
+Document each nested component close to its parent when administrators need both sets of instructions to complete the same task.
+
 ### Visual examples
+
+This section is optional. Keep it only when an image or screenshot helps administrators understand a field or its website display.
+
+Use an example image when administrators need to understand what kind of image to provide.
+
+Use a website screenshot when administrators need to understand where or how entered content appears.
+
+A screenshot may illustrate text fields, components, image fields, or several fields together to clarify the data required.
+
+#### Complete each visual example
+
+For each example:
+
+1. Add a descriptive subsection heading.
+2. Identify the related Strapi field or fields.
+3. Explain what the example shows.
+4. Tell administrators what they should notice.
+5. Add the image using the agreed asset location and a relative path.
+6. Write meaningful alt text.
+7. Give the expandable example a descriptive label.
+8. Add a return link to the relevant field, component, or table.
+
+Use labels such as:
+
+- View an example mobile process image.
+- View the Response Overview card.
+- View the image selection screen.
+
+Do not rely on the image alone to communicate requirements or actions. Keep essential instructions in the text.
+
+#### Example images for image input fields
+
+Include applicable field-specific information when administrators need it to select the correct image:
+
+- What the image should show.
+- The required final input: a Strapi Media asset or an image URL.
+- The approved source, when relevant.
+- Verified orientation, dimensions, file type, or other requirements.
+- Conditions for reusing an existing image.
+- A link to the applicable image input procedure.
+
+Distinguish a requirement from a description of the example.
+
+Do not copy process-image or Cloudinary instructions from another collection unless they apply.
+
+#### Website screenshots
+
+Identify the website page or section shown and explain which fields the screenshot illustrates.
+
+Show enough context to help administrators recognize the location, but avoid unrelated content.
+
+Remove sensitive information and use approved example content.
+
+If the screenshot illustrates several fields, return users to the relevant component section or table rather than one arbitrary field.
+
+#### Image input procedures
+
+Add an optional image input methods section, or link to an existing shared guide, when administrators need detailed image-entry instructions.
+
+Keep field-specific requirements beside the field. Keep reusable steps in the applicable procedure.
+
+Distinguish between:
+
+- Uploading a file from a computer.
+- Selecting an existing Strapi Media Library asset.
+- Using a Cloudinary URL to add an asset to the Strapi Media Library.
+- Entering a Cloudinary URL directly into a URL field.
+
+An image's source does not determine the field's required input. For example, an image may originate in Cloudinary while the field still requires a Strapi Media Libray asset.
+
+If several methods are available, use a concise table to identify the field or situation and link to the correct procedure.
+
+#### Return links
+
+Place return links after the example or procedure.
+
+For field-specific examples, link back to the relevant field row.
+
+For shared procedures, provide a link to the top-level fields table. A second link to Image Input methods may be useful when administrators need to choose another workflow.
+
+Test all links in the rendered documentation.
+
 ### Before publishing
 ### Publish and check the website
 ### Troubleshooting
