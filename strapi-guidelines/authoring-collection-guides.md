@@ -213,10 +213,10 @@ In the completed collection guide, link directly to the relevant example subsect
 The following is an illustrative example, not a working link in this authoring guide:
 
 ```md
-| Column | suggested content |
-| --- | --- |
+| Column        | suggested content                                                                                                                           |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
 | What to enter | Upload the approved mobile process image. See [Process image mobile](#process-image-mobile) for the display example and image requirements. |
-| Example | [View example](#process-image-mobile) |
+| Example       | [View example](#process-image-mobile)                                                                                                       |
 ```
 
 When adapting this example:
@@ -233,8 +233,8 @@ Use descriptive summary label and include the complete example inside the expand
 Example Markdown:
 
 ```md
-| Field name | Example |
-| --- | --- |
+| Field name  | Example                                                                                                                                                                                                                                                                                                                                                |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Description | <details><summary>**View full description example**</summary>We deliver supplies to refugee camps, community centers, and grassroots groups serving people on the move. We also work with a network of organizations across the continent to help them be more sustainable and effective by reducing costs and acquiring new sources of aid.</details> |
 ```
 
@@ -433,7 +433,7 @@ Do not direct administrators to change content schemas, permissions, deployment 
 
 When escalation is needed, recommend the administrator reach out in Slack to the appropriate channel and explain what information to provide, such as the collection name, entry name, action attempted, and visible error message.
 
-Do not ask administators to share passwords, access tokens, or other sensitive information.
+Do not ask administrators to share passwords, access tokens, or other sensitive information.
 
 ### Content ownership and maintenance
 
@@ -441,18 +441,18 @@ Replace the template placeholders with approved roles, teams, or contact routes.
 
 Include:
 
- - Content questions: who confirms wording, facts, and approved assets.
- - Technical problems: who handles interface, validation, or website issues.
- - Guide owner: who is responsible for keeping the instructions current.
- - Last verified: when the relevant instructions were checked.
+- Content questions: who confirms wording, facts, and approved assets.
+- Technical problems: who handles interface, validation, or website issues.
+- Guide owner: who is responsible for keeping the instructions current.
+- Last verified: when the relevant instructions were checked.
 
- Use contact information that is appropriate for the documentation's audience and visability.
+Use contact information that is appropriate for the documentation's audience and visibility.
 
- Resolve ownership with the project maintainers before completing the guide.
+Resolve ownership with the project maintainers before completing the guide.
 
- Use Last verified to record when the instructions were checked against relevant interface and workflow. Do not update it just because the wording was edited.
+Use Last verified to record when the instructions were checked against relevant interface and workflow. Do not update it just because the wording was edited.
 
- Keep the detailed contributor maintenance process in this authoring guide rather than repeating it in every collection guide.
+Keep the detailed contributor maintenance process in this authoring guide rather than repeating it in every collection guide.
 
 ## Final review and submission
 
@@ -494,10 +494,69 @@ A link that works in a local editor preview must also be checked in the document
 
 ### Run repository checks
 
-Run the following checks:
+Run the following checks from the repository root before pushing the completed guide for review.
 
+#### Check formatting
 
+```bash
+yarn format:check
+```
+
+Resolve any formatting issues reported by Prettier.
+
+#### Check Markdown
+
+```bash
+yarn lint:md
+```
+
+Resolve reported Markdown errors, including invalid links to headings or field anchors.
+
+Do not disable a rule simply to hide an infinished link or placeholder.
+
+#### Check spelling
+
+```bash
+yarn check:spelling
+```
+
+Review reported spelling issues and correct mistakes.
+
+For legitimate collection names, technical terms, or other entry vocabulary, consider if these fall under an exception. Do not change accurate field labels just to satisfy the spell checker.
+
+#### Build the documentation and check links
+
+```bash
+yarn build
+yarn check:links
+```
+
+Run the build first because the link checker checks the generated files in `dist/`, not the Markdown source files.
+
+Resolve build failures before checking links. Rebuild after changes that affect the generated documentation, then run the link check again.
+
+Review and resolve broken links reported by the check. Also test field-row anchors, return links, and expandable examples manually in the rendered guide.
+
+#### Check accessibility
+
+```bash
+yarn check:a11y
+```
+
+This script builds the documentation, starts a local server, and runs automated accessibility checks using the generated sitemap.
+
+Review and resolve accessibility failures affecting the guide. If the command cannot run locally, record the problem in the pull request and check the accessibility results when available.
+
+Automated checks do not replace reviewing the guide for clear instructions, useful image descriptions, readable tables, and easy navigation.
 
 ### Request review
+
+In the pull request description, identify:
+
+- The collection documented.
+- The sections or workflows covered.
+- What was verified and in which environment.
+- Any remaining questions.
+- The related issue.
 
 ## Maintenance of the complete guide
