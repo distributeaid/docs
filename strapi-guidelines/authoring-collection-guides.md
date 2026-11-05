@@ -512,7 +512,7 @@ yarn lint:md
 
 Resolve reported Markdown errors, including invalid links to headings or field anchors.
 
-Do not disable a rule simply to hide an infinished link or placeholder.
+Do not disable a rule simply to hide an unfinished link or placeholder.
 
 #### Check spelling
 
@@ -559,4 +559,26 @@ In the pull request description, identify:
 - Any remaining questions.
 - The related issue.
 
-## Maintenance of the complete guide
+## Maintenance of the completed guide
+
+Review the collection guide when:
+
+- Fields are added, removed, renamed, or reordered.
+- Field types, required settings, or validation rules change.
+- Components or nested components change.
+- Administrator permissions or available actions change.
+- Image selection or upload procedures change.
+- Approval or publication processes change.
+- Content appears in a different website location or format.
+- The update process for the website changes.
+- Administrators report confusing or incorrect instructions.
+
+Update affected tables, examples, screenshots, links, and procedures together.
+
+When changing a shared procedure, check the collection guides that link to it. Confirm that the revised instructions still apply.
+
+Test the affected workflow and navigation before updating the Last verified date.
+
+If a guide is no longer needed, confirm this with the maintainers. Update incoming links and remove or archive the guide through the normal review process.
+
+Keep the collection template and this authoring guide aligned. When the template gains or changes a section, update the corresponding authoring instructions.
