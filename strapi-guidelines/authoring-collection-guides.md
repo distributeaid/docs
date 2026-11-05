@@ -20,6 +20,7 @@ The completed collection guide should help administrators create, edit, save, co
 ### Gather the information you need
 
 Before writing a collection guide, confirm:
+
 - The collection name and field labels shown in the Strapi Content Manager.
 - The field types, required settings, validation rules, and component structure.
 - Where the content appears on the website.
@@ -40,9 +41,9 @@ Record unresolved questions while drafting. Do not present assumptions as confir
 4. Replace the collection name and other placeholders to match the collection.
 5. Keep the applicable sections.
 6. Remove sections that do not help administrators use this collection.
-7. Clearly mark unsresolved questions and resolve them before the guide is published.
+7. Clearly mark unresolved questions and resolve them before the guide is published.
 
-Use existing collection guides as references for structure and style. 
+Use existing collection guides as references for structure and style.
 Verify that their field requirements, image rules, and publishing behaviour also apply to the new collection before reusing those instructions.
 
 ### Apply writing and formatting conventions
@@ -107,7 +108,7 @@ Identify:
 
 Use plain language. Administrators should not need to understand API requests, frontend code, or deployment configuration.
 
-Do not assume that publication updates the website immediately. Confirm the actual behaviour and document any additional step that administrators must take. 
+Do not assume that publication updates the website immediately. Confirm the actual behaviour and document any additional step that administrators must take.
 
 ### Before you begin
 
@@ -137,7 +138,7 @@ Include:
 4. How to create a new entry.
 5. How to find and open an existing entry.
 
-Separate creating and editing into short subsections if the actions differ enough to require separate insructions.
+Separate creating and editing into short subsections if the actions differ enough to require separate instructions.
 
 When entries have similar names, explain how to identify the correct one before making changes.
 
@@ -171,13 +172,13 @@ Include a component (if applicable) as one row in this table, then link to its d
 
 Complete each column as follows:
 
-| Column | What to include |
-| --- | --- |
-| Field name | The exact field label administrators see in Strapi. |
-| Field type | A consistent, understandable description of the input type. |
-| What to enter | The action to take, the expected content, and relevant rules. |
-| Example | A realistic input or a link to a longer example. |
-| Required? | Yes, No, or the condition under which the field is required. |
+| Column           | What to include                                                                                   |
+| ---------------- | ------------------------------------------------------------------------------------------------- |
+| Field name       | The exact field label administrators see in Strapi.                                               |
+| Field type       | A consistent, understandable description of the input type.                                       |
+| What to enter    | The action to take, the expected content, and relevant rules.                                     |
+| Example          | A realistic input or a link to a longer example.                                                  |
+| Required?        | Yes, No, or the condition under which the field is required.                                      |
 | Where it appears | The website page and visible element, or an explanation that the field is not publicly displayed. |
 
 In the Field type column, replace `[FIELD TYPE]` with the type of input the field accepts, such as Short text, Rich text, Strapi Media, or Repeatable component. Confirm the type against the collection's configuration.
@@ -200,7 +201,7 @@ Use consistent page names throughout the guide.
 Keep table cells concise. Use one of the following approaches when an example needs more space:
 
 - For images or screenshots, link to an expandable example outside the table.
-- For long text, use `<details` and `<summary>` within the Example cell when the documentation renderer supports it. 
+- For long text, use `<details` and `<summary>` within the Example cell when the documentation renderer supports it.
 - If the expanded content makes the table difficult to read, place the example outside the table and link to it instead.
 
 Check that links and expandable examples work in the final documentation renderer.
@@ -211,7 +212,7 @@ In the completed collection guide, link directly to the relevant example subsect
 
 The following is an illustrative example, not a working link in this authoring guide:
 
-```
+```md
 | Column | suggested content |
 | --- | --- |
 | What to enter | Upload the approved mobile process image. See [Process image mobile](#process-image-mobile) for the display example and image requirements. |
@@ -231,7 +232,7 @@ Use descriptive summary label and include the complete example inside the expand
 
 Example Markdown:
 
-```
+```md
 | Field name | Example |
 | --- | --- |
 | Description | <details><summary>**View full description example**</summary>We deliver supplies to refugee camps, community centers, and grassroots groups serving people on the move. We also work with a network of organizations across the continent to help them be more sustainable and effective by reducing costs and acquiring new sources of aid.</details> |
@@ -271,7 +272,7 @@ Include a technical component name only if it helps administrators identify the 
 
 #### Nested components
 
-Use a seperate subsection when a component contains another component that needs explanation.
+Use a separate subsection when a component contains another component that needs explanation.
 
 Make the relationship clear through headings and introductory text. Do not rely only on technical identifiers to explain the hierarchy.
 
@@ -346,7 +347,7 @@ Distinguish between:
 - Using a Cloudinary URL to add an asset to the Strapi Media Library.
 - Entering a Cloudinary URL directly into a URL field.
 
-An image's source does not determine the field's required input. For example, an image may originate in Cloudinary while the field still requires a Strapi Media Libray asset.
+An image's source does not determine the field's required input. For example, an image may originate in Cloudinary while the field still requires a Strapi Media Library asset.
 
 If several methods are available, use a concise table to identify the field or situation and link to the correct procedure.
 
@@ -361,15 +362,21 @@ For shared procedures, provide a link to the top-level fields table. A second li
 Test all links in the rendered documentation.
 
 ### Before publishing
+
 ### Publish and check the website
+
 ### Troubleshooting
+
 ### Content ownership and maintenance
 
 ## Final review and submission
 
 ### Review the content
+
 ### Test navigation and rendering
+
 ### Run repository checks
+
 ### Request review
 
-## Maintainence of the complete guide
+## Maintenance of the complete guide

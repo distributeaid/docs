@@ -46,8 +46,8 @@ Before publishing, complete the remaining fields and review the
 
 [Explain the meaning of “Required?” if needed.]
 
-| Field name    | Field type     | What to enter      | Example           | Required? | Where it appears |
-| ------------- | -------------- | ------------------ | ----------------- | --------- | ---------------- |
+| Field name    | Field type   | What to enter      | Example           | Required? | Where it appears |
+| ------------- | ------------ | ------------------ | ----------------- | --------- | ---------------- |
 | [FIELD LABEL] | [FIELD TYPE] | [ACTION AND RULES] | [EXAMPLE OR LINK] | [YES/NO]  | [PAGE: LOCATION] |
 
 <!-- AUTHOR: Link component fields and image examples to the sections below. Long examples should use a clickable show/hide button to reveal the extended content.
@@ -67,9 +67,9 @@ Duplicate the subsection below for each component. -->
 
 This component contains additional fields. Complete each field as follows:
 
-| Subfield       | Field type     | What to enter | Example   | Required? | Where it appears |
-| --------       | -------------- | ------------- | --------- | --------- | ---------------- |
-| [FIELD LABEL]  | [FIELD TYPE]   | [INSTRUCTION] | [EXAMPLE] | [Yes/No]  | [LOCATION]       |
+| Subfield      | Field type   | What to enter | Example   | Required? | Where it appears |
+| ------------- | ------------ | ------------- | --------- | --------- | ---------------- |
+| [FIELD LABEL] | [FIELD TYPE] | [INSTRUCTION] | [EXAMPLE] | [Yes/No]  | [LOCATION]       |
 
 <!-- AUTHOR: Add a return link to this field's row in the top-level fields table.
 Create or verify the destination anchor before adding the link.
