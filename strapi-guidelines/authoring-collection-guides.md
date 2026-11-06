@@ -181,7 +181,7 @@ Complete each column as follows:
 | Required?        | Yes, No, or the condition under which the field is required.                                      |
 | Where it appears | The website page and visible element, or an explanation that the field is not publicly displayed. |
 
-In the Field type column, replace `[FIELD TYPE]` with the type of input the field accepts, such as Short text, Rich text, Strapi Media, or Repeatable component. Confirm the type against the collection's configuration.
+In the Field type column, replace `[FIELD TYPE]` with the type of input the field accepts. Examples include Short text, Rich text, Strapi Media, and Repeatable component. Confirm the type against the collection's configuration.
 
 Explain what "Required?" means in the completed guide. Distinguish requirements enforced by Strapi from editorial recommendations. For example, a field may be optional in Strapi but recommended for a particular page. State that recommendation in the What to enter column rather than presenting it as a required field.
 
@@ -201,8 +201,8 @@ Use consistent page names throughout the guide.
 Keep table cells concise. Use one of the following approaches when an example needs more space:
 
 - For images or screenshots, link to an expandable example outside the table.
-- For long text, use `<details` and `<summary>` within the Example cell when the documentation renderer supports it.
-- If the expanded content makes the table difficult to read, place the example outside the table and link to it instead.
+- For long text examples that fit within the table, use `<details` and `<summary>` within the Example cell when the documentation renderer supports it.
+- For rich text examples or if the expanded content makes the table difficult to read, place the example outside the table and link to it instead.
 
 Check that links and expandable examples work in the final documentation renderer.
 
@@ -216,7 +216,7 @@ The following is an illustrative example, not a working link in this authoring g
 | Column        | suggested content                                                                                                                           |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
 | What to enter | Upload the approved mobile process image. See [Process image mobile](#process-image-mobile) for the display example and image requirements. |
-| Example       | [View example](#process-image-mobile)                                                                                                       |
+| Example       | [View the process image mobile example](#process-image-mobile)                                                                              |
 ```
 
 When adapting this example:
@@ -226,9 +226,9 @@ When adapting this example:
 3. Replace the link destination with the subsection's verified anchor.
 4. Test the link in the rendered collection guide.
 
-#### Long text
+#### Long text and rich text examples
 
-Use descriptive summary label and include the complete example inside the expandable section.
+For long text examples that fit comfortably within the table, use an expandable section. Use a descriptive summary label and include the complete example inside the expandable section.
 
 Example Markdown:
 
@@ -238,9 +238,9 @@ Example Markdown:
 | Description | <details><summary>**View full description example**</summary>We deliver supplies to refugee camps, community centers, and grassroots groups serving people on the move. We also work with a network of organizations across the continent to help them be more sustainable and effective by reducing costs and acquiring new sources of aid.</details> |
 ```
 
-If a visible preview is useful, place a short opening sentence before the expandable section. Keep complete example inside it so administrators can read the full text in one place.
+If a visible preview is useful, place a short opening sentence before the expandable section. Keep the complete example inside it so administrators can read the full text in one place.
 
-Keep the table row on one source line. For examples requiring several paragraphs, lists, or complex formatting, place the example outside the table and link to it.
+Keep the table row on one source line. For rich text examples requiring several paragraphs, lists, or complex formatting, place the example outside the table and link to it. Preserve any formatting needed to demonstrate what administrators should enter.
 
 Verify the expandable content in the collection guide's final documentation renderer.
 
@@ -458,7 +458,7 @@ Keep the detailed contributor maintenance process in this authoring guide rather
 
 ### Review the content
 
-Before requesting review, confirm:
+Before requesting a review of the collection user guide, confirm:
 
 - The guide identifies the correct collection and intended audience.
 - Field labels and instructions match the administrator interface.
