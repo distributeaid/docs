@@ -2,7 +2,7 @@
 
 ## Purpose of this authoring guide
 
-Use this guide with `collection-template.md` to create administrator-facing instructions for a specific Strapi collection.
+Use this guide with [`collection-template.md`](./collection-template.md) to create administrator-facing instructions for a specific Strapi collection.
 
 The template provides the structure to copy. This authoring guide explains how to complete each section, decide which optional sections to keep, and prepare the completed guide for review.
 
@@ -537,17 +537,24 @@ Resolve build failures before checking links. Rebuild after changes that affect 
 
 Review and resolve broken links reported by the check. Also test field-row anchors, return links, and expandable examples manually in the rendered guide.
 
-#### Check accessibility
+#### Review accessibility
 
-```bash
-yarn check:a11y
-```
+Review the rendered guide for accessibility:
 
-This script builds the documentation, starts a local server, and runs automated accessibility checks using the generated sitemap.
+- Use clear instructions and descriptive link text.
+- Provide useful alternative text for informative images.
+- Check that table headings and content are understandable.
+- Check that expandable examples can be opened using the keyboard and that their contents are readable.
 
-Review and resolve accessibility failures affecting the guide. If the command cannot run locally, record the problem in the pull request and check the accessibility results when available.
+The repository's `yarn check:a11y` command is pending maintainer review and is not currently a required local authoring command. The inspected runs requested a missing sitemap and tested zero pages, despite reporting a passing result.
 
-Automated checks do not replace reviewing the guide for clear instructions, useful image descriptions, readable tables, and easy navigation.
+A separately tested local command successfully checked the generated pages, but its configuration has not yet been adopted as the repository's documented process.
+
+When automated accessibility checks are run:
+
+- Confirm that they test the expected pages.
+- Do not treat `0/0 URLs passed` as accessibility verification.
+- Record reported failures and any checks that could not be completed in the pull request.
 
 ### Request review
 
