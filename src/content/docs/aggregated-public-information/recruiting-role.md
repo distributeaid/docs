@@ -1,4 +1,7 @@
-# Recruiting Role Content Guide
+---
+title: Recruiting Role Content Guide
+description: How to create, edit, publish, and close recruiting roles in Strapi.
+---
 
 ## Purpose
 
