@@ -17,9 +17,11 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@astrojs/markdown-remark": "^7.1.1",
     "@astrojs/starlight": "^0.38.4",
     "astro": "^6.1.10",
-    "sharp": "^0.34.3"
+    "sharp": "^0.34.3",
+    "starlight-openapi": "^0.25.0"
   },
   "packageManager": "yarn@4.9.4",
   "engines": {
